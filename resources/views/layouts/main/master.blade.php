@@ -29,6 +29,7 @@
    <meta name="twitter:title" content="@yield('title')" />
    <meta name="twitter:description" content="@yield('description')" />
    <meta name="twitter:image" content="@yield('image')" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <!-- Fav Icon -->
    <link rel="icon" href="{{url(''.$setting->favicon)}}" type="image/x-icon">
    <style>
@@ -68,6 +69,9 @@
    <link href="{{asset('frontend/css/mew_noti.scss.css')}}" rel="stylesheet" type="text/css" media="all" />
    <link rel="preload" as="script" href="{{asset('frontend/js/swiper.js')}}" />
    <script src="{{asset('frontend/js/swiper.js')}} "></script>
+   <script src="{{asset('frontend/js/notify.min.js')}}"></script>
+   <link rel="stylesheet" href="{{asset('frontend/css/main.css')}}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <script>
       (function () {
             function asyncLoad() {
@@ -399,5 +403,12 @@
             </defs>
       </svg>
    </div>
+   @if (session()->has('postdone'))
+    <script>
+        console.log(123);
+        $.notify("Gửi thông tin liên hệ thành công", "success"
+			);
+    </script>
+@endif
 </body>
 </html>

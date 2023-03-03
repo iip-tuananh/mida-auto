@@ -20,7 +20,7 @@ class BlogController extends Controller
         ->orderBy('id','DESC')
         ->select(['id','title','image','description','created_at','slug'])
         ->paginate(12);
-        $data['news'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(10)->get(['id', 'title', 'slug', 'image']);
+        $data['blognew'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(10)->get(['id', 'title', 'slug', 'image','created_at','description']);
         $data['title_page'] = 'Tất cả tin tức';
         $data['categoryBlog'] = BlogCategory::with([
             'listBlog' => function ($query){
@@ -58,6 +58,7 @@ class BlogController extends Controller
     public function detailBlog($slug)
     {
         $data['blog_detail'] = Blog::with('cate')->where(['slug' => $slug])->first();
+        $data['blognew'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(10)->get(['id', 'title', 'slug', 'image','created_at','description']);
         $data['blogs'] = Blog::where(['status'=>1, 'category'=>$data['blog_detail']->category])
         ->orderBy('id','DESC')
         ->select(['id','title','image','description','created_at','slug'])

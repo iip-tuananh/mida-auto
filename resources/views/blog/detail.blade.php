@@ -9,146 +9,76 @@
 {{url(''.$blog_detail->image)}}
 @endsection
 @section('css')
-<link href="{{asset('frontend/css/blog_article_style.scss.css')}}" rel="stylesheet" type="text/css" />
-<link href="{{asset('frontend/css/sidebar_style.scss.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('js')
 @endsection
 @section('content')
-<section class="bread-crumb" style="background-image: linear-gradient(to bottom, rgb(10 9 9 / 44%) 0%,rgb(10 10 10 / 60%) 100%), url({{$blog_detail->image}});background-attachment: fixed;">
-	<span class="crumb-border"></span>
-	<div class="container">
-	<div class="rows">
-		<div class="col-xs-12 a-left">
-			<p class="title_h1 clearfix">
-				{{languageName($blog_detail->title)}}
-			</p>
-			<ul class="breadcrumb" >
-				<li class="home">
-				<a  href="{{route('home')}}" ><span >Trang chủ</span></a>						
-				<span class="mr_lr">&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</span>
-				</li>
-				<li >
-				<a  href="{{route('allListBlog')}}"><span >Tin tức</span></a>	
-				<span class="mr_lr">&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</span>
-				</li>
-				<li><strong><span >{{languageName($blog_detail->title)}}</span></strong></li>
-			</ul>
-		</div>
-	</div>
-	</div>
-</section>
-<section class="blogpage clearfix">
-	<div class="container article-wraper" itemscope itemtype="https://schema.org/Article">
-	<div class="wrap_background_aside padding-top-0 margin-bottom-40 clearfix">
-		<article class="article-main">
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="article-details clearfix">
-					<h1 class="article-title clearfix">{{languageName($blog_detail->title)}}</h1>
-					<div class="post-date">
-						<span>{{date_format($blog_detail->created_at,'d-m-Y')}}</span>
-					</div>
-					<div class="article-content clearfix">
-						{{-- <img class="margin-bottom-20" src="{{$blog_detail->image}}" alt="{{languageName($blog_detail->title)}}"/> --}}
-						<div class="rte">
-							{!!languageName($blog_detail->content)!!}
-						</div>
-					</div>
-				</div>
-				<div class="section clearfix">
-					<div class="social-sharing clearfix">
-						<span>Chia sẻ bài viết:</span>
-						<!-- Go to www.addthis.com/dashboard to customize your tools -->
-						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58589c2252fc2da4"></script>
-						<div class="addthis_inline_share_toolbox"></div>
-					</div>
-				</div>
-				@if (count($blogs) > 1)
-				<div class="section bloglq clearfix">
-					<h2>
-						<a href="{{route('allListBlog')}}" title="Tin liên quan">Tin liên quan</a>
-					</h2>
-					<div class="section owlnav_style1">
-						<div class="slickblog">
-							@foreach ($blogs as $blog)
-							@if ($blog->id != $blog_detail->id)
-								<div class="item">
-								<div class="blogwp clearfix">
-									<a  class="image-blog clearfix" href="{{route('detailBlog', ['slug'=>$blog->slug])}}" title="{{languageName($blog->title)}}">
-									<img class="lazyload" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="{{$blog->image}}"  alt="{{languageName($blog->title)}}">
-									</a>
-									<div class="post-date clearfix"> 
-										{{languageName($blog->description)}}
-									</div>
-									<h3>
-										<a href="{{route('detailBlog', ['slug'=>$blog->slug])}}" title="{{languageName($blog->title)}}">{{languageName($blog->title)}}</a>
-									</h3>
-								</div>
-								</div>
-							@endif
-							@endforeach
-						</div>
-					</div>
-				</div>
-				@endif
-				</div>
-			</div>
-		</article>
-	</div>
-	</div>
-</section>
-<style>
-	.post-date{
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 3; 
-	-webkit-box-orient: vertical;
-	}
-</style>
-<script>
-	$(document).ready(function ($) {
-		$('.slickblog').slick({
-			autoplay: true,
-			autoplaySpeed: 6000,
-			dots: false,
-			arrows: false,
-			infinite: false,
-			speed: 300,
-			slidesToShow: 4,
-			slidesToScroll: 4,
-			responsive: [
-				{
-					breakpoint: 1200,
-					settings: {
-						slidesToShow: 4,
-						slidesToScroll: 4
-					}
-				},
-				{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 3
-					}
-				},
-				{
-					breakpoint: 991,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 2
-					}
-				},
-				{
-					breakpoint: 767,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}
-			]
-		});
-	});
-</script>
+<div class="col-right position-relative">
+<div class="contentWarp ">
+   <div class="breadcrumbs bg-white">
+      <div class="container position-relative">
+         <ul class="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
+            <li class="home">
+               <a href="{{route('home')}}" title="Trang chủ">
+                  <svg width="12" height="10.633">
+                     <use href="#svg-home" />
+                  </svg>
+                  Trang chủ
+               </a>
+               <span class="slash-divider ml-2 mr-2">/</span>
+            </li>
+            <li>
+               <a href="/tin-tuc" title="Tin tức"><span>Tin tức</span></a>	
+               <span class="slash-divider ml-2 mr-2">/</span>
+            </li>
+            <li >{{languageName($blog_detail->title)}}</li>
+         </ul>
+      </div>
+   </div>
+   <section class="col2-right-layout" itemscope  itemtype="http://schema.org/Article">
+      <meta itemprop="mainEntityOfPage" content="/oppo-reno8-series-ra-mat-tai-viet-nam-vao-ngay-18-8">
+      <meta itemprop="description" content="">
+      <meta itemprop="url" content="//mew-mobile.mysapo.net/oppo-reno8-series-ra-mat-tai-viet-nam-vao-ngay-18-8">
+      <meta itemprop="name" content="{{languageName($blog_detail->title)}}">
+      <meta itemprop="headline" content="{{languageName($blog_detail->title)}}">
+      <meta itemprop="image" content="http://bizweb.dktcdn.net/thumb/grande/100/459/533/articles/cleanshot-2022-08-09-at-1-27-11-2x-e1659983495924.jpg?v=1660019210580">
+      <meta itemprop="author" content="Mew Theme">
+      <meta itemprop="datePublished" content="09-08-2022">
+      <meta itemprop="dateModified" content="09-08-2022">
+      <div class="d-none" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+         <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <img class="hidden" src="https://bizweb.dktcdn.net/100/459/533/themes/868331/assets/logo.png?1676652384879" alt="Mew Mobile"/>
+            <meta itemprop="url" content="https://bizweb.dktcdn.net/100/459/533/themes/868331/assets/logo.png?1676652384879">
+            <meta itemprop="width" content="400">
+            <meta itemprop="height" content="60">
+         </div>
+         <meta itemprop="name" content="Mew Mobile">
+      </div>
+      <div class="main container blogs">
+         <div class="col-main art_container mt-3 mb-3">
+            <div class="rounded p-3 bg-white">
+               <div class="row">
+                  <article class="blog_entry clearfix order-md-2 col-12 col-md-12 col-lg-8 col-xl-9" style="padding: 37px;transform: translateY(-40px);">
+                     <h1 class="article-name font-weight-bold mt-1">{{languageName($blog_detail->title)}}</h1>
+                     <div class="entry-date">
+                        <p class="day mb-0 mb-lg-3 pt-1">
+                            <b>{{$blog_detail->created_at}}</b>
+                        </p>
+                     </div>
+                     <div class="js-toc table-of-contents w-100 position-relative p-2 rounded mb-3" data-toc></div>
+                     <div class="entry-content text-justify rte " data-content>
+						{!!languageName($blog_detail->content)!!}
+					 </div>
+                  
+                  </article>
+                  <div class="col-xl-3 col-lg-4 col-md-12 d-none d-lg-block ba_sidebar order-3 order-lg-1" style="border-right:2px solid red">
+                     @include('layouts.blog.rightbar')
+                  </div>
+               </div>
+            </div>
+          
+         </div>
+      </div>
+   </section>
+</div>
 @endsection

@@ -1,0 +1,40 @@
+.formlienhe input{
+    height: 40px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+}
+.formlienhe input[type="submit"]{
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.flex-cus{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    align-items: center;
+}
+.bd{
+    border-top: 3px dashed #ef2037;
+    padding: 20px;
+}
+.h3-custom{
+    background-color: #ef2037;
+    color: white;
+    font-weight: 700;
+    font-size: 31px;
+    width: 103%;
+    padding: 10px;
+    transform: translateX(-7px);
+    border-radius: 10px;
+}
+.flex-cus i{
+    font-size: 50px;
+    color: #d70018;
+}
+.abcontent{
+    font-size: 20px;
+}
