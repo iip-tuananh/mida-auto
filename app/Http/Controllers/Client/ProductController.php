@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function allProduct()
     {
         $data['list'] = Product::where(['status'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')
-        ->paginate(12);
+        ->paginate(1);
         $data['title'] = "Tất cả sản phẩm";
         return view('product.list',$data);
     }
@@ -27,9 +27,12 @@ class ProductController extends Controller
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$danhmuc])
         ->orderBy('id','DESC')
         ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description')
-        ->paginate(12);
+        ->paginate(1);
         $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','slug']);
         $cate_id = $data['cateno']->id;
+        $cate_img = $data['cateno']->avatar;
+        $data['cate_img'] = $cate_img;
+
         $data['cateid'] = $cate_id;
         $data['title'] = languageName($data['cateno']->name);
         $data['content'] = $data['cateno']->content;
@@ -43,6 +46,8 @@ class ProductController extends Controller
         $data['pronew'] = Product::where('status',1)->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')
         ->paginate(5);
         $data['cateno'] = TypeProduct::where(['slug'=>$loaidanhmuc, 'cate_slug'=>$danhmuc])->first(['id','name','cate_id','content', 'avatar']);
+        $cate_img = $data['cateno']->avatar;
+        $data['cate_img'] = $cate_img;
         $cate_id = $data['cateno']->cate_id;
         $data['title'] = languageName($data['cateno']->name);
         $data['cateid'] = 0;

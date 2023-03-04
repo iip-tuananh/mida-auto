@@ -128,21 +128,14 @@
             </a>
             <i class="js-submenu down_icon d-flex align-items-center justify-content-center position-absolute d-lg-none"></i>
             <ul class="lv1 list-group p-0 list-unstyled rounded">
-            <li class="no level1 pr-lg-2  pl-2 position-relative cls">
-               <a href="/phu-kien-di-dong" class="pt-1 pb-1 pr-4 position-relative  js-checkMenu" title="Phụ kiện di động">
-               Phụ kiện di động
-               </a>
-            </li>
-            <li class="no level1 pr-lg-2  pl-2 position-relative cls">
-               <a href="/phu-kien-laptop" class="pt-1 pb-1 pr-4 position-relative  js-checkMenu" title="Phụ kiện Laptop">
-               Phụ kiện Laptop
-               </a>
-            </li>
-            <li class="no level1 pr-lg-2  pl-2 position-relative cls">
-               <a href="/phu-kien-gaming" class="pt-1 pb-1 pr-4 position-relative  js-checkMenu" title="Phụ kiện Gaming">
-               Phụ kiện Gaming
-               </a>
-            </li>
+               @foreach ($servicehome as $item)
+                  <li class="no level1 pr-lg-2  pl-2 position-relative cls">
+                     <a href="{{route('serviceDetail',['slug'=>$item->slug])}}" class="pt-1 pb-1 pr-4 position-relative  js-checkMenu" title="Phụ kiện di động">
+                     {{$item->name}}
+                     </a>
+                  </li>
+               @endforeach
+          
             </ul>
          </li>
          <li class="level0 position-relative cls pt-1 pt-lg-2 pb-lg-2 pb-1 ">

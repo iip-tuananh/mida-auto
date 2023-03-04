@@ -157,7 +157,7 @@ class PageController extends Controller
     public function listService()
     {
         $data['title_page'] = 'Tất cả dịch vụ';
-        $data['services'] = Services::where(['status'=>1])->select()->paginate(12);
+        $data['serviceslist'] = Services::where(['status'=>1])->paginate(12);
         $data['news'] = Blog::where(['status'=>1])->orderBy('id', 'desc')->limit(5)->get(['id', 'title', 'slug', 'image']);
         $data['discountPro'] = Product::where('status', 1)->where('discount', '>', 0)->limit(5)->get(['id', 'name', 'price', 'discount', 'images', 'cate_slug', 'type_slug', 'slug']);
         // dd($data['discountPro']);
@@ -175,12 +175,10 @@ class PageController extends Controller
         return view('service.list', $data);
     }
 
-    public function serviceDetail($cate,$slug)
+    public function serviceDetail($slug)
     {
-        $data['news'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(10)->get(['id', 'title', 'slug', 'image']);
-        $data['discountPro'] = Product::where('status', 1)->where('discount', '>', 0)->limit(5)->get(['id', 'name', 'price', 'discount', 'images', 'cate_slug', 'type_slug', 'slug']);
-        $data['services'] = Services::where(['status'=>1, 'category_slug'=>$cate])->get();
-        $data['detail_service'] = Services::where(['slug'=>$slug , 'status'=>1, 'category_slug'=>$cate])->first();
+        $data['detail_service'] = Services::where(['slug'=>$slug , 'status'=>1])->first();
+        $data['service_khac'] = Services::where(['status'=>1])->get();
         return view('service.detail',$data);
     }
 }

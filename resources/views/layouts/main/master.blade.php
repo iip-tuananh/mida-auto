@@ -71,6 +71,7 @@
    <script src="{{asset('frontend/js/swiper.js')}} "></script>
    <script src="{{asset('frontend/js/notify.min.js')}}"></script>
    <link rel="stylesheet" href="{{asset('frontend/css/main.css')}}">
+   @yield('css')
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    <script>
       (function () {
@@ -403,6 +404,7 @@
             </defs>
       </svg>
    </div>
+   @yield('js')
    @if (session()->has('postdone'))
     <script>
         console.log(123);
