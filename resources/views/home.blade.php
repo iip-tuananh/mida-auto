@@ -1236,85 +1236,28 @@
       <div class="container">
             <div class="rounded bg-white p-3">
             <h2 class="title text-uppercase font-weight-bold position-relative pb-2 pb-lg-3 m-0">
-               <a class="position-relative" href="mew-reviews" title="Cùng Mew review">Cùng Mew review</a>
+               <a class="position-relative" href="mew-reviews" title="Dịch vụ">Dịch vụ</a>
             </h2>
             <div class="b_product">
                <div class="mew_video swiper-container position-relative">
                   <div class="swiper-wrapper">
+                     @foreach ($servicehome as $service)
                         <div class="swiper-slide">
                         <div class="item_grid mb-3">
                            <div class="img_thm position-relative bor-10 modal-open">
-                              <a href="javascript:;" data-video="dzbLTlBG_oA" class="effect-ming open_video" title="So sánh Xiaomi 12S Ultra và Samsung Galaxy S22 Ultra: Ai mới thật sự là kẻ hủy diệt Android?">
+                              <a href="{{route('serviceDetail', ['slug'=>$service->slug])}}" class="effect-ming open_video" title="{{$service->name}}">
                                     <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                    <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/so-sanh-xiaomi-s12-ultra-1-vs-samsung-galaxxy-s22-ultra.jpg?v=1658203829910" class="d-block img img-cover position-absolute lazy" alt="So sánh Xiaomi 12S Ultra và Samsung Galaxy S22 Ultra: Ai mới thật sự là kẻ hủy diệt Android?">
-                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-video="dzbLTlBG_oA" data-background="url(//bizweb.dktcdn.net/100/459/533/themes/868331/assets/play-button.png?1676652384879)"></div>
+                                    <img src="{{$service->image}}" class="d-block img img-cover position-absolute lazy" alt="{{$service->name}}">
+                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-background="url({{$service->image}})"></div>
                                     </div>
                               </a>
-                           </div>
-                           <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="/so-sanh-xiaomi-12s-ultra-va-samsung-galaxy-s22-ultra-ai-moi-that-su-la-ke-huy-diet-android" title="So sánh Xiaomi 12S Ultra và Samsung Galaxy S22 Ultra: Ai mới thật sự là kẻ hủy diệt Android?">So sánh Xiaomi 12S Ultra và Samsung Galaxy S22 Ultra: Ai mới thật sự là kẻ hủy diệt Android?</a></h3>
+                           <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="{{route('serviceDetail', ['slug'=>$service->slug])}}" title="{{$service->name}}">{{$service->name}}</a></h3>
                         </div>
                         </div>
-                        <div class="swiper-slide">
-                        <div class="item_grid mb-3">
-                           <div class="img_thm position-relative bor-10 modal-open">
-                              <a href="javascript:;" data-video="6JNVRYoww9o" class="effect-ming open_video" title="Đánh giá chi tiết OPPO A57: Thiết kế đẹp, pin siêu khỏe lại có sạc nhanh nhưng hiệu năng chưa tốt">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                    <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/oppo-a57-28-1-e1657268814473.jpg?v=1658201983303" class="d-block img img-cover position-absolute lazy" alt="Đánh giá chi tiết OPPO A57: Thiết kế đẹp, pin siêu khỏe lại có sạc nhanh nhưng hiệu năng chưa tốt">
-                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-video="6JNVRYoww9o" data-background="url(//bizweb.dktcdn.net/100/459/533/themes/868331/assets/play-button.png?1676652384879)"></div>
-                                    </div>
-                              </a>
-                           </div>
-                           <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="/danh-gia-chi-tiet-oppo-a57-thiet-ke-dep-pin-sieu-khoe-lai-co-sac-nhanh-nhung-hieu-nang-chua-tot" title="Đánh giá chi tiết OPPO A57: Thiết kế đẹp, pin siêu khỏe lại có sạc nhanh nhưng hiệu năng chưa tốt">Đánh giá chi tiết OPPO A57: Thiết kế đẹp, pin siêu khỏe lại có sạc nhanh nhưng hiệu năng chưa tốt</a></h3>
-                        </div>
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="item_grid mb-3">
-                           <div class="img_thm position-relative bor-10 modal-open">
-                              <a href="javascript:;" data-video="wBSvixJB54w" class="effect-ming open_video" title="So sánh nhanh ảnh chụp từ vivo X80 Pro vs OPPO Find X5 Pro: “Vũ khí” ngoại nhập, Thụy Điển và Đức, “súng” ai mạnh hơn?">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                    <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/cover-oppo-find-x5-pro-vs-vivo-x80-pro-1-1.jpg?v=1658201605940" class="d-block img img-cover position-absolute lazy" alt="So sánh nhanh ảnh chụp từ vivo X80 Pro vs OPPO Find X5 Pro: “Vũ khí” ngoại nhập, Thụy Điển và Đức, “súng” ai mạnh hơn?">
-                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-video="wBSvixJB54w" data-background="url(//bizweb.dktcdn.net/100/459/533/themes/868331/assets/play-button.png?1676652384879)"></div>
-                                    </div>
-                              </a>
-                           </div>
-                           <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="/so-sanh-nhanh-anh-chup-tu-vivo-x80-pro-vs-oppo-find-x5-pro-vu-khi-ngoai-nhap-thuy-dien-va-duc-sung-ai-manh-hon" title="So sánh nhanh ảnh chụp từ vivo X80 Pro vs OPPO Find X5 Pro: “Vũ khí” ngoại nhập, Thụy Điển và Đức, “súng” ai mạnh hơn?">So sánh nhanh ảnh chụp từ vivo X80 Pro vs OPPO Find X5 Pro: “Vũ khí” ngoại nhập, Thụy Điển và Đức, “súng” ai mạnh hơn?</a></h3>
-                        </div>
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="item_grid mb-3">
-                           <div class="img_thm position-relative bor-10 modal-open">
-                              <a href="javascript:;" data-video="2heYe7Zpwmw" class="effect-ming open_video" title="Apple M2 mạnh cỡ nào, so với M1 và M1 Pro thì M2 nằm ở đâu?">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                    <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/apple-m2-3-11032022213749.jpg?v=1658201489000" class="d-block img img-cover position-absolute lazy" alt="Apple M2 mạnh cỡ nào, so với M1 và M1 Pro thì M2 nằm ở đâu?">
-                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-video="2heYe7Zpwmw" data-background="url(//bizweb.dktcdn.net/100/459/533/themes/868331/assets/play-button.png?1676652384879)"></div>
-                                    </div>
-                              </a>
-                           </div>
-                           <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="/apple-m2-manh-co-nao-so-voi-m1-va-m1-pro-thi-m2-nam-o-dau" title="Apple M2 mạnh cỡ nào, so với M1 và M1 Pro thì M2 nằm ở đâu?">Apple M2 mạnh cỡ nào, so với M1 và M1 Pro thì M2 nằm ở đâu?</a></h3>
-                        </div>
-                        </div>
-                        <div class="swiper-slide">
-                        <div class="item_grid mb-3">
-                           <div class="img_thm position-relative bor-10 modal-open">
-                              <a href="javascript:;" data-video="L3EpOa2z8NQ" class="effect-ming open_video" title="Đánh giá iPhone 11 sau 3 năm: Giá giảm hơn nửa, 2022 rồi nhưng vẫn còn “hot” lắm!">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                    <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/iphone-11-23-1.jpg?v=1658201428193" class="d-block img img-cover position-absolute lazy" alt="Đánh giá iPhone 11 sau 3 năm: Giá giảm hơn nửa, 2022 rồi nhưng vẫn còn “hot” lắm!">
-                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-video="L3EpOa2z8NQ" data-background="url(//bizweb.dktcdn.net/100/459/533/themes/868331/assets/play-button.png?1676652384879)"></div>
-                                    </div>
-                              </a>
-                           </div>
-                           <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="/danh-gia-iphone-11-sau-3-nam-gia-giam-hon-nua-2022-roi-nhung-van-con-hot-lam" title="Đánh giá iPhone 11 sau 3 năm: Giá giảm hơn nửa, 2022 rồi nhưng vẫn còn “hot” lắm!">Đánh giá iPhone 11 sau 3 năm: Giá giảm hơn nửa, 2022 rồi nhưng vẫn còn “hot” lắm!</a></h3>
-                        </div>
-                        </div>
-                  </div>
+                     </div>
+                     @endforeach
                   <div class="swiper-button-prev mv_prev"></div>
                   <div class="swiper-button-next mv_next"></div>
-               </div>
-               <div class="popup_video position-fixed w-100 h-100 justify-content-center align-items-center d-flex">
-                  <div class="position-relative max-100">
-                        <a href="javascript:;" class="close_video position-absolute d-flex m_white_bg_module justify-content-center align-items-center" title="Đóng"><img alt="Đóng" class="lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/close.png?1676652384879"></a>
-                        <div class="b_video p-2 p-md-3 m_white_bg_module rounded m-auto"></div>
-                  </div>
                </div>
             </div>
             </div>
@@ -1350,123 +1293,64 @@
       <div class="container">
             <div class="rounded bg-white p-3">
             <h2 class="title text-uppercase font-weight-bold position-relative pb-2 pb-lg-3 m-0">
-               <a class="position-relative" href="24h-cong-nghe" title="24H Công Nghệ">
-               24H Công Nghệ
+               <a class="position-relative" href="{{route('allListBlog')}}" title="Tin tức nổi bật">
+               Tin tức nổi bật
                </a>
             </h2>
             <div class="b_blog row">
                <div class="col-12 col-md-6">
                   <div class="item_grid mb-3 mb-md-0">
                         <div class="img_thm position-relative modal-open bor-10">
-                        <a href="/he-lo-thong-so-ky-thuat-galaxy-buds-2-pro-rat-dang-de-cho-doi" title="Hé lộ thông số kỹ thuật Galaxy Buds 2 Pro, rất đáng để chờ đợi!!!" class="effect-ming">
+                        <a href="{{route('detailBlog', ['slug'=>$homeBlog[0]->slug])}}" title="{{languageName($homeBlog[0]->title)}}" class="effect-ming">
                            <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                              <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="https://bizweb.dktcdn.net/100/459/533/articles/galaxy-buds-2-pro-face.jpg?v=1660017575640" class="lazy d-block img img-cover position-absolute" alt="Hé lộ thông số kỹ thuật Galaxy Buds 2 Pro, rất đáng để chờ đợi!!!">
+                              <img src="{{$homeBlog[0]->image}}" data-src="{{$homeBlog[0]->image}}" class="lazy d-block img img-cover position-absolute" alt="{{languageName($homeBlog[0]->title)}}">
                               <div class="position-absolute w-100 h-100 overlay"></div>
                            </div>
                         </a>
                         <div class="entry-date position-absolute text-center rounded-right">
                            <p class="day font-weight-bold">
-                              09
+                              {{date('d', strtotime($homeBlog[0]->created_at))}}
                            </p>
                            <p class="yeah">
-                              08/2022
+                              {{date('m/Y', strtotime($homeBlog[0]->created_at))}}
                            </p>
                         </div>
                         </div>
                         <div class="cont">
-                        <h3 class="title_blo font-weight-bold mt-2"><a class="line_1" href="/he-lo-thong-so-ky-thuat-galaxy-buds-2-pro-rat-dang-de-cho-doi" title="Hé lộ thông số kỹ thuật Galaxy Buds 2 Pro, rất đáng để chờ đợi!!!">Hé lộ thông số kỹ thuật Galaxy Buds 2 Pro, rất đáng để chờ đợi!!!</a></h3>
+                        <h3 class="title_blo font-weight-bold mt-2"><a class="line_1" href="{{route('detailBlog', ['slug'=>$homeBlog[0]->slug])}}" title="{{languageName($homeBlog[0]->title)}}">{{languageName($homeBlog[0]->title)}}</a></h3>
                         <div class="sum line_2 h-auto text-justify">
-                           Đã một thời gian kể từ khi&nbsp;Samsung&nbsp;tung ra một cặp&nbsp;tai nghe không dây&nbsp;cho người dùng. Công ty sẽ khắc phục điều đó vào ngày 10 tháng 8 tại sự kiện Unpacked, bằng việc giới thiệu&nbsp;Galaxy Buds 2 Pro&nbsp;mới cùng loạt Galaxy Z thế hệ mới cũng như Galaxy Watch5 series.
-                           Đã có một vài rò rỉ cung cấp thông tin về Galaxy Buds 2 Pro, bao gồm tính năng khử tiếng ồn được cải tiến và chất lượng âm thanh tốt hơn.
-                           Theo đó, Galaxy Buds 2 Pro được cho là có tính năng Khử tiếng ồn chủ động thông minh có...
+                           {{languageName($homeBlog[0]->description)}}
                         </div>
                         </div>
                   </div>
                </div>
                <div class="col-12 col-md-6">
-                  <article class="blog-item-list clearfix mb-3 row">
-                        <div class="col-4 col-lg-3 pr-0 ">
-                        <a href="/apple-tung-ra-ban-cap-nhat-ios-16-beta-5-danh-cho-nha-phat-trien" class=" d-block modal-open thumb_img_blog_list thumb rounded" title="Apple tung ra bản cập nhật iOS 16 Beta 5 d&#224;nh cho nh&#224; ph&#225;t triển"> 
-                        <span class="modal-open position-relative d-block w-100 m-0 ratio3by2 has-edge aspect zoom">
-                        <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/medium/100/459/533/articles/cover-20.jpg?v=1660017528540" decoding="async" alt="Apple tung ra bản cập nhật iOS 16 Beta 5 d&#224;nh cho nh&#224; ph&#225;t triển" class="lazy d-block img img-cover position-absolute">
-                        </span>
-                        </a>
-                        </div>
-                        <div class="blogs-rights col-8 col-lg-9">
-                        <h3 class="blog-item-name font-weight-bold mb-1 title_blo">
-                           <a class="line_1" href="/apple-tung-ra-ban-cap-nhat-ios-16-beta-5-danh-cho-nha-phat-trien" title="Apple tung ra bản cập nhật iOS 16 Beta 5 d&#224;nh cho nh&#224; ph&#225;t triển">Apple tung ra bản cập nhật iOS 16 Beta 5 d&#224;nh cho nh&#224; ph&#225;t triển</a>
-                        </h3>
-                        <div class="post-time small">09/08/2022</div>
-                        <div class="sum line_2 h-auto text-justify">
-                           iOS 16&nbsp;beta 5 và iPadOS 16 beta 5 hiện đã được tung ra cho các nhà phát triển, chỉ hai tuần sau khi bản beta thứ tư được phát hành.
-                           iOS 16 mang đến một số thay đổi, bao gồm cập nhật cho&nbsp;Màn hình&nbsp;khóa, tùy chọn&nbsp;hình nền&nbsp;mới và hơn thế nữa. iOS 16 beta 5 sẽ tiếp tục tinh chỉnh các tính năng mới này.
-                           Mỗi bản beta iOS 16 mới thường sẽ có một số thay đổi, sửa lỗi và thậm chí là thêm các tính năng mới.&nbsp;Apple&nbsp;luôn theo dõi phản hồi mà họ nhận được từ những người thử nghiệm...
-                        </div>
-                        </div>
-                  </article>
-                  <article class="blog-item-list clearfix mb-3 row">
-                        <div class="col-4 col-lg-3 pr-0 ">
-                        <a href="/realme-narzo-50i-prime-ra-mat-unisoc-t612-pin-5000mah-gia-tu-2-79-trieu-dong" class=" d-block modal-open thumb_img_blog_list thumb rounded" title="Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, gi&#225; từ 2.79 triệu đồng"> 
-                        <span class="modal-open position-relative d-block w-100 m-0 ratio3by2 has-edge aspect zoom">
-                        <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/medium/100/459/533/articles/realme-narzo-50i-prime-ra-mat-viet-nam-7.jpg?v=1660017343050" decoding="async" alt="Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, gi&#225; từ 2.79 triệu đồng" class="lazy d-block img img-cover position-absolute">
-                        </span>
-                        </a>
-                        </div>
-                        <div class="blogs-rights col-8 col-lg-9">
-                        <h3 class="blog-item-name font-weight-bold mb-1 title_blo">
-                           <a class="line_1" href="/realme-narzo-50i-prime-ra-mat-unisoc-t612-pin-5000mah-gia-tu-2-79-trieu-dong" title="Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, gi&#225; từ 2.79 triệu đồng">Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, gi&#225; từ 2.79 triệu đồng</a>
-                        </h3>
-                        <div class="post-time small">09/08/2022</div>
-                        <div class="sum line_2 h-auto text-justify">
-                           Sau hơn 1 tháng ra mắt tại thị trường quốc tế,&nbsp;Realme&nbsp;đã chính thức trình làng Narzo 50i Prime tại thị trường Việt Nam.
-                           Realme&nbsp;Narzo 50i Prime sở hữu viên pin dung lượng lớn,&nbsp;màn hình&nbsp;6.5 inch và bộ vi xử lý Unisoc.
-                           Realme Narzo 50i Prime được trang bị màn hình IPS với kích thước 6.5 inch độ phân giải HD+, tần số quét 60Hz và màn hình chiếm 80.7% mặt trước. Mặt trước có thiết kế “giọt nước”.
-                           Về cấu hình, thiết bị sử dụng bộ vi xử lý Unisoc T612 đi kèm với đó là 3GB/4GB LPDDR4x RAM và 32GB/64GB bộ nhớ...
-                        </div>
-                        </div>
-                  </article>
-                  <article class="blog-item-list clearfix mb-3 row">
-                        <div class="col-4 col-lg-3 pr-0 ">
-                        <a href="/xiaomi-13-series-co-the-duoc-trang-bi-pin-mot-cell-100w-chip-sac-the-he-moi" class=" d-block modal-open thumb_img_blog_list thumb rounded" title="Xiaomi 13 series c&#243; thể được trang bị pin một cell 100W, chip sạc thế hệ mới"> 
-                        <span class="modal-open position-relative d-block w-100 m-0 ratio3by2 has-edge aspect zoom">
-                        <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/medium/100/459/533/articles/xiaomi-13-series-3-1280x720-800-resize.jpg?v=1658220122433" decoding="async" alt="Xiaomi 13 series c&#243; thể được trang bị pin một cell 100W, chip sạc thế hệ mới" class="lazy d-block img img-cover position-absolute">
-                        </span>
-                        </a>
-                        </div>
-                        <div class="blogs-rights col-8 col-lg-9">
-                        <h3 class="blog-item-name font-weight-bold mb-1 title_blo">
-                           <a class="line_1" href="/xiaomi-13-series-co-the-duoc-trang-bi-pin-mot-cell-100w-chip-sac-the-he-moi" title="Xiaomi 13 series c&#243; thể được trang bị pin một cell 100W, chip sạc thế hệ mới">Xiaomi 13 series c&#243; thể được trang bị pin một cell 100W, chip sạc thế hệ mới</a>
-                        </h3>
-                        <div class="post-time small">19/07/2022</div>
-                        <div class="sum line_2 h-auto text-justify">
-                           Dòng&nbsp;Xiaomi 12S&nbsp;chỉ mới vừa ra mắt nhưng những tin đồn về dòng&nbsp;Xiaomi 13&nbsp;đã bắt đầu xuất hiện rất nhiều. Các rò rỉ trước đây cho biết dòng sản phẩm thế hệ tiếp theo của&nbsp;Xiaomi&nbsp;có thể ra mắt vào tháng 11 và sẽ được trang bị bộ vi xử lý Snapdragon 8 Gen 2 chưa được Qualcomm giới thiệu.
-                           Mới đây, Digital Chat Station (chuyên gia rò rỉ thông tin) đã tiết lộ một vài chi tiết thú vị về loạt sản phẩm hàng đầu sắp tới của Xiaomi. Nguồn tin cho biết Xiaomi sẽ sử dụng pin Single-cell (một cell) 100...
-                        </div>
-                        </div>
-                  </article>
-                  <article class="blog-item-list clearfix mb-3 row">
-                        <div class="col-4 col-lg-3 pr-0 ">
-                        <a href="/ro-ri-anh-chup-phien-ban-surface-duo-tam-trung-bi-microsoft-huy-bo" class=" d-block modal-open thumb_img_blog_list thumb rounded" title="R&#242; rỉ ảnh chụp phi&#234;n bản Surface Duo tầm trung bị Microsoft hủy bỏ"> 
-                        <span class="modal-open position-relative d-block w-100 m-0 ratio3by2 has-edge aspect zoom">
-                        <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/medium/100/459/533/articles/h2-1280x720-800-resize.jpg?v=1658220152440" decoding="async" alt="R&#242; rỉ ảnh chụp phi&#234;n bản Surface Duo tầm trung bị Microsoft hủy bỏ" class="lazy d-block img img-cover position-absolute">
-                        </span>
-                        </a>
-                        </div>
-                        <div class="blogs-rights col-8 col-lg-9">
-                        <h3 class="blog-item-name font-weight-bold mb-1 title_blo">
-                           <a class="line_1" href="/ro-ri-anh-chup-phien-ban-surface-duo-tam-trung-bi-microsoft-huy-bo" title="R&#242; rỉ ảnh chụp phi&#234;n bản Surface Duo tầm trung bị Microsoft hủy bỏ">R&#242; rỉ ảnh chụp phi&#234;n bản Surface Duo tầm trung bị Microsoft hủy bỏ</a>
-                        </h3>
-                        <div class="post-time small">19/07/2022</div>
-                        <div class="sum line_2 h-auto text-justify">
-                           Gần đây, đã xuất hiện rò rỉ về việc Microsoft Surface Duo "tầm trung" từng được đề xuất đã bị hủy bỏ. Những hình ảnh về Surface Duo đã được đăng trên eBay.
-                           Những hình ảnh đã bị loại bỏ cho thấy Surface Duo "tầm trung" được đề xuất dường như sẽ không bao giờ được đưa ra ánh sáng. Windows Central đã đăng tải số ảnh chụp nhanh của thiết bị và một số thông tin xung quanh thông số kỹ thuật của Microsoft Surface Duo.
-                           Hình ảnh chiếc Surface Duo tầm trung bị Microsft hủy ra mắt
-                           Rõ ràng, thiết bị...
-                        </div>
-                        </div>
-                  </article>
+                  @foreach ($homeBlog as $key=>$blog)
+                  @if ($key != 0)
+                     <article class="blog-item-list clearfix mb-3 row">
+                           <div class="col-4 col-lg-3 pr-0 ">
+                           <a href="{{route('detailBlog', ['slug'=>$blog->slug])}}" class=" d-block modal-open thumb_img_blog_list thumb rounded" title="{{languageName($blog->title)}}"> 
+                           <span class="modal-open position-relative d-block w-100 m-0 ratio3by2 has-edge aspect zoom">
+                           <img src="{{$blog->image}}" data-src="{{$blog->image}}" decoding="async" alt="{{languageName($blog->title)}}" class="lazy d-block img img-cover position-absolute">
+                           </span>
+                           </a>
+                           </div>
+                           <div class="blogs-rights col-8 col-lg-9">
+                           <h3 class="blog-item-name font-weight-bold mb-1 title_blo">
+                              <a class="line_1" href="{{route('detailBlog', ['slug'=>$blog->slug])}}" title="{{languageName($blog->title)}}">{{languageName($blog->title)}}</a>
+                           </h3>
+                           <div class="post-time small">                              
+                              {{date('d/m/Y', strtotime($blog->created_at))}}
+                           </div>
+                           <div class="sum line_2 h-auto text-justify">
+                              {{languageName($blog->description)}}
+                           </div>
+                           </div>
+                     </article>
+                  @endif
+                  @endforeach
                   <div class="d-block mt-auto text-center">
-                        <a href="24h-cong-nghe" title="Xem thêm" class="view_mores box_shadow rounded-10 modal-open d-block py-2 px-3 mt-3 text-center font-weight-bold">Xem thêm</a>
+                        <a href="{{route('allListBlog')}}" title="Xem thêm" class="view_mores box_shadow rounded-10 modal-open d-block py-2 px-3 mt-3 text-center font-weight-bold">Xem thêm</a>
                   </div>
                </div>
             </div>

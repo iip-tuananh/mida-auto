@@ -29,84 +29,149 @@ Tra cứu bảo hành
 </script>
 @endsection
 @section('content')
-<section class="bread-crumb" style="background-image: linear-gradient(to bottom, rgb(10 9 9 / 44%) 0%,rgb(10 10 10 / 60%) 100%), url({{isset($serviceCate) ? $serviceCate->image : $banners[0]->image}}); background-attachment: fixed;">
-    <span class="crumb-border"></span>
-    <div class="container">
-    <div class="rows">
-        <div class="col-xs-12 a-left">
-            <h1 class="title_h1 clearfix">Tra cứu bảo hành</h1>
-            <ul class="breadcrumb" >
-                <li class="home">
-                <a  href="{{route('home')}}" ><span >Trang chủ</span></a>						
-                <span class="mr_lr">&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</span>
-                </li>
-                <li><strong ><span>Tra cứu bảo hành</span></strong></li>
-            </ul>
-        </div>
-    </div>
-    </div>
-</section>
-<section class="blogpage clearfix">
-    <div class="containers" itemscope itemtype="https://schema.org/Blog">
-    <div class="wrap_background_aside margin-bottom-0 clearfix">
-        <div class="section full_background_blog clearfix">
-            <div class="container">
-                <div id="content" class="content-area page-wrapper" role="main">
-                    <div class="row row-main">
-                        <div class="large-12 col">
-                            <div class="col-inner">
-                                <div style="display: none;">
-                                    <h1>Tra cứu bảo hành Classis</h1>
-                                </div>
-                                <div id="text-2039177763" class="text">
-                                    Bạn vui lòng nhập <span style="color: #ff6600;">số điện thoại</span> hoặc<span style="color: #ff6600;"> biển số xe viết liền</span> vào ô tương ứng
-                                    <p></p>
-                                    <div class="tcbh-wrapper">
-                                    <form id="tcbh-form" role="form" action="" method="GET">
-                                        <div class="row">
-                                            <div class="col-md-7">
-                                                <div class="tcbh-search-wrapper">
-                                                    <p><input id="tcbh-input" class="form-control" name="s" type="text" placeholder="Nhập số điện thoại hoặc biển số xe" value=""></p>
-                                                    <div class="loader loader-custom hidden">&nbsp;</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="tcbh-submit-wrapper">
-                                                    <button class="btn btn-success tra-cuu" data-url="{{route('resultTraCuu')}}">Tra cứu</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div id="tcbh-rs">&nbsp;</div>
-                                    </div>
-                                    <div id="thong-tin-chi-tiet-khach-hang">
-                        
-                                    </div>
-                                    <div>
-                                        <h5><span style="color: #ff6600;">ĐIỀU KIỆN BẢO HÀNH</span></h5>
-                                        <p>Tại Hoàng Long Window Film, khách hàng được bảo hành 1 năm kể từ ngày lắp đặt theo các nội dung sau:</p>
-                                        <ol>
-                                        <li>Phồng rộp</li>
-                                        <li>Rạn nứt, tách lớp</li>
-                                        <li>Bay màu, loang màu</li>
-                                        </ol>
-                                        <p>Không bảo hành đối với các trường hợp làm thủng, rách films do người sử dụng.</p>
-                                        <h5><span style="color: #ff6600;">LƯU Ý KHI SỬ DỤNG</span></h5>
-                                        <ol>
-                                        <li>Sau khi lắp đặt film, trong 24 giờ không được lên xuống kính, lau bề mặt film để lớp keo bám chắc vào bề mặt kính.</li>
-                                        <li>Khi vệ sinh kính, nên dùng các loại khăn mềm. Không dùng vật dụng cứng, hóa chất tẩy rửa.</li>
-                                        </ol>
-                                        {{-- <style>#text-2039177763{color:rgb(102,102,102)}#text-2039177763>*{color:rgb(102,102,102)}</style> --}}
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-right position-relative">
+	<div class="contentWarp ">
+	<div class="breadcrumbs bg-white">
+		<div class="container position-relative">
+			<ul class="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
+				<li class="home">
+				<a href="{{route('home')}}" title="Trang chủ">
+					<svg width="12" height="10.633">
+						<use href="#svg-home" />
+					</svg>
+					Trang chủ
+				</a>
+				<span class="slash-divider ml-2 mr-2">/</span>
+				</li>
+				<li >Tra cứu bảo hành</li>
+			</ul>
+		</div>
+	</div>
+	<section class="blog-layout box-tra-cuu-bao-hanh" itemscope itemtype="http://schema.org/Blog">
+		<div class="container mt-3 mb-3 lastest-articles">
+			<div class="rounded p-3 bg-white">
+                <div class="content-tcbh">
+                    <h1 class="title-tcbh">
+                    <span>Tra cứu thông tin bảo hành</span>
+                    </h1>
+                    <div class="form-tcbh">
+                    <div class="form-tcbh-ct">
+                        <div class="form-ct">
+                            <label>Số điện thoại</label>
+                            <input type="text" id="phonetcbh">
+                        </div>
+                        <div class="form-ct">
+                            <label>Biển số xe</label>
+                            <input type="text" id="bsxtcbh">
+                        </div>
+                        <div class="form-ct">
+                            <button type="button" id="click_check_warrantry" onclick="getCheckWarrantry()">Tra cứu bảo hành</button>
+                            <a href="{{route('home')}}">Quay lại trang chủ</a>
+                        </div>
+                        <div class="form-ct">
+                            <div id="js-error" style="color:red"></div>
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-<div class="ab-module-article-mostview"></div>
+			</div>
+		</div>
+	</section>
+    <style>
+        .box-tra-cuu-bao-hanh .content-tcbh {
+            padding: 20px 0px;
+        }
+        .box-tra-cuu-bao-hanh .content-tcbh .title-tcbh {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+        .box-tra-cuu-bao-hanh .title-tcbh span {
+            width: 428px;
+            float: left;
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            line-height: 47px;
+            background: #f9ab0f;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh .form-tcbh-ct {
+            width: 864px;
+            float: left;
+            border: solid 1px #f9ab0f;
+            padding: 30px;
+            padding-right: 218px;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh .form-ct {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh .form-ct label {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 40px;
+            color: #222222;
+            float: left;
+            margin-right: 12px;
+            width: 90px;
+            text-align: right;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh .form-ct input {
+            width: 428px;
+            border: solid 1px #e1e1e1;
+            border-radius: 5px;
+            height: 40px;
+            line-height: 40px;
+            padding: 0px 10px;
+            outline: none;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh .form-ct button {
+            width: 210px;
+            float: left;
+            margin-right: 8px;
+            line-height: 38px;
+            border: solid 1px #f9ab0f;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            background: #f9ab0f;
+            border-radius: 5px;
+        }
+        .box-tra-cuu-bao-hanh .form-tcbh .form-ct a {
+            width: 210px;
+            float: left;
+            line-height: 38px;
+            border: solid 1px #f9ab0f;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #f9ab0f;
+            background: #fff;
+            border-radius: 5px;
+        }
+    </style>
+</div>
 @endsection

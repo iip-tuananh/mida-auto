@@ -36,7 +36,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
     Route::get('dang-xuat.html','AuthController@logout')->name('logout')->middleware('CheckAuthClient::class');
 
     Route::get('trang-noi-dung/{slug}.html','PageContentController@detail')->name('pagecontent');
-    Route::get('chi-tiet-dich-vu/{cate}/{slug}.html','PageController@serviceDetail')->name('serviceDetail');
+    Route::get('chi-tiet-dich-vu/{slug}.html','PageController@serviceDetail')->name('serviceDetail');
     Route::get('tat-ca-dich-vu.html','PageController@listService')->name('listAllService');
     Route::get('dich-vu/{cate}.html', 'PageController@listServiceCate')->name('listServiceCate');
     Route::get('gioi-thieu.html','PageController@aboutUs')->name('aboutUs');  

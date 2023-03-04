@@ -15,29 +15,29 @@ Liên hệ với chúng tôi
 @section('content')
 <div class="col-right position-relative">
 	<div class="contentWarp ">
-	   <div class="breadcrumbs bg-white">
-		  <div class="container position-relative">
-			 <ul class="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
+	<div class="breadcrumbs bg-white">
+		<div class="container position-relative">
+			<ul class="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
 				<li class="home">
-				   <a href="{{route('home')}}" title="Trang chủ">
-					  <svg width="12" height="10.633">
-						 <use href="#svg-home" />
-					  </svg>
-					  Trang chủ
-				   </a>
-				   <span class="slash-divider ml-2 mr-2">/</span>
+				<a href="{{route('home')}}" title="Trang chủ">
+					<svg width="12" height="10.633">
+						<use href="#svg-home" />
+					</svg>
+					Trang chủ
+				</a>
+				<span class="slash-divider ml-2 mr-2">/</span>
 				</li>
 				<li >Liên Hệ</li>
-			 </ul>
-		  </div>
-	   </div>
-	   <section class="blog-layout" itemscope itemtype="http://schema.org/Blog">
-		  <meta itemprop="name" content="Tin tức">
-		  <meta itemprop="description" content="">
-		  <div class="container mt-3 mb-3 lastest-articles">
-			 <div class="rounded p-3 bg-white">
+			</ul>
+		</div>
+	</div>
+	<section class="blog-layout" itemscope itemtype="http://schema.org/Blog">
+		<meta itemprop="name" content="Tin tức">
+		<meta itemprop="description" content="">
+		<div class="container mt-3 mb-3 lastest-articles">
+			<div class="rounded p-3 bg-white">
 				<div class="row">
-				  <div class="col-md-12 col-xs-12">
+				<div class="col-md-12 col-xs-12">
 					<form action="{{route('postcontact')}}" method="post" class="formlienhe">
 					@csrf
 					<input type="text" class="form-control" name="name" placeholder="Enter Name"  required>
@@ -47,12 +47,10 @@ Liên hệ với chúng tôi
 					<br>
 					<input type="submit"  class ="btn-success" value="Gửi thông tin liên hệ">
 				</form>
-				  </div>
 				</div>
-			 </div>
-		  </div>
-		 
-	   </section>
-	 
-	</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
 @endsection

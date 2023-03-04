@@ -27,7 +27,7 @@ class HomeController extends Controller
                 $query->where('status',1)->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug'); 
             }
         ])->where('status',1)->orderBy('id','asc')->get(['id','name','imagehome','avatar','slug']);
-        $data['homeBlog'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(8)->get(['id','title','image','description','created_at','slug','category']);
+        $data['homeBlog'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(5)->get(['id','title','image','description','created_at','slug','category']);
         return view('home',$data);
     }
 }
