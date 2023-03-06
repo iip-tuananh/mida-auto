@@ -9,7 +9,7 @@
       <div class="row align-items-center">
          <div class="col-12 col-lg-3 d-none d-lg-block">
                <a href="{{route('home')}}" title="{{$setting->company}}" class="logo">
-               <img alt="{{$setting->company}}" src="{{$setting->logo}}" class="img-fluid">
+               <img alt="{{$setting->company}}" src="{{$setting->logo}}" class="img-fluid img-logo-cus">
                </a> 
          </div>
          <div class="col-12 col-lg-9">

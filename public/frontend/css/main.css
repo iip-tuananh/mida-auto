@@ -11,6 +11,11 @@
     border-radius: 7px;
     cursor: pointer;
 }
+.img-logo-cus{
+    max-width: 50% !important;
+    height: auto !important;
+
+}
 .flex-cus{
     display: flex;
     flex-direction: column;
