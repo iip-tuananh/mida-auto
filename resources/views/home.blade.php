@@ -21,10 +21,10 @@
                <div class="swiper-slide">
                   <a class="d-none d-md-block w-100 h-100" href="{{$banner->link}}" title="{{$banner->title}}">
                         <picture class="position-relative w-100 m-0 ratio1by4 d-block aspect">
-                        <source media="(min-width: 1200px)" srcset="{{$banner->image}}">
-                        <source media="(min-width: 992px)" srcset="{{$banner->image}}">
-                        <source media="(max-width: 569px)" srcset="{{$banner->image}}">
-                        <source media="(max-width: 480px)" srcset="{{$banner->image}}">
+                        <source media="(min-width: 1200px)" src="{{$banner->image}}">
+                        <source media="(min-width: 992px)" src="{{$banner->image}}">
+                        <source media="(max-width: 569px)" src="{{$banner->image}}">
+                        <source media="(max-width: 480px)" src="{{$banner->image}}">
                         <img class="d-block img img-cover position-absolute" src="{{$banner->image}}" alt="{{$banner->title}}"/>
                         </picture>
                   </a>
