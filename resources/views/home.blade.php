@@ -1242,13 +1242,17 @@
                <div class="mew_video swiper-container position-relative">
                   <div class="swiper-wrapper">
                      @foreach ($servicehome as $service)
+                     @php
+                         $imgs = json_decode($service->image);
+                     @endphp
+              
                         <div class="swiper-slide">
                         <div class="item_grid mb-3">
                            <div class="img_thm position-relative bor-10 modal-open">
                               <a href="{{route('serviceDetail', ['slug'=>$service->slug])}}" class="effect-ming open_video" title="{{$service->name}}">
                                     <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect">
-                                    <img src="{{$service->image}}" class="d-block img img-cover position-absolute lazy" alt="{{$service->name}}">
-                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-background="url({{$service->image}})"></div>
+                                    <img src="{{$imgs[0]}}" class="d-block img img-cover position-absolute lazy" alt="{{$service->name}}">
+                                    <div class="position-absolute w-100 h-100 video_open lazy_bg" data-background="url({{$imgs[0]}})"></div>
                                     </div>
                               </a>
                            <h3 class="title_blo font-weight-bold mt-2"><a class="line_2" href="{{route('serviceDetail', ['slug'=>$service->slug])}}" title="{{$service->name}}">{{$service->name}}</a></h3>
