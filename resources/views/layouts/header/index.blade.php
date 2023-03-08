@@ -102,9 +102,12 @@
                      <span>
             
                      <img src="{{$cate->avatar}}" alt="" srcset="" width="30px" height="30px">
+                     <strong>
+                        &nbsp;
                      <a href="{{route('allListProCate', ['danhmuc'=>$cate->slug])}}" class="pt-1 pb-1 pr-4 position-relative  js-checkMenu" title="{{languageName($cate->name)}}">
                      {{languageName($cate->name)}}
                      </a>
+                  </strong>
                                  
                   </span>
                      @if (count($cate->typeCate) > 0)
