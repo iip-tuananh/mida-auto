@@ -1297,6 +1297,21 @@
             }
       });
    </script>
+     <section id="m_blog" class="m_blog mt-3 mt-lg-4 mb-3 mb-lg-4">
+      <div class="container">
+         <div class="rounded bg-white p-3">
+         <div class="row bor">
+            <div class="col-md-6 col-xs-12" style="margin-bottom: 10px">
+               <img src="{{asset('frontend/images/banner1.png')}}" alt="" srcset="">
+                           </div>
+                           
+                           <div class="col-md-6 col-xs-12">
+                              <img src="{{asset('frontend/images/24_Sepd7bd24ed1cb79bbe1adc0b5f65ea3e76.png')}}" alt="" srcset="">
+                           </div>
+         </div>
+         </div>
+      </div>
+   </section>
    <section id="m_blog" class="m_blog mt-3 mt-lg-4 mb-3 mb-lg-4">
       <div class="container">
             <div class="rounded bg-white p-3">

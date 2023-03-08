@@ -56,7 +56,9 @@ body {
 
 .navigation-block {
     min-width: calc(100% - 145px);
-    background: linear-gradient(90deg, var(--mainColor), var(--mainColor2))
+    background-color: black;
+    border-bottom: 1px solid;
+    /* background: linear-gradient(90deg, var(--mainColor), var(--mainColor2)); */
 }
 
 .col-left {
@@ -70,7 +72,7 @@ body {
     .col-left {
         position:relative !important;
         background-color: white;
-        /* background:linear-gradient(90deg, var(--mainColor), var(--mainColor2)); */
+        background: linear-gradient(180deg, rgb(0 0 0) 0%, rgb(255 255 255) 50%, rgb(0 0 0) 100%);
     }
 }
 

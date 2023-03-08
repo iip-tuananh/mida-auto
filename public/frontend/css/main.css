@@ -72,6 +72,11 @@
     height: 92px;
     border-radius: 50%;
 }
+.bor img{
+    border-radius: 10px;
+    /* margin-left: 10px; */
+    width: 100%;
+}
 .bg-red{
     background-color: #d70018 !important;
 }
