@@ -72,6 +72,9 @@
     height: 92px;
     border-radius: 50%;
 }
+.bg-red{
+    background-color: red !important;
+}
 .img-mo{
     height: 35px;
     width: 35px;

@@ -869,17 +869,17 @@
    @foreach ($categoryhome as $key=>$cate)
    @if (count($cate->product) > 0)
       @if ($key%2==0)
-      <section id="product_3" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
-         <div class="container">
-               <div class="rounded bg-white p-2">
-               <div class="head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row">
+      <section id="product_3" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4 ">
+         <div class="container ">
+               <div class="rounded bg-white p-2 bg-red">
+               <div class=" head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row">
                   <h2 class="title text-uppercase font-weight-bold position-relative m-0">
                      <a class="position-relative" href="dien-thoai" title="{{languageName($cate->name)}}">
                      {{languageName($cate->name)}}
                      </a>
                   </h2>
                   @if (count($cate->typeCate) > 0)
-                  <div class="list_link_pr d-flex pt-2 pb-2">
+                  <div class="list_link_pr d-flex pt-2 pb-2 ">
                      @foreach ($cate->typeCate as $type)
                         <a class="border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
                               <div>
@@ -890,7 +890,7 @@
                   </div>
                   @endif
                </div>
-               <div class="row align-items-lg-center">
+               <div class="row align-items-lg-center ">
                   <div class="col-xl-9 col-lg-8 col-12 pl-lg-0 order-lg-2 ">
                      <div class="mew_product_3 swiper-container p-2 position-relative">
                            <div class="swiper-wrapper">

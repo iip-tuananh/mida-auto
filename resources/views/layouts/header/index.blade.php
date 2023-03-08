@@ -3,7 +3,12 @@
    <img alt="{{$setting->company}}" src="{{$setting->logo}}" class="img-fluid mb_logo">
    </a> 
    </div>
-   <div class="bg_head position-fixed w-100 scroll_down "></div>
+   <div class="bg_head position-fixed w-100 scroll_down ">
+ 
+   </div>
+   <div>
+     <img src="{{asset('frontend/images/banner-top.png')}}" alt="" srcset="">
+   </div>
    <div class="col-left position-fixed d-flex flex-column pt-2 pb-2">
    <div class="container position-relative">
       <div class="row align-items-center">
@@ -93,10 +98,15 @@
             <i class="js-submenu down_icon d-flex align-items-center justify-content-center position-absolute d-lg-none"></i>
             <ul class="lv1 list-group p-0 list-unstyled rounded">
                @foreach ($categoryhome as $cate)
-                  <li class=" level1 pr-lg-2 pt-lg-2 pb-lg-2 pl-2 position-relative cls">
+                  <li class=" level1 pr-lg-2 pt-lg-2 pb-lg-2 pl-2 position-relative cls d-flex">
+                     <span>
+            
+                     <img src="{{$cate->avatar}}" alt="" srcset="" width="30px" height="30px">
                      <a href="{{route('allListProCate', ['danhmuc'=>$cate->slug])}}" class="pt-1 pb-1 pr-4 position-relative  js-checkMenu" title="{{languageName($cate->name)}}">
                      {{languageName($cate->name)}}
                      </a>
+                                 
+                  </span>
                      @if (count($cate->typeCate) > 0)
                         <i class="js-submenu down_icon d-flex align-items-center justify-content-center position-absolute d-lg-none"></i>
                         <ul class="lv2 list-group p-0 list-unstyled rounded">
