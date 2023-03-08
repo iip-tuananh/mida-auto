@@ -55,7 +55,7 @@
                      <b><small >Gọi mua hàng</small> <br>{{$setting->phone1}}</b>
                   </a>
                </div>
-               <div class="navigation-bottom mt-auto mt-lg-0">
+               <div class="navigation-bottom mt-auto mt-lg-0 title-tracuu">
                   <div class="b_use d-none d-lg-flex align-items-stretch">
                      {{-- <div id="js-login-toggle" class="btn-account d-none d-lg-flex align-items-center justify-content-center mr-3">
                            <svg width="24" height="24" class="mr-2 d-none d-xl-block">
@@ -66,7 +66,7 @@
                            <a href="/account/register" class="item_login d-block font-weight-bold small" title="Đăng ký">Đăng ký</a>
                            </div>
                      </div> --}}
-                     <a class="title-tracuu p-1 btn-cart position-relative d-inline-flex head_svg justify-content-center align-items-center rounded-10" title="Giỏ hàng" href="/cart">
+                     <a class=" p-1 btn-cart position-relative d-inline-flex head_svg justify-content-center align-items-center rounded-10" title="Giỏ hàng" href="/cart">
                            <span class="b_ico_Cart text-center d-flex justify-content-center align-items-center position-relative">
                            <svg width="20" height="20" >
                               <use href="#svg-cart" />
