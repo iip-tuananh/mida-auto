@@ -14,6 +14,20 @@
 @endsection
 @section('content')
 <div class="contentWarp ">
+   <div class="menu-cung">
+  
+         @foreach ($categoryhome as $cate)
+         @if (count($cate->product) > 0)
+         <a href="#{{$cate->id}}" title="">
+            <li>
+               <span class="title-san">{{languageName($cate->name)}}</span>
+               <img src="{{$cate->imagehome}}" alt="" style="width:40px; height:40px">
+            </li>
+         </a>
+         @endif
+         @endforeach
+ 
+   </div>
    <section class="mew_mobile_slide mb-4">
       <div class="mew_slide_main swiper-container">
          <div class="swiper-wrapper">
@@ -907,7 +921,7 @@
    @foreach ($categoryhome as $key=>$cate)
    @if (count($cate->product) > 0)
       @if ($key%2==0)
-      <section id="product_3" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4 ">
+      <section id="{{$cate->id}}" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4 ">
          <div class="container ">
                <div class="rounded bg-white p-2 bg-red">
                <div class=" head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row">
@@ -984,7 +998,7 @@
          });
       </script>
       @else
-      <section id="product_4" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
+      <section id="{{$cate->id}}"  class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
          <div class="container">
                <div class="rounded bg-white p-2">
                <div class="head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row">
