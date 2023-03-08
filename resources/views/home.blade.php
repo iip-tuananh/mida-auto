@@ -421,10 +421,10 @@
                   slidesPerView: 2
                },
                992: {
-                  slidesPerView: 3
+                  slidesPerView: 4
                },
                1200: {
-                  slidesPerView: 4
+                  slidesPerView: 5
                }
             }
       });
