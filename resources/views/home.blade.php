@@ -972,13 +972,13 @@
                   },
                   992: {
                      slidesPerView: 3,
-                     slidesPerColumnFill: 'row',
-                     slidesPerColumn: 2
+                
+                   
                   },
                   1200: {
                      slidesPerView: 4,
-                     slidesPerColumnFill: 'row',
-                     slidesPerColumn: 2
+          
+               
                   }
                }
          });
@@ -1049,13 +1049,13 @@
                   },
                   992: {
                      slidesPerView: 3,
-                     slidesPerColumnFill: 'row',
-                     slidesPerColumn: 2
+           
+                 
                   },
                   1200: {
                      slidesPerView: 4,
-                     slidesPerColumnFill: 'row',
-                     slidesPerColumn: 2
+               
+            
                   }
                }
          });
