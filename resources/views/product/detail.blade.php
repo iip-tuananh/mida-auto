@@ -229,7 +229,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                            </svg>
                                        </a>
                                    </div>
-                                   <div class="mew_mobi_bar d-lg-none position-fixed d-flex modal-open">
+                                   {{-- <div class="mew_mobi_bar d-lg-none position-fixed d-flex modal-open">
                                        <a id="js-menu-toggle" href="javascript:;" title="Danh mục" class="item align-content-center d-flex flex-column h-100 justify-content-center ">
                                            <svg width="20" height="20">
                                                <use href="#svg-menu" />
@@ -254,7 +254,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                        <a title="Chọn mua" href="javascript:;" id="o_sw_buys" class="btn d-flex text-white justify-content-center flex-row align-items-center rounded-0 product-action_buynow modal-open font-weight-bold open_sw_mobile">
                                        <span class="ml-2 mr-2">Chọn mua</span>
                                        </a>	
-                                   </div>
+                                   </div> --}}
                                </form>
                            </div>
                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-3 product-warp">

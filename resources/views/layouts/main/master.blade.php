@@ -133,40 +133,37 @@
             </svg>
             </a>
       </div>
-      <div class="mew_mobi_bar d-lg-none position-fixed d-flex">
-            <a id="js-menu-toggle" href="javascript:;" title="Danh mục" class="item align-content-center d-flex flex-column h-100 justify-content-center">
-            <svg width="20" height="20">
-               <use href="#svg-menu" />
-            </svg>
-            <span class="tit d-block font-weight-bold text-center pr-1 pr-sm-2 pl-1 pl-sm-2 pt-1">Danh mục</span>
-            </a>
-            <a href="/so-sanh" title="So sánh" class="item align-content-center d-flex flex-column h-100 justify-content-center js-notify-container">
-            <svg width="20" height="20">
-               <use href="#svg-compare" />
-            </svg>
-            <span class="tit font-weight-bold d-block text-center pr-1 pr-sm-2 pl-1 pl-sm-2 pt-1">So sánh <b class="js-compare-button"><span class="tit">0</span></b></span>
-            </a>
-            <a href="javascript:;" title="Liên hệ" class="item align-content-center d-flex flex-column h-100 justify-content-center" id="js-contact-toggle">
-            <svg width="20" height="20">
-               <use href="#svg-phone" />
-            </svg>
-            <span class="tit d-block font-weight-bold text-center pr-1 pr-sm-2 pl-1 pl-sm-2 pt-1">Liên hệ</span>
-            </a>
-            <a href="/account/login" title="Tài khoản" class="item align-content-center d-flex flex-column h-100 justify-content-center ">
-            <svg width="20" height="20">
-               <use href="#svg-user" />
-            </svg>
-            <span class="tit d-block font-weight-bold text-center pr-1 pr-sm-2 pl-1 pl-sm-2 pt-1">Tài khoản</span>
-            </a>
-            <a class="item d-flex flex-column p-1 align-items-center justify-content-center btn-cart position-relative  " title="Giỏ hàng" href="/cart">
-            <span class="position-relative flex-column d-flex">
-               <svg width="20" height="20">
-                  <use href="#svg-cart" />
-               </svg>
-               <span class="tit d-block font-weight-bold text-center pr-1 pr-sm-2 pl-1 pl-sm-2 pt-1">Giỏ hàng</span>
-               <span class="btn-cart-indicator position-absolute d-none text-center"></span>
-            </span>
-            </a>
+      <div class="d-lg-none ">
+         <div class="tuan-flex">
+
+            <div>
+               <i class="fa-solid fa-list"></i>
+               
+            </div>
+            <div>
+               <a href="{{$setting->facebook}}">
+                  <img src="{{asset('frontend/images/icon-messenger.png.pagespeed.ce_.sSebhnGGgP.png')}}" alt="" class="img-mo">
+               </a>
+            </div>
+            <div class="tran-tran">
+
+               <div  class="mobile-phone-cus">
+                  <a href="tel:+{{$setting->phone1}}">
+                     <img src="{{asset('frontend/images/icon-phone-w.png')}}" alt="" class="img-mo">
+                  </a>
+               </div>
+            </div>
+            <div>
+               <a href="https://zalo.me/{{$setting->phone1}}">
+                  <img src="{{asset('frontend/images/icon-zalo-circle2.png.pagespeed.ce_.iUc59tfITH.png')}}" alt="" class="img-mo">
+               </a>
+            </div>
+            <div>
+               <a href="{{route('listCart')}}">
+                  <i class="fa-solid fa-cart-shopping"></i>
+               </a>
+            </div>
+         </div>
       </div>
       <div class="toast-container"></div>
       <template id="cart-item-template">
