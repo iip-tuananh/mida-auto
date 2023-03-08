@@ -11,6 +11,7 @@ Tra cứu bảo hành
 <script type="text/javascript">
     $('.tra-cuu').click(function(e) {
         e.preventDefault();
+        console.log(123);
         var keyword = $('#tcbh-input').val();
         var url = $(this).data('url');
         $.ajax({
@@ -65,7 +66,7 @@ Tra cứu bảo hành
                             <input type="text" id="bsxtcbh">
                         </div>
                         <div class="form-ct">
-                            <button type="button" id="click_check_warrantry" onclick="getCheckWarrantry()">Tra cứu bảo hành</button>
+                            <button type="button" class="tra-cuu" id="click_check_warrantry" >Tra cứu bảo hành</button>
                             <a href="{{route('home')}}">Quay lại trang chủ</a>
                         </div>
                         <div class="form-ct">

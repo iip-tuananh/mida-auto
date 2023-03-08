@@ -21,7 +21,8 @@
     word-break: break-word;
     -webkit-line-clamp: 2;
     height: calc(21px* 2);
-    line-height: 21px
+    line-height: 21px;
+    text-align: center;
 }
 
 .line_3 {

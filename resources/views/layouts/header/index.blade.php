@@ -16,7 +16,7 @@
                <div class="d-lg-flex align-items-center position-static pr-menu">
                <div class="mr-2 mr-xl-3 level0 position-relative cls">
                   <a href="{{route('tracuubaohanh')}}" title="Tra cứu bảo hành" class="align-items-center d-flex head_svg p-1 pl-xl-2 pr-xl-2 rounded-10">
-                  <small>Tra cứu 
+                  <small class="title-tracuu">Tra cứu 
                   <b class="d-block">bảo hành</b>
                   </small>
                   </a>
@@ -45,14 +45,14 @@
                      <a class="pl-2 pl-xl-3 pr-2 pr-xl-3 d-inline-block position-relative" href="/tin-tuc" title="News">News</a>
                   </div>
                </div> --}}
-               <div class="info-block mr-3">
+               <div class="info-block mr-3 title-tracuu">
                   <a href="tel:{{$setting->phone1}}" title="{{$setting->phone1}}" class="align-items-center d-flex">
                      <span class="play0 d-none d-xl-block">
                            <svg width="32" height="32">
                            <use href="#svg-phone" />
                            </svg>
                      </span>
-                     <b><small>Gọi mua hàng</small> <br>{{$setting->phone1}}</b>
+                     <b><small >Gọi mua hàng</small> <br>{{$setting->phone1}}</b>
                   </a>
                </div>
                <div class="navigation-bottom mt-auto mt-lg-0">
@@ -66,7 +66,7 @@
                            <a href="/account/register" class="item_login d-block font-weight-bold small" title="Đăng ký">Đăng ký</a>
                            </div>
                      </div> --}}
-                     <a class="p-1 btn-cart position-relative d-inline-flex head_svg justify-content-center align-items-center rounded-10" title="Giỏ hàng" href="/cart">
+                     <a class="title-tracuu p-1 btn-cart position-relative d-inline-flex head_svg justify-content-center align-items-center rounded-10" title="Giỏ hàng" href="/cart">
                            <span class="b_ico_Cart text-center d-flex justify-content-center align-items-center position-relative">
                            <svg width="20" height="20" >
                               <use href="#svg-cart" />
