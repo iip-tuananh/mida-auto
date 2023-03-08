@@ -409,8 +409,6 @@
             loop: false,
             speed: 1000,
             autoplay: false,
-            slidesPerColumnFill: 'row',
-            slidesPerColumn: 2,
             navigation: {
                nextEl: '.mf_next',
                prevEl: '.mf_prev',
