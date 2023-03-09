@@ -41,10 +41,6 @@ $discountPrice = $product->price - $product->price * ($product->discount / 100);
          <span class="special-price font-weight-bold">Liên hệ</span>
       </div>
    @endif
-   <label class="compare-label position-relative d-flex align-items-center m-0">
-   <input type="checkbox" class="compare-checkbox d-none" value="{{route('detailProduct', ['cate'=>$product->cate_slug, 'slug'=>$product->slug])}}" data-type="Android"> 
-   <span class="compare-checkbox mr-1 rounded-circle"></span>
-   Mua hàng
-   </label>
+  
    </div>
 </div>

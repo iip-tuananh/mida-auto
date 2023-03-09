@@ -830,7 +830,7 @@
                          $imgs = json_decode($service->image);
                      @endphp
               
-                        <div class="swiper-slide">
+                        <div class="swiper-slide khung-t">
                         <div class="item_grid mb-3">
                            <div class="img_thm position-relative bor-10 modal-open">
                               <a href="{{route('serviceDetail', ['slug'=>$service->slug])}}" class="effect-ming open_video" title="{{$service->name}}">

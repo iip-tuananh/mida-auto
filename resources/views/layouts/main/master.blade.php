@@ -106,24 +106,24 @@
             <img alt="Lên đầu trang" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/to-top-arrow2.png?1676652384879">
       </div>
       <div class="fix-phone p-1 p-lg-2 pt-lg-3 pb-lg-3" id="mb_bar">
-            <a href="tel:19006750" title="Gọi mua hàng" class="mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 phone-box d-flex align-items-center justify-content-center">
+            <a href="tel:{{$setting->phone1}}" title="Gọi mua hàng" class="mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 phone-box d-flex align-items-center justify-content-center">
             <svg width="24" height="24" class="play0">
                <use href="#svg-phone" />
             </svg>
             </a>
-            <a href="https://m.me/mewtheme" title="Chat Facebook" target="_blank" class="mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 fb-box d-flex align-items-center justify-content-center rounded-circle">
+            <a href="{{$setting->facebook}}" title="Chat Facebook" target="_blank" class="mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 fb-box d-flex align-items-center justify-content-center rounded-circle">
             <svg width="28" height="28">
                <use href="#svg-messenger" />
             </svg>
             </a>
-            <a href="https://zalo.me/+18001231234" title="Chat Zalo" target="_blank" class="mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 zalo-box d-flex align-items-center justify-content-center">
+            <a href="https://zalo.me/{{$setting->phone1}}" title="Chat Zalo" target="_blank" class="mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 zalo-box d-flex align-items-center justify-content-center">
             <svg width="32" height="32">
                <use href="#svg-zalo" />
             </svg>
             </a>
-            <a href="/so-sanh" title="So sánh" class="d-none d-lg-flex mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 js-compare-button js-notify-container zalo-box align-items-center justify-content-center">
+            <a href="{{route('listCart')}}" title="Giỏ Hàng" class="d-none d-lg-flex mt-lg-1 ml-1 mb-lg-1 mr-1 ml-lg-0 mr-lg-0 js-compare-button js-notify-container zalo-box align-items-center justify-content-center">
             <svg width="24" height="24">
-               <use href="#svg-compare" />
+               <use href="#svg-cart"></use>
             </svg>
             <span class="position-absolute rounded-circle text-center font-weight-bold">0</span>
             </a>

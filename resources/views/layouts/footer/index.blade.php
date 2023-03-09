@@ -2,7 +2,7 @@
    <div class="foo_mid mb-4">
       <div class="container">
             <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 footer-left">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 footer-left">
                <a href="{{route('home')}}" title="{{$setting->company}}" class="logo_foo d-block mb-2">
                <img alt="Logo {{$setting->company}}" class="lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{$setting->logo}}">
                </a>
@@ -11,6 +11,10 @@
                   <p><b>Email: </b><a href="mailto:{{$setting->email}}" title="{{$setting->email}}">{{$setting->email}}</a></p>
                   <p><b>Hotline: </b><a href="tel:{{$setting->phone1}}" title="{{$setting->phone1}}">{{$setting->phone1}}</a></p>
                </address>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
+               <h3 class="footer-title mb-2 position-relative font-weight-bold">Map</h3>
+               {!!$setting->iframe_map!!}
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
                <h3 class="footer-title mb-2 position-relative font-weight-bold">Chính sách</h3>
@@ -65,4 +69,9 @@
             </div>
       </div>
    </div>
+   <style>
+      #mapDiv{
+    height: 223px !important;
+}
+   </style>
 </footer>
