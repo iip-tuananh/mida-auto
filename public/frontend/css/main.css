@@ -132,11 +132,18 @@
     /* margin-left: 10px; */
     width: 100%;
 }
+.bor-20{
+    border-radius: 20px !important;
+}
+.bg-nen{
+    background-color:#f3f3f3 !important;
+}
 .bg-do{
     background-color: #dc3a4d !important;
 }
 .bg-xanh{
     background-color: #00c2ff !important;
+  
 }
 .bg-red{
     background-color: #d70018 !important;
