@@ -929,9 +929,9 @@
                      </a>
                   </h2>
                   @if (count($cate->typeCate) > 0)
-                  <div class="list_link_pr d-flex pt-2 pb-2 bg-do">
+                  <div class="list_link_pr d-flex pt-2 pb-2">
                      @foreach ($cate->typeCate as $type)
-                        <a class="border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
+                        <a class="  bg-do border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
                               <div>
                               </div>
                               {{languageName($type->name)}}
