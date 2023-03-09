@@ -46,7 +46,7 @@
             @endforeach
          </div>
       </div>
-      <div class="container">
+      {{-- <div class="container">
             <div class="mew_slide swiper-container position-relative">
             <div class="swiper-wrapper">
                @foreach ($bannerAds as $banner)
@@ -66,7 +66,7 @@
             <div class="swiper-button-prev msl_prev"></div>
             <div class="swiper-button-next msl_next"></div>
             </div>
-      </div>
+      </div> --}}
    </section>
    <script rel="dns-prefetch">
       var swiperMainHomeSlider = new Swiper('.mew_slide_main', {
@@ -128,7 +128,7 @@
             }
       });
    </script>
-   <section class="product_poli_wrap mt-3 mb-3">
+   {{-- <section class="product_poli_wrap mt-3 mb-3">
       <div class="container">
             <div class="product_poli m-0">
             <div class="row">
@@ -175,7 +175,7 @@
             </div>
             </div>
       </div>
-   </section>
+   </section> --}}
    {{-- <section id="mew_cate_1" class="mew_cate_1 mt-3 mt-lg-4 mb-3 mt-lg-4">
       <div class="container">
             <div class="b_mew_cate rounded bg-white p-2 p-xl-3">
@@ -907,10 +907,10 @@
                   slidesPerView: 2
                },
                992: {
-                  slidesPerView: 2
+                  slidesPerView: 4
                },
                1200: {
-                  slidesPerView: 3
+                  slidesPerView: 5
                }
             }
          });
