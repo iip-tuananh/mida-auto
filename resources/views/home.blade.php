@@ -9,6 +9,8 @@
 {{url(''.$banners[0]->image)}}
 @endsection
 @section('css')
+<link rel="stylesheet" href="{{asset('frontend/css/button.css')}}">
+
 @endsection
 @section('js')
 @endsection
@@ -925,7 +927,7 @@
                <div class=" head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row bg-nen">
                   <h2 class="title text-uppercase font-weight-bold position-relative m-0">
                      <a  class="position-relative" href="javascipt:;" title="{{languageName($cate->name)}}">
-                     {{languageName($cate->name)}}
+                     <div class="button-custom">{{languageName($cate->name)}}</div>
                      </a>
                   </h2>
                   @if (count($cate->typeCate) > 0)
@@ -1086,7 +1088,7 @@
                   @endif
                   <h2 class="title text-uppercase font-weight-bold position-relative m-0">
                      <a class="position-relative" href="imac-macbook" title="{{languageName($cate->name)}}">
-                     {{languageName($cate->name)}}
+                     <div class="button-custom">{{languageName($cate->name)}}</div>
                      </a>
                   </h2>
                </div>
