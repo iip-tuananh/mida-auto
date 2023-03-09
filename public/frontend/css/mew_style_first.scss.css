@@ -20,8 +20,8 @@
     -webkit-box-orient: vertical;
     word-break: break-word;
     -webkit-line-clamp: 2;
-    height: calc(21px* 2);
-    line-height: 21px;
+    height: calc(10px* 2);
+    line-height: 18px;
     text-align: center;
 }
 
