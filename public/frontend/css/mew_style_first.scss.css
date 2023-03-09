@@ -963,7 +963,9 @@ button {
 .ratio1by2 {
     padding-bottom: 200%
 }
-
+.pd-2{
+    padding-bottom: 0.5rem !important;
+}
 .ratio1by3 {
     padding-bottom: calc(100%/3)
 }
