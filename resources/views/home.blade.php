@@ -821,7 +821,7 @@
    <section id="video" class="m_blog mt-3 mt-lg-4 mb-3 mb-lg-4">
       <div class="container">
             <div class="rounded bg-white p-3">
-            <h2 class="title text-uppercase font-weight-bold position-relative pb-2 pb-lg-3 m-0">
+            <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
                <a class="position-relative" href="mew-reviews" title="Dịch vụ">Dịch vụ</a>
             </h2>
             <div class="b_product">
@@ -856,7 +856,7 @@
    <section id="mew_cate_2" class="mew_cate_2 mt-3 mt-lg-4 mb-3 mb-lg-4" style="--cl_tit_trending: #333;--bg_trending_1: #ffecd2;--bg_trending_2: #fcb69f;">
       <div class="container">
             <div class="mew_bts_cate rounded pl-3 pr-3 pt-3 pb-3">
-               <h2 class="title text-uppercase font-weight-bold position-relative pb-2 pb-lg-3 m-0">
+               <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
                   <a class="position-relative" href="mew-reviews" title="Dịch vụ">Danh mục sản phẩm</a>
                </h2>
             <div class="cate-pro-home position-relative swiper-container">
@@ -1402,7 +1402,7 @@
    <section id="m_blog" class="m_blog mt-3 mt-lg-4 mb-3 mb-lg-4">
       <div class="container">
             <div class="rounded bg-white p-3">
-            <h2 class="title text-uppercase font-weight-bold position-relative pb-2 pb-lg-3 m-0">
+            <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
                <a class="position-relative" href="{{route('allListBlog')}}" title="Tin tức nổi bật">
                Tin tức nổi bật
                </a>
