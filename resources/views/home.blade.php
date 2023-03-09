@@ -610,7 +610,7 @@
    </section> --}}
    <section id="video" class="m_blog mt-3 mt-lg-4 mb-3 mb-lg-4">
       <div class="container">
-            <div class="rounded bg-white pd-2">
+            <div class="rounded bg-white pd-2 bg-xam">
             <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
                <a class="position-relative" href="mew-reviews" title="Dịch vụ">Dịch vụ</a>
             </h2>
