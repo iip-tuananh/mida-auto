@@ -59,7 +59,7 @@ Route::group(['namespace'=>'Client','middleware' => ['checkLanguage']], function
     Route::post('thantoan','CartController@postBill')->name('postBill');
 
     Route::get('tra-cuu-bao-hanh.html','PageController@tracuu')->name('tracuubaohanh');
-    Route::post('tra-cuu-bao-hanh','PageController@resultTraCuu')->name('resultTraCuu');
+    Route::post('ket-qua-tra-cuu-bao-hanh','PageController@resultTraCuu')->name('resultTraCuu');
     Route::get('menu.html','PageController@menu')->name('menu');
     Route::get('account/orders','AuthController@accoungOrder')->name('accoungOrder')->middleware('CheckAuthClient::class');
     Route::get('account/orders/{billid}','AuthController@accoungOrderDetail')->name('accoungOrderDetail')->middleware('CheckAuthClient::class');

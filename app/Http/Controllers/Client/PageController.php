@@ -29,12 +29,13 @@ class PageController extends Controller
         return view('tra-cuu-bao-hanh');
     }
     public function resultTraCuu(Request $request) {
-        $keyword = $request->keyword;
-        $data['customerService'] = ReviewCus::where('phone', '=', $keyword)->orWhere('license_plate', '=', $keyword)->first();
-        $html = view('layouts.product.tra-cuu', $data)->render();
+        $phone = $request->phone;
+        $bienso = $request->bienso;
+        $data['customerService'] = ReviewCus::where('phone', '=', $phone)->orWhere('license_plate', '=', $bienso)->first();
+        $html8 = view('layouts.product.tra-cuu', $data)->render();
         return response()->json([
             'status' => 200,
-            'html' => $html,
+            'html8' => $html8,
         ]);
     }
     public function baogia()

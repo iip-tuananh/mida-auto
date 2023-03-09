@@ -8,26 +8,7 @@ Tra cứu bảo hành
 {{url(''.$banners[0]->image)}}
 @endsection
 @section('js')
-<script type="text/javascript">
-    $('.tra-cuu').click(function(e) {
-        e.preventDefault();
-        console.log(123);
-        var keyword = $('#tcbh-input').val();
-        var url = $(this).data('url');
-        $.ajax({
-            type: 'post',
-            url: url,
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            data: {keyword: keyword},
-            success: function(data){
-                $('#thong-tin-chi-tiet-khach-hang').html(data.html);
-            },
-            error: function(data){
-                console.log('Lỗi');
-            }
-        })
-    })
-</script>
+
 @endsection
 @section('content')
 <div class="col-right position-relative">
@@ -59,14 +40,14 @@ Tra cứu bảo hành
                     <div class="form-tcbh-ct">
                         <div class="form-ct">
                             <label>Số điện thoại</label>
-                            <input type="text" id="phonetcbh">
+                            <input type="text" class="phonetcbh">
                         </div>
                         <div class="form-ct">
                             <label>Biển số xe</label>
-                            <input type="text" id="bsxtcbh">
+                            <input type="text" class="bsxtcbh">
                         </div>
                         <div class="form-ct">
-                            <button type="button" class="tra-cuu" id="" >Tra cứu bảo hành</button>
+                            <button type="submmit" class="tra-cuu-new" data-url="{{route('resultTraCuu')}}" >Tra cứu bảo hành</button>
                             <a href="{{route('home')}}">Quay lại trang chủ</a>
                         </div>
                         <div class="form-ct">
@@ -78,6 +59,59 @@ Tra cứu bảo hành
 			</div>
 		</div>
 	</section>
+    <div id="thong-tin-chi-tiet-khach-hang">
+        {{-- <div class="row">
+            <div class="col-md-12 mb-4">
+               <h5 class="text-uppercase"><span style="color: #ff6600;">Kết quả tra cứu bảo hành</span></h5>
+            </div>
+            <div class="col-md-6">
+               <table class="table table-striped">
+                  @foreach ($name as $item)
+                     <tr>
+                        <td style="font-weight: 600;">{{$item->title}}</td>
+                        <td>{{$item->detail}}</td>
+                     </tr>
+                  @endforeach
+               </table>
+            </div>
+            <div class="col-md-6">
+               <table class="table table-striped">
+                  @foreach ($content as $item)
+                     <tr>
+                        <td style="font-weight: 600;">{{$item->title}}</td>
+                        <td>{{$item->detail}}</td>
+                     </tr>
+                  @endforeach
+               </table>
+            </div>
+            <div class="col-md-12 mt-5 mb-5">
+               <div class="owl-carousel owl-theme">
+                  @foreach ($imgs as $img)
+                     <img src="{{$img}}" alt="" data-fancybox="gallery">
+                  @endforeach
+               </div>
+            </div>
+            <script>
+               $('.owl-carousel').owlCarousel({
+                  loop:false,
+                  margin:10,
+                  nav:true,
+                  autoplay: true,
+                  responsive:{
+                        0:{
+                           items:1
+                        },
+                        600:{
+                           items:1
+                        },
+                        1000:{
+                           items:2
+                        }
+                  }
+               })
+            </script>
+         </div> --}}
+    </div>
     <style>
         .box-tra-cuu-bao-hanh .content-tcbh {
             padding: 20px 0px;

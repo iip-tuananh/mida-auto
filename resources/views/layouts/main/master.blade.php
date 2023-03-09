@@ -29,7 +29,8 @@
    <meta name="twitter:title" content="@yield('title')" />
    <meta name="twitter:description" content="@yield('description')" />
    <meta name="twitter:image" content="@yield('image')" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  
    <!-- Fav Icon -->
    <link rel="icon" href="{{url(''.$setting->favicon)}}" type="image/x-icon">
    <style>
@@ -68,6 +69,8 @@
    <link rel="preload" as="style"  href="{{asset('frontend/css/mew_noti.scss.css')}}" type="text/css">
    <link href="{{asset('frontend/css/mew_noti.scss.css')}}" rel="stylesheet" type="text/css" media="all" />
    <link rel="preload" as="script" href="{{asset('frontend/js/swiper.js')}}" />
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
    <script src="{{asset('frontend/js/swiper.js')}} "></script>
    <script src="{{asset('frontend/js/notify.min.js')}}"></script>
    <link rel="stylesheet" href="{{asset('frontend/css/main.css')}}">
@@ -409,5 +412,47 @@
 			);
     </script>
 @endif
+<script>
+   $('.tra-cuu-new').click(function(e){
+e.preventDefault();
+var url = $(this).data('url');
+var phone = $('.phonetcbh').val();
+var bienso = $('.bsxtcbh').val();
+console.log(url, phone, bienso);
+$.ajax({
+    type: "POST",
+    url: url,
+    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    data: {'phone': phone, 'bienso': bienso},
+    success: function(data){
+        $('#thong-tin-chi-tiet-khach-hang').html(data.html1);
+     
+      
+    }
+})
+})
+</script>
+{{-- <script >
+   $('.tra-cuu').click(function(e) {
+       e.preventDefault();
+       var phone = $('.phonetcbh').val();
+       var bienso = $('.bsxtcbh').val();
+       var url = $(this).data('url');
+       
+       $.ajax({
+           type: "post",
+           url: url,
+           headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+           data: {
+               phone: phone, 
+               bienso: bienso
+           },
+      
+           success: function (data) {
+               $('#thong-tin-chi-tiet-khach-hang').html(data.html8);
+           }
+       })
+   })
+</script> --}}
 </body>
 </html>
