@@ -132,6 +132,18 @@
     /* margin-left: 10px; */
     width: 100%;
 }
+.box-shadow{
+    box-shadow: #00ffac 0px 5px 1px, #00ffac 0px 1px 0px, #00ffac 3px 5px 0px 0px;
+}
+.a-style{
+    color: white !important;
+    border: none !important;
+    outline: none !important;
+}
+.a-style:hover{
+    transform: scale(0.9);
+    transition: all 1s;
+}
 .bor-20{
     border-radius: 20px !important;
 }

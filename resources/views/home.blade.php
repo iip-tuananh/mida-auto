@@ -924,14 +924,14 @@
                <div class="rounded  p-2 ">
                <div class=" head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row bg-nen">
                   <h2 class="title text-uppercase font-weight-bold position-relative m-0">
-                     <a  class="position-relative" href="dien-thoai" title="{{languageName($cate->name)}}">
+                     <a  class="position-relative" href="javascipt:;" title="{{languageName($cate->name)}}">
                      {{languageName($cate->name)}}
                      </a>
                   </h2>
                   @if (count($cate->typeCate) > 0)
                   <div class="list_link_pr d-flex pt-2 pb-2">
                      @foreach ($cate->typeCate as $type)
-                        <a class="  bg-do border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
+                        <a class=" box-shadow a-style bg-do border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
                               <div>
                               </div>
                               {{languageName($type->name)}}
@@ -956,7 +956,7 @@
                   </div>
                   <div class="col-xl-3 col-lg-4 col-12 order-lg-1">
                      <div class="b_product p-2 pr-lg-0 d-flex flex-lg-column">
-                           <a href="#" title="{{languageName($cate->name)}}" class="rounded modal-open position-relative w-100 w-mb-50 ratio1by1 has-edge aspect d-block sitdown">
+                           <a href="javascript:;" title="{{languageName($cate->name)}}" class="  rounded modal-open position-relative w-100 w-mb-50 ratio1by1 has-edge aspect d-block sitdown">
                            <img class="d-block img img-cover position-absolute lazy" src="{{$cate->imagehome}}" data-src="{{$cate->imagehome}}" alt="{{languageName($cate->name)}}">
                            </a>
                      </div>
@@ -998,17 +998,13 @@
       @else
       <section id="{{$cate->id}}"  class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
          <div class="container">
-               <div class="rounded bg-white p-2">
-               <div class="head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row">
-                  <h2 class="title text-uppercase font-weight-bold position-relative m-0">
-                     <a class="position-relative" href="imac-macbook" title="{{languageName($cate->name)}}">
-                     {{languageName($cate->name)}}
-                     </a>
-                  </h2>
+               <div class="rounded bg-nen p-2">
+               <div class="head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row ">
+                 
                   @if (count($cate->typeCate) > 0)
                   <div class="list_link_pr d-flex pt-2 pb-2">
                      @foreach ($cate->typeCate as $type)
-                        <a class="border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
+                        <a class=" box-shadow a-style bg-xanh border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
                               <div>
                               </div>
                               {{languageName($type->name)}}
@@ -1016,9 +1012,14 @@
                      @endforeach
                   </div>
                   @endif
+                  <h2 class="title text-uppercase font-weight-bold position-relative m-0">
+                     <a class="position-relative" href="imac-macbook" title="{{languageName($cate->name)}}">
+                     {{languageName($cate->name)}}
+                     </a>
+                  </h2>
                </div>
-               <div class="row align-items-lg-center">
-                  <div class="col-xl-9 col-lg-8 col-12 pr-lg-0">
+               <div class="row align-items-lg-center bg-do bor-20">
+                  <div class="col-xl-9 col-lg-8 col-12 pr-lg-0 ">
                      <div class="mew_product_4 swiper-container p-2 position-relative">
                            <div class="swiper-wrapper">
                               @foreach ($cate->product as $product)
