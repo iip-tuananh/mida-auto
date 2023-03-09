@@ -132,6 +132,12 @@
     /* margin-left: 10px; */
     width: 100%;
 }
+.bg-do{
+    background-color: #dc3a4d !important;
+}
+.bg-xanh{
+    background-color: #00c2ff !important;
+}
 .bg-red{
     background-color: #d70018 !important;
 }

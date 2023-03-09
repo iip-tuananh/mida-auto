@@ -66,7 +66,7 @@ Tra cứu bảo hành
                             <input type="text" id="bsxtcbh">
                         </div>
                         <div class="form-ct">
-                            <button type="button" class="tra-cuu" id="click_check_warrantry" >Tra cứu bảo hành</button>
+                            <button type="button" class="tra-cuu" id="" >Tra cứu bảo hành</button>
                             <a href="{{route('home')}}">Quay lại trang chủ</a>
                         </div>
                         <div class="form-ct">
