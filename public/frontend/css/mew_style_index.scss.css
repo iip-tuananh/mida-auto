@@ -279,8 +279,8 @@ section.product_poli_wrap .product_poli .item img {
 
 .head_box .list_link_pr {
     gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
+    /* overflow-x: auto; */
+    /* overflow-y: hidden; */
     -webkit-overflow-scrolling: touch;
     max-width: 100%
 }
