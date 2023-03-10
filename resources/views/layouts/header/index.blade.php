@@ -44,12 +44,7 @@
                      </div>
                   </form>
                </div>
-               {{-- <div class="blog-block">
-                  <div class="blog_head text-center d-flex align-items-center">
-                     <a class="pl-2 pl-xl-3 pr-2 pr-xl-3 d-inline-block position-relative" href="/24h-cong-nghe" title="24h<br>Công nghệ">24h<br>Công nghệ</a>
-                     <a class="pl-2 pl-xl-3 pr-2 pr-xl-3 d-inline-block position-relative" href="/tin-tuc" title="News">News</a>
-                  </div>
-               </div> --}}
+           
                <div class="info-block mr-3 title-tracuu">
                   <a href="tel:{{$setting->phone1}}" title="{{$setting->phone1}}" class="align-items-center d-flex">
                      <span class="play0 d-none d-xl-block">
@@ -62,21 +57,15 @@
                </div>
                <div class="navigation-bottom mt-auto mt-lg-0 title-tracuu">
                   <div class="b_use d-none d-lg-flex align-items-stretch">
-                     {{-- <div id="js-login-toggle" class="btn-account d-none d-lg-flex align-items-center justify-content-center mr-3">
-                           <svg width="24" height="24" class="mr-2 d-none d-xl-block">
-                           <use href="#svg-account"/>
-                           </svg>
-                           <div id="m_login" class="pop_login">
-                           <a href="/account/login" class="item_login d-block font-weight-bold small" title="Đăng nhập">Đăng nhập</a>
-                           <a href="/account/register" class="item_login d-block font-weight-bold small" title="Đăng ký">Đăng ký</a>
-                           </div>
-                     </div> --}}
-                     <a class=" p-1 btn-cart position-relative d-inline-flex head_svg justify-content-center align-items-center rounded-10" title="Giỏ hàng" href="/cart">
+                
+                     <a class=" p-1 btn-cart position-relative d-inline-flex head_svg justify-content-center align-items-center rounded-10" title="Giỏ hàng" href="{{route('listCart')}}">
                            <span class="b_ico_Cart text-center d-flex justify-content-center align-items-center position-relative">
                            <svg width="20" height="20" >
                               <use href="#svg-cart" />
                            </svg>
-                           <span class="btn-cart-indicator position-absolute d-none font-weight-bold text-center text-white"></span>
+                     
+                           <p class="count-item">{{count($cartcontent)}}</p>
+                    
                            </span>
                            <small class="d-none d-xl-block ml-lg-1">Giỏ hàng</small>
                      </a>

@@ -157,6 +157,24 @@
     background-color: #00c2ff !important;
   
 }
+.bg-vang{
+
+}
+.count-item{
+    background-color: yellow;
+    width: 20px;
+    position: absolute;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    left: -10px;
+    bottom: -20px;
+    font-weight: 700;
+    color: brown;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
 .bg-red{
     background-color: #d70018 !important;
 }

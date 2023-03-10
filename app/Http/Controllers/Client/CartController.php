@@ -50,7 +50,7 @@ class CartController extends Controller
                 }
 				DB::commit();
                 $request->session()->forget('cart');
-                return Redirect::to('/')->with('success', 'Gửi đơn hàng thành công');
+                return Redirect::to('/')->with('dathangthanhcong','Bạn đã đặt hàng thành công');
 			} catch (\Throwable $e) {
 			DB::rollBack();
 			throw $e;
@@ -63,40 +63,70 @@ class CartController extends Controller
         $data['cart'] = session()->get('cart', []);
         return view('cart.list',$data);
     }
-    public function addToCart($id)
+    public function addToCart(Request $request)
     {
+        $id = $request->id;
         $product = Product::findOrFail($id);
+        $cart = session()->get('cart',[]);
+        if (isset($request->quantity)) {
+            if(isset($cart[$id])) {
+                $cart[$id]['quantity'] = $cart[$id]['quantity'] + $request->quantity;
 
-        $cart = session()->get('cart', []);
-
-        if(isset($cart[$id])) {
-            $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
+            } else {
+                $cart[$id] = [
+                    "id" => $product->id,
+                    "name" => $product->name,
+                    "quantity" => $request->quantity,
+                    "price" => $product->price,
+                    "discount" => $product->discount,
+                    "cate_slug" => $product->cate_slug,
+                    "type_slug" => $product->type_slug,
+                    "slug"=>$product->slug,
+                    "image" => json_decode($product->images)[0],
+                ];
+            }
         } else {
-            $cart[$id] = [
-                "id" => $product->id,
-                "name" => $product->name,
-                "quantity" => 1,
-                "price" => $product->price,
-                "discount" => $product->discount,
-                "cate_slug" => $product->cate_slug,
-                "type_slug" => $product->type_slug,
-                "slug"=>$product->slug,
-                "image" => json_decode($product->images)[0],
-                "preserve"=>$product->preserve
-            ];
+            if(isset($cart[$id])) {
+                $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
+         
+            } else {
+                $cart[$id] = [
+                    "id" => $product->id,
+                    "name" => $product->name,
+                    "quantity" => 1,
+                    "price" => $product->price,
+                    "discount" => $product->discount,
+                    "cate_slug" => $product->cate_slug,
+                    "type_slug" => $product->type_slug,
+                    "slug"=>$product->slug,
+                    "image" => json_decode($product->images)[0],
+                    
+                ];
+            }
         }
+        
         session()->put('cart', $cart);
-
-        // dd(session()->get('cart'));
-        return response()->json($cart);
+        $data['cart'] = session()->get('cart',[]);
+        $data['cartItemName'] = $cart[$id]['name'];
+        $view2 = view('layouts.product.countpro', $data)->render();
+        return response()->json([
+            'html2' => $view2,
+           
+        ]);
     }
+
     public function update(Request $request)
     {
         if($request->id && $request->quantity){
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            return response()->json($cart);
+            $data['cart'] = session()->get('cart',[]);
+            $data['cartItemName'] = $cart[$request->id]['name'];
+            $view3 = view('cart.list-cart-ajax', $data)->render();
+            return response()->json([
+                'html3' => $view3,
+            ]);
         }
         
     }
@@ -104,11 +134,18 @@ class CartController extends Controller
     {
         if($request->id) {
             $cart = session()->get('cart');
+            $data['cartItemName'] = $cart[$request->id]['name'];
             if(isset($cart[$request->id])) {
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            return response()->json($cart);
+            $data['cart'] = session()->get('cart',[]);
+            $view3 = view('cart.list-cart-ajax', $data)->render();
+            $view2 = view('layouts.product.countpro', $data)->render();
+            return response()->json([
+                'html3' => $view3,
+                'html2' => $view2,
+            ]);
         }
     }
 }

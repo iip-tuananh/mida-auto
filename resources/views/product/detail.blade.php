@@ -132,37 +132,11 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                    <span class="special-price m-0">{{number_format($priceDiscount)}}₫</span>
                                    <del class="old-price ml-2">{{number_format($product->price)}}₫</del>
                                </div>
-                               <form action="/cart/add" method="post" enctype="multipart/form-data">
-                                   <input type="hidden" name="productAlias" value="xiaomi-redmi-note-11-pro-plus-5g" />
+                               <form >
+                              
                                    <div id="o_sw_buy" class="mobile_open_box_swatch">
                                        <div class="d-flex align-items-start flex-column">
                                            <div class="product-control w-100">
-                                               {{-- <div class="header font-weight-bold mb-2">Màu sắc</div>
-                                               <div class="d-sm-flex align-items-center swatch-color mb-2 swatch clearfix flex-wrap" data-option-index="0" data-value="">
-                                                
-                                                   <div data-value="Xanh l&#225;" class="swatch-element color Xanh lá position-relative mb-2 mr-2 float-left ">
-                                                       <input id="swatch-0-xanh-la" class="position-absolute w-100 m-0" type="radio" name="option-0" value="Xanh l&#225;" checked/>
-                                                       <div class="border rounded p-1 d-flex align-items-center dlabel">
-                                                           <label title="Xanh lá" for="swatch-0-xanh-la" class="sw-color-xanh-la m-0 bg_cl_none" style="background-image: url(//bizweb.dktcdn.net/thumb/small/100/459/533/products/11-pro-plus-green-1.jpg?v=1660672160733);background-size: contain;background-repeat:no-repeat;background-position:center;background-color: #fff;"></label>
-                                                           <small class="pl-1 pr-1 font-weight-bold">Xanh lá</small>
-                                                       </div>
-                                                       <div class="product-variation__tick position-absolute">
-                                                           <svg enable-background="new 0 0 12 12" class="icon-tick-bold">
-                                                               <use href="#svg-tick" />
-                                                           </svg>
-                                                       </div>
-                                                   </div>
-                                                 
-                                               </div> --}}
-                                               {{-- <div class="box-variant clearfix  d-none ">
-                                                   <fieldset class="form-group">
-                                                       <select id="product-selectors" class="custom-select form-control" name="variantId" style="display:none">
-                                                           <option selected="selected" value="70103789">70103789 Xanh lá - 8.890.000₫</option>
-                                                           <option  value="70103790">70103790 Xanh dương - 8.890.000₫</option>
-                                                           <option  value="70103791">70103791 Xám - 8.890.000₫</option>
-                                                       </select>
-                                                   </fieldset>
-                                               </div> --}}
                                                <div class="product-quantity d-sm-flex align-items-center clearfix">
                                                    <header class="font-weight-bold mb-2" style="min-width: 100px;">Số lượng </header>
                                                    <div class="custom-btn-number form-inline border-0">
@@ -182,16 +156,36 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                            </div>
                                        </div>
                                        <div class="pt-2 pb-2 mb-2 d-flex gap_8 mxs_100">
-                                           <button type="button" class=" btn d-flex w-100 justify-content-center flex-column align-items-center rounded pt-2 pb-2 product-action_buynow js-buynow sitdown modal-open position-relative">
-                                           <span class="text-uppercase font-weight-bold">Mua ngay</span>
-                                           <small>(Giao tận nơi hoặc lấy tại cửa hàng)</small>
-                                           </button>
-                                           <button type="button" class=" mb-2 mb-lg-0 btn d-flex justify-content-center flex-column align-items-center rounded p-2 product-action_buy js-addToCart modal-open font-weight-bold position-relative">
-                                               <svg width="20" height="20">
-                                                   <use href="#svg-shopping-cart" />
-                                               </svg>
-                                               <small class="ml-2 mr-2 button__text">Thêm vào giỏ</small>
-                                           </button>
+                                           
+                                           <button data-url="{{route('addToCart',['id'=>$product->id])}}" type="button" class=" add_to_cart btn d-flex w-100 justify-content-center flex-column align-items-center rounded pt-2 pb-2 product-action_buynow sitdown modal-open position-relative">
+                                            
+                                            <i class="fa-solid fa-cart-plus"></i>
+                                            <small class="ml-2 mr-2 button__text">Thêm vào giỏ</small>
+                                        </button>
+                                        <button onclick="window.location.href='tel:{{$setting->phone1}}'" type="button" class=" mb-2 mb-lg-0 btn d-flex justify-content-center flex-column align-items-center rounded p-2   modal-open font-weight-bold position-relative">
+                                            <span class="text-uppercase font-weight-bold">Liên hệ</span>
+                                       
+                                        </button>
+                                           <script>
+                                            $('.add_to_cart').click(function (e) { 
+                                                e.preventDefault();
+                                                var url = $(this).data('url');
+                                                var quantity = $('input[name="quantity"]').val();
+                                                $.ajax({
+                                                    type: "get",
+                                                    url: url,
+                                                    data: {
+                                                        quantity :quantity,
+                                                    },
+                                                    success: function (data) {
+                                                       $('.count-item').html(data.html2);
+                                                       $.notify("Thêm vào giỏ hàng thành công", "success"
+			);
+                                                    
+                                                    }
+                                                });
+                                            });
+                                        </script>
                                            <a href="tel:1900123321" class="btn_out mb-2 mb-lg-0 btn d-none w-100 justify-content-center flex-column align-items-center rounded pt-2 pb-2 sitdown product-action_buynow font-weight-bold text-white position-relative">
                                            <span class="text-uppercase font-weight-bold">Cháy hàng</span>
                                            <small>(Vui lòng liên hệ trực tiếp)</small>

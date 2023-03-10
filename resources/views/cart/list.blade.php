@@ -8,274 +8,147 @@ Giỏ hàng của bạn
 {{url(''.$banners[0]->image)}}
 @endsection
 @section('css')
-<link href="{{asset('frontend/css/cartpage.scss.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="{{asset('frontend/css/cart_style.scss.css')}}">
 @endsection
 @section('js')
 <script>
-$(function() {
-   $('.submit-pc').on('click', function(e) {
+   $('.remove_item_cart').click(function (e) { 
       e.preventDefault();
-      let urlUpdateCart = $('.input_qty_pr').data('url');
-      let id = $(this).parent('.input_qty_pr').data('id');
-      let quantityPc = $(this).parent('.input_qty_pr').find('input#qtyItem'+id).val();
-      // alert(quantityPc);
-      if (quantityPc){
+         var id = $(this).data('id');
+         var url = $(this).data('url');
          $.ajax({
-            type: 'get',
-            url: urlUpdateCart,
-            data :{
-                  id: id,
-                  quantity : quantityPc
+            type: "get",
+            url: url,
+            data: {
+               id:id,
             },
-            success: function(data){
-                  window.location.reload();
-            },
-            error: function(data){
-
+            success: function (data) {
+               $('.listcartajax').html(data.html3);
+               $('.count-item').html(data.html2);
             }
          });
-      };
    });
-   $('.submit-mobile').on('click', function(e) {
-      e.preventDefault();
-      let urlUpdateCart = $('.txt_center').data('url');
-      let id = $(this).parent('.txt_center').data('id');
-      let quantityMb = $(this).parent('.txt_center').find('input#qtyMobile'+id).val();
-      // alert(quantityMb);
-      if (quantityMb){
-         $.ajax({
-            type: 'get',
-            url: urlUpdateCart,
-            data :{
-                  id: id,
-                  quantity : quantityMb
-            },
-            success: function(data){
-                  window.location.reload();
-            },
-            error: function(data){
-
-            }
-         });
-      };
-   });
-   $('.delete-from-cart').on('click', function(e) {
-      e.preventDefault();
-      let urlRemoveCart = $('.main-cart-page').data('url');
-      let id = $(this).data('id');
-      $.ajax({
-         type: 'get',
-         url: urlRemoveCart,
-         data: {
-            id: id
-         },
-         success: function(data) {
-            window.location.reload();
-            $.notify("Xóa sản phẩm thành công!", "success");
-         },
-         error: function(data) {
-
-         }
-      })
-   });
-})
+   
+   function btnMinus(id,url) {
+    var id = id;
+    var result = document.getElementById('qty'+id); var qtypro = result.value; if( !isNaN( qtypro ) && qtypro > 1 ) result.value--;
+    var quantity = result.value;
+    var url = url;
+    $.ajax({
+        type:'get',
+        url:url,
+        data: {id:id, quantity:quantity},
+        success: function(data) {
+         $('.listcartajax').html(data.html3);
+        }
+    })
+   }
+   function btnPlus(id , url) {
+    var id = id;
+    console.log(id);
+    var result = document.getElementById('qty'+id); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;
+    var quantity = result.value;
+    var url = url;
+    $.ajax({
+        type:'get',
+        url:url,
+        data: {id:id, quantity:quantity},
+        success: function(data) {
+         $('.listcartajax').html(data.html3);
+        }
+    })
+   }
 </script>
 @endsection
 @section('content')
-<div class="bodywrap clearfix">
-   <section class="bread-crumb" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%,rgba(255,255,255,0.2) 100%), url({{$banners[0]->image}});">
-      <span class="crumb-border"></span>
-      <div class="container">
-         <div class="rows">
-            <div class="col-xs-12 a-left">
-               <p class="title_h1 clearfix">
+<div class="col-right position-relative">
+   <div class="contentWarp ">
+      <div class="breadcrumbs bg-white">
+         <div class="container position-relative">
+            <ul class="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
+               <li class="home">
+                  <a href="{{route('home')}}" title="Trang chủ">
+                     <svg width="12" height="10.633">
+                        <use href="#svg-home"></use>
+                     </svg>
+                     Trang chủ
+                  </a>
+                  <span class="slash-divider ml-2 mr-2">/</span>
+               </li>
+               <li>Giỏ hàng</li>
+            </ul>
+         </div>
+      </div>
+      <section class="cart-layout mt-3 mb-3">
+         <div class="container" style="min-height: 350px">
+            <div class="rounded p-2 p-md-3 bg-white">
+               <h1 class="cart-name font-weight-bold text-uppercase pb-2 pt-2 mb-2">
                   Giỏ hàng
-               </p>
-               <ul class="breadcrumb" >
-                  <li class="home">
-                     <a  href="/" ><span >Trang chủ</span></a>						
-                     <span class="mr_lr">&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</span>
-                  </li>
-                  <li><strong ><span>Giỏ hàng</span></strong></li>
-               </ul>
-            </div>
-         </div>
-      </div>
-   </section>
-   @if (isset($cart))
-   <section class="main-cart-page main-container col1-layout" data-url="{{ route('removeCart')}}">
-      <div class="main container cartpcstyle">
-         <div class="wrap_background_aside">
-            <div class="header-cart">
-               <div class="header-cart title_cart_pc hidden-sm hidden-xs">
-               </div>
-            </div>
-            <div class="col-main cart_desktop_page cart-page">
-               <div class="cart page_cart hidden-xs hidden-sm ">
-                  <div class="col-lg-12 col-xl-12 col-md-12">
-                     <h1 class="title_cart">
-                        <span>Giỏ hàng của bạn</span>
-                     </h1>
-                  </div>
-                     <div class="bg-scroll">
-                        <div class="cart-thead hidden">
-                           <div style="width: 22%" class="a-left">Ảnh sản phẩm</div>
-                           <div style="width: 28%" class="a-left">Tên sản phẩm</div>
-                           <div style="width: 15%" class="a-left">Giá bán lẻ</div>
-                           <div style="width: 10%" class="a-center">Số lượng</div>
-                           <div style="width: 15%" class="a-center">Tạm tính</div>
-                           <div style="width: 10%" class="a-center"></div>
-                        </div>
-                        <div class="cart-tbody">
-                           @php
-                              $totalPrice = 0;
-                              $priceItem = 0;
-                              $countPro = 0;
-                           @endphp
-                           @foreach ($cart as $item)
-                           @php
-                              $pricePro = $item['price'] - $item['price'] * ($item['discount']/100);
-                              $totalPrice += $item['quantity'] * $pricePro ;
-                           @endphp
-                              <div class="item-cart productid-{{$item['id']}}">
-                                 <div style="width: 15%" class="image">
-                                    <a class="product-image a-left" title="{{languageName($item['name'])}}" href="{{route('detailProduct',['cate'=>$item['cate_slug'], 'slug'=>$item['slug']])}}">
-                                    <img width="75" height="auto" alt="{{languageName($item['name'])}}" src="{{$item['image']}}">
-                                    </a>
-                                 </div>
-                                 <div style="width: 30%" class="a-left contentcart">
-                                    <h3 class="product-name"> <a class="text2line" href="{{route('detailProduct',['cate'=>$item['cate_slug'], 'slug'=>$item['slug']])}}" title="{{languageName($item['name'])}}">{{languageName($item['name'])}}</a> </h3>
-                                    <span class="cart-prices">
-                                    <span class="prices">{{number_format($pricePro)}}₫</span> 
-                                    </span>
-                                    @if (isset($item['color']))
-                                    <span class="variant-title">{{$item['color']}}</span>
-                                    @endif
-                                 </div>
-                                 <div style="width: 25%" class="a-center">
-                                    <div class="input_qty_pr" data-id="{{$item['id']}}" data-url="{{route('updateCart')}}">
-                                       <input type="text" maxlength="3" readonly="" min="0" class="check_number_here input-text number-sidebar input_pop input_pop qtyItem{{$item['id']}}" id="qtyItem{{$item['id']}}" name="Lines" size="4" value="{{$item['quantity']}}">
-                                       <button onclick="var result = document.getElementById('qtyItem{{$item['id']}}'); var qtyItem{{$item['id']}} = result.value; if( !isNaN( qtyItem{{$item['id']}} )) result.value++;return false;" class="increase_pop items-count btn-plus submit-pc" type="button"><i class="fas fa-plus-circle"></i></button>
-                                       <button onclick="var result = document.getElementById('qtyItem{{$item['id']}}'); var qtyItem{{$item['id']}} = result.value; if( !isNaN( qtyItem{{$item['id']}} ) &amp;&amp; qtyItem{{$item['id']}} > 1 ) result.value--;return false;" class="reduced_pop items-count btn-minus submit-pc" type="button"><i class="fas fa-minus-circle"></i></button>
-                                    </div>
-                                 </div>
-                                 <div style="width: 12%" class="a-center">
-                                    <span class="cart-price">
-                                    <span class="price">{{number_format($pricePro * $item['quantity'])}}₫</span> 
-                                    </span>
-                                 </div>
-                                 <div style="width: 18%" class="a-center">
-                                    <a class="remove-itemx remove-item-cart delete-from-cart" title="Xóa" href="javascript:;" data-id="{{$item['id']}}">
-                                    <span><i class="fa fa-times"></i></span>
-                                    </a>
-                                 </div>
-                              </div>
-                           @endforeach
-                        </div>
-                     </div>
-                  <div class="col-lg-12 col-xl-12 col-md-12">
-                     <div class="wrapbottomcart">
-                        <div class="section continued">
-                           <div class="bg_cart shopping-cart-table-total">
-                              <div class="table-total">
-                                 <table class="table">
-                                    <tbody>
-                                       <tr>
-                                          <td class="total-text f-left">Tổng tiền</td>
-                                          <td class="txt-right totals_price price_end f-right">{{number_format($totalPrice)}}₫</td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                              </div>
-                              <a href="{{route('allProduct')}}" class="form-cart-continue"><i class="fas fa-reply"></i>Tiếp tục mua hàng</a>
-                              <a href="{{ route('checkout') }}" class="btn-checkout-cart button_checkfor_buy"><i class="fas fa-check"></i>Tiến hành thanh toán</a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="wrap_background_aside padding-top-15 margin-bottom-40 padding-left-0 padding-right-0 cartmbstyle">
-         <div class="cart-mobile container">
-               <div class="header-cart">
-                  <div class="title-cart title_cart_mobile">
-                     <h3>Giỏ hàng</h3>
-                  </div>
-               </div>
-               <div class="header-cart-content" style="background:#fff;">
-                  <div class="cart_page_mobile content-product-list">
+               </h1>
+               @php
+               $totalPrice = 0;
+               @endphp
+               @if(count($cart)>0)
+               <div class="row js-cart listcartajax">
+                  <div class="basket cart__basket col-md-8 ">
                      @foreach ($cart as $item)
                      @php
-                        $pricePro = $item['price'] - $item['price'] * ($item['discount']/100);
+                     $pricePro = $item['price'] - $item['price'] * ($item['discount']/100);
+                     $totalPrice += $item['quantity'] * $pricePro ;
                      @endphp
-                     <div class="item-product item productid-{{$item['id']}} ">
-                        <div class="item-product-cart-mobile">
-                           <a href="{{route('detailProduct',['cate'=>$item['cate_slug'], 'slug'=>$item['slug']])}}">	
-                           </a><a class="product-images1" href="" title="{{languageName($item['name'])}}">
-                           <img width="80" height="150" src="{{$item['image']}}" alt="{{languageName($item['name'])}}">
-                           </a>
-                        </div>
-                        <div class="title-product-cart-mobile">
-                           <h3>
-                              <a href="{{route('detailProduct',['cate'=>$item['cate_slug'], 'slug'=>$item['slug']])}}" title="{{languageName($item['name'])}}">{{languageName($item['name'])}}</a>
-                              @if (isset($item['color']))
-                              <em style="font-size:11px; display:block">{{$item['color']}}</em>
-                              @endif
-                           </h3>
-                           <p>
-                              Giá: <span>{{number_format($pricePro)}}₫</span>
+                     <div class="d-flex cart__basket__item product mb-4 rounded ux-card position-relative clearfix">
+                        <img src="{{$item['image']}}" class="js-img position-absolute" alt="undefined">
+                        <div class="col-12 d-flex p-0">
+                           <p class="item-title clearfix mb-2">
+                              <a href="/xiaomi-redmi-note-11-pro-plus-5g" title="{{languageName($item['name'])}}" class="js-titlte font-weight-bold">{{languageName($item['name'])}}</a>
                            </p>
+                           <span class="js-price  ml-auto text-right clearfix"><del style="color:black">{{number_format($item['price'])}}</del>&nbsp;₫</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <span class="js-price price font-weight-bold  clearfix">{{number_format($pricePro)}}&nbsp;₫</span>
                         </div>
-                        <div class="select-item-qty-mobile">
-                           <div class="txt_center" data-id="{{$item['id']}}" data-url="{{route('updateCart')}}">
-                              <button onclick="var result = document.getElementById('qtyMobile{{$item['id']}}'); var qtyMobile{{$item['id']}} = result.value; if( !isNaN( qtyMobile{{$item['id']}} ) &amp;&amp; qtyMobile{{$item['id']}} > 1 ) result.value--;return false;" class="reduced items-count btn-minus submit-mobile" type="button"><i class="fas fa-minus-circle"></i></button>
-                              <input type="text" maxlength="3" min="1" class="input-text number-sidebar qtyMobile{{$item['id']}}" id="qtyMobile{{$item['id']}}" name="Lines" size="4" value="{{$item['quantity']}}">
-                              <button onclick="var result = document.getElementById('qtyMobile{{$item['id']}}'); var qtyMobile{{$item['id']}} = result.value; if( !isNaN( qtyMobile{{$item['id']}} )) result.value++;return false;" class="increase items-count btn-plus submit-mobile" type="button"><i class="fas fa-plus-circle"></i></button>
-                           </div>
-                           <a class="button remove-item remove-item-cart delete-from-cart" href="javascript:;" data-id="{{$item['id']}}">Xoá</a>
+                        <div class="input-group-btn " style="display:flex">
+                           <button
+                           onclick="btnMinus('{{$item['id']}}','{{route('updateCart')}}')"
+                           class="reduced_pop items-count btn-minus btn btn-default bootstrap-touchspin-down"
+                           type="button">–</button>
+                           <input
+                              type="text"
+                              maxlength="12" min="1" disabled=""
+                              class="form-control quantity-r2 quantity js-quantity-product input-text number-sidebar input_pop input_pop qtyItem27698914"
+                              id="qty{{$item['id']}}" name="Lines"
+                              size="4" value="{{$item['quantity']}}">
+                              <button
+                              onclick="btnPlus('{{$item['id']}}','{{route('updateCart')}}')"
+                              class="increase_pop items-count btn-plus btn btn-default bootstrap-touchspin-up"
+                              type="button">+</button>
+                           
                         </div>
+                        <button data-url="{{route('removeCart')}}" data-id="{{$item['id']}}" class="btn btn-outline-danger remove ml-auto remove_item_cart" title="Xoá" data-variantid="70103789">Xoá</button>
                      </div>
                      @endforeach
                   </div>
-                  <div class="header-cart-price">
-                     <div class="title-cart">
-                        <h3 class="text-xs-left">Tổng tiền</h3>
-                        <a class="text-xs-right  totals_price_mobile">{{number_format($totalPrice)}}₫</a>
-                     </div>
-                     <div class="checkout">
-                        <button class="btn-proceed-checkout-mobile" title="Tiến hành thanh toán" type="button" onclick="window.location.href='{{ route('checkout') }}'">
-                        <span>Tiến hành thanh toán</span></button>
-                        <button href="" class="btn btn-white f-left" title="Tiếp tục mua hàng" type="button" onclick="window.location.href='{{ route('allProduct') }}'">
-                        <span>Tiếp tục mua hàng</span>
-                        </button>
-                     </div>
+                  <div class="summary cart__summary col-md-4">
+                     <dl class="total mb-4 p-3 d-flex align-items-center clearfix flex-wrap justify-content-end rounded">
+                        <dt class="text-uppercase font-weight-bold roun" style="color: black">Tổng tiền</dt>
+                        <dd class="cart__summary_total font-weight-bold ml-auto mb-0">{{number_format($totalPrice)}}&nbsp;₫</dd>
+                     </dl>
+                     <a class="btn btn-block btn-checkout btn-danger rounded mb-3 text-uppercase font-weight-bold pt-3 pb-3" href="{{route('checkout')}}" role="button">Thanh toán</a>
+                     <hr>
+                     <a class="btn btn-block btn-clearcart js-clearcart btn-dark rounded w-100 font-weight-bold mb-4" href="{{route('home')}}" role="button" >Tiếp tục mua hàng</a>
                   </div>
                </div>
-         </div>
-      </div>
-   </section>
-   @else
-   <section class="main-cart-page main-container col1-layout" data-url="{{ route('removeCart')}}">
-      <div class="main container cartpcstyle">
-         <div class="wrap_background_aside">
-            <div class="header-cart">
-               <div class="header-cart title_cart_pc hidden-sm hidden-xs">
-               </div>
-            </div>
-            <div class="col-main cart_desktop_page cart-page">
-               <div class="cart page_cart hidden-xs hidden-sm row ">
-                  <div class="col-lg-12 col-xl-12 col-md-12">
-                     <h1 class="title_cart">
-                        <span>Chưa có sản phẩm nào trong giỏ hàng của bạn!</span>
-                     </h1>
+               @else
+               <div class="basket cart__basket col-md-12 ">
+                  <div class="d-flex cart__basket__item product mb-4 rounded ux-card position-relative clearfix">
+                     Hiện tại không có sản phẩm nào trong giỏ hàng
                   </div>
                </div>
+               <div class="summary cart__summary col-md-12">
+                  <a class="btn btn-block btn-clearcart js-clearcart btn-dark rounded w-100 font-weight-bold mb-4" href="{{route('home')}}" role="button" >Tiếp tục mua hàng</a>
+               </div>
+               @endif
             </div>
          </div>
-      </div>
-   </section>
-   @endif
+      </section>
+   </div>
 </div>
 @endsection

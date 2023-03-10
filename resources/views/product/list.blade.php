@@ -21,7 +21,7 @@ Danh sách {{$title}}
          <div class="container position-relative">
             <ul class="breadcrumb align-items-center m-0 pl-0 pr-0 small pt-2 pb-2">
                <li class="home">
-                  <a href="/" title="Trang chủ">
+                  <a href="{{route('home')}}" title="Trang chủ">
                      <svg width="12" height="10.633">
                         <use href="#svg-home" />
                      </svg>
@@ -38,26 +38,17 @@ Danh sách {{$title}}
             <div class="rounded p-2 p-md-3 bg-white">
                <div class="banner_collection mb-3 swiper-container position-relative">
                   <div class="swiper-wrapper">
-                     
+                     @if(isset($cate_img))
                      <div class="swiper-slide text-center effect-ming">
                         <a href="javascrip:;" class="rounded modal-open position-relative w-100 m-0 ratio1by6 d-block aspect sitdown" title="Điện thoại">
                         <img src="{{$cate_img}}" alt="Điện thoại" class="d-block img img-cover position-absolute" />
                         </a>
                      </div>
-                   
+                   @endif
                   </div>
                   <div class="swiper-button-prev mbc_prev d-none d-md-flex"></div>
                   <div class="swiper-button-next mbc_next d-none d-md-flex"></div>
                </div>
-               {{-- <div class="aside-content d-none d-lg-block bg-main rounded-10 mb-3">
-                  <ul class="nav navbar-pills p-2">
-                     @foreach ($cateno->TypeCate as $item)
-                        <li class="nav-item position-relative ">
-                           <a title="Android" class="nav-link font-weight-bold text-white" href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20product_type:(Android)&page=1&view=grid">{{languageName($item->name)}}</a>
-                        </li>
-                     @endforeach
-                  </ul>
-               </div> --}}
                <h1 class="collection-name font-weight-bold mb-lg-3 text-uppercase pb-2 pt-2 mb-2 d-none">
                   Điện thoại
                </h1>
@@ -67,12 +58,6 @@ Danh sách {{$title}}
                         <ul class="aside-content filter-vendor list-unstyled mb-0 d-flex align-items-baseline gap-10">
                            <li>
                               <span class="h6 title-head m-0 pt-2 pb-2 font-weight-bold">Sắp xếp theo: </span>
-                           </li>
-                           <li class="filter-item filter-item--check-box">
-                              <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
-                              <input type="radio" class="d-none sortby-default" name="sortBy" onclick="sortby('default')">
-                              <span class="fa2 px-2 py-1 rounded border">Mặc định</span> 
-                              </label>
                            </li>
                            <li class="filter-item filter-item--check-box">
                               <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
@@ -292,24 +277,15 @@ Danh sách {{$title}}
                         <div class="aside-filter mb-3 modal-open w-100 pr-0 pr-md-2 order-lg-3 clearfix">
                            <div class="filter-container row">
                               <aside class="aside-item filter-price mb-3 col-12 col-sm-12 col-lg-12">
-                                 <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Lọc giá</div>
+                                 <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Khoảng giá</div>
                                  <div class="aside-content filter-group mb-1">
                                     <div class="row">
-                                       <div class="col-6 col-lg-12 col-xl-6">
-                                          <label class="d-flex align-items-baseline pt-1 pb-1 m-0" for="filter-khoanggia-tu">
-                                          <input type="text" id="filter-khoanggia-tu" class="form-control rounded pr-0" value="" placeholder="Giá tối thiểu">
-                                          </label>
-                                       </div>
-                                       <div class="col-6 col-lg-12 col-xl-6">
-                                          <label class="d-flex align-items-baseline pt-1 pb-1 m-0" for="filter-khoanggia-den">
-                                          <input type="text" id="filter-khoanggia-den" class="form-control rounded pr-0" value="" placeholder="Giá tối đa">
-                                          </label>
-                                       </div>
+                                   
                                     </div>
                                  </div>
-                                 <a class="btn btn-primary js-filter-pricerange font-weight-bold rounded-10" href="javascript:;" data-value="(>=0 AND <=0)">Áp dụng</a>
+                                 {{-- <a class="btn btn-primary js-filter-pricerange font-weight-bold rounded-10" href="javascript:;" data-value="(>=0 AND <=0)">Áp dụng</a> --}}
                               </aside>
-                              <aside class="aside-item filter-vendor mb-3 col-12 col-sm-4 col-lg-12">
+                              {{-- <aside class="aside-item filter-vendor mb-3 col-12 col-sm-4 col-lg-12">
                                  <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Thương hiệu</div>
                                  <div class="aside-content filter-group">
                                     <ul class="filter-vendor filter-grid list-unstyled m-0">
@@ -345,8 +321,8 @@ Danh sách {{$title}}
                                        </li>
                                     </ul>
                                  </div>
-                              </aside>
-                              <aside class="aside-item filter-type mb-3 col-12 col-sm-4 col-lg-12">
+                              </aside> --}}
+                              {{-- <aside class="aside-item filter-type mb-3 col-12 col-sm-4 col-lg-12">
                                  <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Loại</div>
                                  <div class="aside-content filter-group">
                                     <ul class="filter-type d-flex flex-wrap gap_8 list-unstyled m-0">
@@ -489,7 +465,7 @@ Danh sách {{$title}}
                                        </li>
                                     </ul>
                                  </div>
-                              </aside>
+                              </aside> --}}
                            </div>
                         </div>
                         <div class="filter-container__selected-filter position-relative d-none order-lg-2 rounded-10 p-2 mb-3">

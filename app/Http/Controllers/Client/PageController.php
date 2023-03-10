@@ -29,9 +29,11 @@ class PageController extends Controller
         return view('tra-cuu-bao-hanh');
     }
     public function resultTraCuu(Request $request) {
-        $phone = $request->phone;
-        $bienso = $request->bienso;
+      
+        $phone = $request->phonexe;
+        $bienso = $request->bienxe;
         $data['customerService'] = ReviewCus::where('phone', '=', $phone)->orWhere('license_plate', '=', $bienso)->first();
+        session()->put('thongtinxe', $data);
         $html8 = view('layouts.product.tra-cuu', $data)->render();
         return response()->json([
             'status' => 200,

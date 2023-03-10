@@ -70,6 +70,7 @@ class AppServiceProvider extends ServiceProvider
             $helpCustomHeaderTop = PageContent::where(['status'=>2, 'type'=>'ho-tro-khach-hang', 'language'=>'vi'])->get(['title', 'slug']);
             $helpCustomFooter = PageContent::where(['type'=>'ho-tro-khach-hang', 'language'=>'vi'])->where('status', ">", 0)->get(['title', 'slug']);
             $cartcontent = session()->get('cart', []);
+            $thongtinxe = session()->get('thongtinxe', []);
             $viewold = session()->get('viewoldpro', []);
             $compare = session()->get('compareProduct', []);
             $blogCate = BlogCategory::with([
@@ -107,7 +108,8 @@ class AppServiceProvider extends ServiceProvider
                 'aboutUsMainMenu'=>$aboutUsMainMenu,
                 'aboutUsFooter'=>$aboutUsFooter,
                 'helpCustomFooter'=>$helpCustomFooter,
-                'serviceCategory'=>$serviceCategory
+                'serviceCategory'=>$serviceCategory,
+                'thongtinxe'=>$thongtinxe,
                 ]);    
         });  
     }

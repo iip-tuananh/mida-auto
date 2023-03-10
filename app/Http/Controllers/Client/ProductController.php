@@ -27,7 +27,7 @@ class ProductController extends Controller
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$danhmuc])
         ->orderBy('id','DESC')
         ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description')
-        ->paginate(1);
+        ->paginate(12);
         $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','slug']);
         $cate_id = $data['cateno']->id;
         $cate_img = $data['cateno']->avatar;
