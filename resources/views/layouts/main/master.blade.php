@@ -412,6 +412,20 @@
          );
       </script>
       @endif
-    
+    <script>
+      $(window).scroll(function() {
+  // kiểm tra khoảng cách scroll từ top
+  if ($(this).scrollTop() >= 200) {
+    // nếu khoảng cách lớn hơn hoặc bằng 200px
+    // thì thêm class
+    $('.navigation-block ').addClass('dungimdi');
+  } else {
+    // nếu khoảng cách nhỏ hơn 200px
+    // thì xóa class
+    $('.class-name').removeClass('dungimdi');
+  }
+});
+
+    </script>
    </body>
 </html>

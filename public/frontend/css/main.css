@@ -160,6 +160,12 @@
 .bg-vang{
 
 }
+.dungimdi{
+    position: fixed !important;
+    top:0px;
+    width: 100%;
+    z-index: 1000;
+}
 .count-item{
     background-color: yellow;
     width: 20px;
