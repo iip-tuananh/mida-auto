@@ -421,14 +421,14 @@ Danh sách {{$title}}
                                     </ul>
                                  </div>
                               </aside>
-                              <aside class="aside-item filter-tag-style-3 tag-filtster mb-3 col-12 col-sm-4 col-lg-12">
-                                 <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Tính năng camera</div>
+                              {{-- <aside class="aside-item filter-tag-style-3 tag-filtster mb-3 col-12 col-sm-4 col-lg-12">
+                                 <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Tính năng </div>
                                  <div class="aside-content filter-group">
                                     <ul class="d-flex flex-wrap gap_8 list-unstyled m-0">
                                        <li class="filter-item filter-item--check-box">
                                           <label class="d-flex align-items-baseline m-0" for="filter-chup-xoa-phong">
                                           <input type="checkbox" id="filter-chup-xoa-phong" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Chụp xóa phông)" data-operator="OR">
-                                          <span class="fa2 px-2 py-1 rounded border">Chụp xóa phông</span>
+                                          <span class="fa2 px-2 py-1 rounded border">Tính Năng 1</span>
                                           </label>
                                        </li>
                                        <li class="filter-item filter-item--check-box">
@@ -465,7 +465,7 @@ Danh sách {{$title}}
                                        </li>
                                     </ul>
                                  </div>
-                              </aside>
+                              </aside> --}}
                            </div>
                         </div>
                         <div class="filter-container__selected-filter position-relative d-none order-lg-2 rounded-10 p-2 mb-3">
