@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function allProduct()
     {
         $data['list'] = Product::where(['status'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug')
-        ->paginate(1);
+        ->paginate(12);
         $data['title'] = "Tất cả sản phẩm";
         return view('product.list',$data);
     }
