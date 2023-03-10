@@ -322,7 +322,7 @@ Danh sách {{$title}}
                                     </ul>
                                  </div>
                               </aside> --}}
-                              {{-- <aside class="aside-item filter-type mb-3 col-12 col-sm-4 col-lg-12">
+                              <aside class="aside-item filter-type mb-3 col-12 col-sm-4 col-lg-12">
                                  <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Loại</div>
                                  <div class="aside-content filter-group">
                                     <ul class="filter-type d-flex flex-wrap gap_8 list-unstyled m-0">
@@ -465,7 +465,7 @@ Danh sách {{$title}}
                                        </li>
                                     </ul>
                                  </div>
-                              </aside> --}}
+                              </aside>
                            </div>
                         </div>
                         <div class="filter-container__selected-filter position-relative d-none order-lg-2 rounded-10 p-2 mb-3">
