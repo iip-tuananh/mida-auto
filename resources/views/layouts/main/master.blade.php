@@ -422,7 +422,7 @@
   } else {
     // nếu khoảng cách nhỏ hơn 200px
     // thì xóa class
-    $('.class-name').removeClass('dungimdi');
+    $('.navigation-block').removeClass('dungimdi');
   }
 });
 
