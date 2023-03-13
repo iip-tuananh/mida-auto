@@ -133,7 +133,7 @@
 
    <section id="flash_sale" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4" style="--cl_tit_fl: #ffd641;--bg_fl_1: #d70018;--bg_fl_2: #ff8a97;">
       <div class="container">
-            <div class="rounded bg-flash modal-open p-2">
+            <div class="rounded bg-flash modal-open p-2 bor-20">
             <div class="time_box row align-items-center button-custom">
                <div class=" col-12 col-lg-9 mb-2 mb-lg-0">
                   <div class="row align-items-center">
@@ -610,7 +610,7 @@
    </section> --}}
    <section id="video" class="m_blog mt-3 mt-lg-4 mb-3 mb-lg-4">
       <div class="container">
-            <div class="rounded bg-white pd-2 bg-xam">
+            <div class="rounded bg-white pd-2 bg-xam bor-20">
             <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
                <a class="position-relative" href="mew-reviews" title="Dịch vụ">Dịch vụ</a>
             </h2>
