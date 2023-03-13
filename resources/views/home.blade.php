@@ -131,7 +131,7 @@
       });
    </script>
 
-   <section id="flash_sale" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4" style="--cl_tit_fl: #ffd641;--bg_fl_1: #d70018;--bg_fl_2: #ff8a97;">
+   <section id="flash_sale" class="m_product " style="--cl_tit_fl: #ffd641;--bg_fl_1: #d70018;--bg_fl_2: #ff8a97;">
       <div class="container">
             <div class="rounded bg-flash modal-open p-2 bor-20">
             <div class="time_box row align-items-center button-custom">
@@ -221,7 +221,7 @@
             }
       });
    </script>
-   {{-- <section id="product_2" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
+   {{-- <section id="product_2" class="m_product ">
       <div class="container">
             <div class="rounded bg-white p-2 js-tab-product">
             <div class="tab_link d-flex p-2 gap_8">
@@ -713,7 +713,7 @@
    @foreach ($categoryhome as $key=>$cate)
    @if (count($cate->product) > 0)
       @if ($key%2==0)
-      <section id="{{$cate->id}}" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4 ">
+      <section id="{{$cate->id}}" class="m_product  ">
          <div class="container ">
                <div class="rounded  p-2 ">
                <div class=" head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row bg-nen">
@@ -790,7 +790,7 @@
          });
       </script>
       @else
-      <section id="{{$cate->id}}"  class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
+      <section id="{{$cate->id}}"  class="m_product ">
          <div class="container">
                <div class="rounded bg-nen p-2">
                <div class="head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row ">
@@ -942,7 +942,7 @@
       @endif
    @endif
    @endforeach
-   {{-- <section id="product_5" class="m_product mt-3 mt-lg-4 mb-3 mt-lg-4">
+   {{-- <section id="product_5" class="m_product ">
       <div class="container">
             <div class="rounded bg-white p-2">
             <div class="head_box pt-2 pl-2 pr-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row">
