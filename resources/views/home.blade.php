@@ -650,7 +650,7 @@
          </h2>
          <br>
       
-            <div class="mew_bts_cate rounded pl-3 pr-3 pt-3 pb-3">
+            <div class="mew_bts_cate rounded pl-3 pr-3 pt-3 pb-3 bor-20">
             <div class="cate-pro-home position-relative swiper-container ">
                <div class="swiper-wrapper ">
                   @foreach ($cateProHome as $cate)
