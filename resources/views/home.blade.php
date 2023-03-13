@@ -645,11 +645,13 @@
    </section>
    <section id="mew_cate_2" class="mew_cate_2 mt-3 mt-lg-4 mb-3 mb-lg-4" style="--cl_tit_trending: #333;--bg_trending_1: #ffecd2;--bg_trending_2: #fcb69f;">
       <div class="container">
+         <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
+            <a class="position-relative button-custom" href="mew-reviews" title="Dịch vụ">Danh mục sản phẩm</a>
+         </h2>
+         <br>
+      
             <div class="mew_bts_cate rounded pl-3 pr-3 pt-3 pb-3">
-               <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
-                  <a class="position-relative" href="mew-reviews" title="Dịch vụ">Danh mục sản phẩm</a>
-               </h2>
-            <div class="cate-pro-home position-relative swiper-container">
+            <div class="cate-pro-home position-relative swiper-container ">
                <div class="swiper-wrapper ">
                   @foreach ($cateProHome as $cate)
                      <div class=" swiper-slide ">
@@ -699,10 +701,10 @@
                   slidesPerView: 2
                },
                992: {
-                  slidesPerView: 3
+                  slidesPerView: 5
                },
                1200: {
-                  slidesPerView: 3
+                  slidesPerView: 5
                }
             }
          });
@@ -868,7 +870,7 @@
      position: absolute;
      width: 100%;
      height: 100%;
-     background: #222;
+     background:#0c48cd;
      left: 0;
      top: 0;
      border-radius: 10px;

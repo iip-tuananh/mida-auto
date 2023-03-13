@@ -79,6 +79,12 @@
    <div class="navigation-block mr-lg-auto d-none d-lg-block">
    <div class="container">
       <ul id="menu_pc" class="p-0 m-0 list-unstyled position-relative d-lg-flex">
+         <li class="level0 position-relative cls pt-1 pt-lg-2 pb-lg-2 pb-1 ">
+            <a href="{{route('home')}}" title="Trang chủ" class="font-weight-bold d-block pt-1 pb-1 pl-lg-3 pr-lg-3 pr-2 position-relative ">
+            Trang chủ
+            </a>
+         </li>
+         &nbsp;  &nbsp;
          <li class="level0 position-relative cls pt-1 pt-lg-2 pb-lg-2 pb-1 mega">
             <a href="{{route('allProduct')}}" title="Sản phẩm" class="font-weight-bold d-block pt-1 pb-1  pr-4 js-checkMenu position-relative ">
             Sản phẩm
@@ -113,11 +119,7 @@
                @endforeach
             </ul>
          </li>
-         <li class="level0 position-relative cls pt-1 pt-lg-2 pb-lg-2 pb-1 ">
-            <a href="{{route('home')}}" title="Trang chủ" class="font-weight-bold d-block pt-1 pb-1 pl-lg-3 pr-lg-3 pr-2 position-relative ">
-            Trang chủ
-            </a>
-         </li>
+        
          <li class="level0 position-relative cls pt-1 pt-lg-2 pb-lg-2 pb-1 ">
             <a href="{{route('aboutUs')}}" title="Giới thiệu" class="font-weight-bold d-block pt-1 pb-1 pl-lg-3 pr-lg-3 pr-2 position-relative ">
             Giới thiệu

@@ -157,6 +157,9 @@
     background-color: #00c2ff !important;
   
 }
+.bg-cus{
+    background-color: red !important;
+}
 .bg-vang{
 
 }
@@ -165,6 +168,8 @@
     top:0px;
     width: 100%;
     z-index: 1000;
+    background-color: #131f68;
+    transition: all 1s ease-in-out;
 }
 .count-item{
     background-color: yellow;
