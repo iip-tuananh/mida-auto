@@ -643,7 +643,7 @@
             </div>
       </div>
    </section>
-   <section id="mew_cate_2" class="mew_cate_2 mt-3 mt-lg-4 mb-3 mb-lg-4" style="--cl_tit_trending: #333;--bg_trending_1: #ffecd2;--bg_trending_2: #fcb69f;">
+   <section id="mew_cate_2" class="mew_cate_2 " style="--cl_tit_trending: #333;--bg_trending_1: #ffecd2;--bg_trending_2: #fcb69f;">
       <div class="container">
          <h2 class="title text-uppercase font-weight-bold position-relative pb-2  m-0">
             <a class="position-relative button-custom" href="mew-reviews" title="Dịch vụ">Danh mục sản phẩm</a>
