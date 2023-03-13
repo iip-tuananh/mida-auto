@@ -135,8 +135,8 @@ body {
 @media (orientation: portrait) {
     .menu_mobile #menu-mew {
         display:flex;
-        height: 100px;
-        margin-top: calc(100vh - 320px) !important;
+        height: 127px;
+        margin-top: calc(100vh - 350px) !important;
         box-shadow: 0px 0px 3px 0px #d70018
     }
 }
@@ -198,7 +198,7 @@ body {
 @media (orientation: portrait) {
     .menu_mobile #menu-mew .level0 .lv1 {
         width:100%;
-        height: calc(100% - 100px);
+        height: calc(100% - 128px);
         left: 0%
     }
 }

@@ -369,7 +369,7 @@ button {
 }
 
 .menubar {
-    background: transparent;
+    background: #000102;
     z-index: 10;
     min-height: 58px;
     top: 0 !important;

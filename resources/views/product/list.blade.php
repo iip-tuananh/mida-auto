@@ -94,12 +94,12 @@ Danh sách {{$title}}
                                
                        
                            </div>
-                           {{-- <ul class="pagination d-flex justify-content-center clearfix mt-4 mb-4">
+                           <ul class="pagination d-flex justify-content-center clearfix mt-4 mb-4">
                               <li class="page-item mr-1 ml-1 disabled"><a class="page-link rounded text-center" href="#" title="Trang trước">&#xab;</a></li>
                               <li class="active page-item disabled mr-1 ml-1"><a class="page-link rounded text-center" href="javascript:;" title="Trang 1">1</a></li>
                               <li class="page-item mr-1 ml-1"><a class="page-link rounded text-center" onclick="doSearch(2)" href="javascript:;" title="Trang 2">2</a></li>
                               <li class="page-item mr-1 ml-1"><a class="page-link rounded text-center" onclick="doSearch(2)" href="javascript:;" title="Trang sau">&#xbb;</a></li>
-                           </ul> --}}
+                           </ul>
                         </div>
                      </div>
                      {{-- <div class="category-gallery pb-3 pt-3">

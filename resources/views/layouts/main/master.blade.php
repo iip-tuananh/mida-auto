@@ -135,8 +135,16 @@
          <div class="d-lg-none ">
             <div class="tuan-flex">
                <div>
-                  <i class="fa-solid fa-list"></i>
+                  <i id="js-menu-toggle" class="fa-solid fa-list"></i>
                </div>
+               <script>
+                  $('#js-menu-toggle').click(function (e) { 
+                     e.preventDefault();
+                     $('#col-left-mew').toggleClass('active');
+                     $('#body_overlay').toggleClass('d-none');
+                     
+                  });
+               </script>
                <div>
                   <a href="{{$setting->facebook}}">
                   <img src="{{asset('frontend/images/icon-messenger.png.pagespeed.ce_.sSebhnGGgP.png')}}" alt="" class="img-mo">

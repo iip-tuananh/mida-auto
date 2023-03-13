@@ -165,10 +165,6 @@
    <div class="align-items-center menu_mobile h-100 position-relative">
       <ul id="menu-mew" class="p-0 m-0 list-unstyled d-lg-flex justify-content-lg-end">
          <li class="level0 d-block w-100 position-static">
-               <a title="Điện thoại" class="position-relative d-flex js-submenu flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_1.png?1676652384879" alt="Điện thoại">
-               <span class="line_1 line_2">Điện thoại</span>
-               </a>
                <ul class="lv1 p-0 list-unstyled position-absolute m_chill m-0">
                <li class="level1 main position-sticky bg-white">
                   <a href="/dien-thoai" class="font-weight-bold d-flex pt-2 pb-2 border-bottom align-items-center w-100 justify-content-center text-main" title="Chi tiết danh mục">
@@ -176,241 +172,55 @@
                   </a>
                </li>
                <li class="level1 position-relative">
-                  <a href="/dien-thoai" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Chọn theo hãng">
-                  Chọn theo hãng
-                  </a>
+                 
                   <ul class="lv2 d-flex list-unstyled flex-column pl-0">
                      <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20vendor:(Apple)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Apple">
-                           Apple
+                           <a href="{{route('home')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" >
+                         Trang chủ
                            </a>
                      </li>
                      <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20vendor:(Samsung)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Samsung">
-                           Samsung
+                           <a href="{{route('allListBlog')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Từ 5 - 10 triệu">
+                           Tin Tức
                            </a>
                      </li>
                      <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20vendor:(Xiaomi)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Xiaomi">
-                           Xiaomi
+                           <a href="{{route('tracuubaohanh')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Tra cứu">
+                           Tra cứu bảo hành
                            </a>
                      </li>
                      <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20vendor:(Oppo)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Oppo">
-                           Oppo
+                           <a href="{{route('listAllService')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Dịch vụ">
+                           Dịch vụ
                            </a>
                      </li>
+                     <li class="level2 position-relative">
+                           <a href="{{route('lienHe')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Liên hệ">
+                           Liên hệ
+                           </a>
+                     </li>
+                      <li class="level2 position-relative">
+                           <a href="{{route('aboutUs')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="">
+                           Giới thiệu
+                           </a>
+                     </li>
+                     <li class="level2 position-relative">
+                        <a href="{{route('allProduct')}}" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Sản phẩm">
+                        Sản phẩm
+                        </a>
+                  </li>
                   </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/dien-thoai" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Chọn theo mức giá">
-                  Chọn theo mức giá
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20price_min:(%3E=0%20AND%20%3C=5000000)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Dưới 5 triệu">
-                           Dưới 5 triệu
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20price_min:(%3E=5000000%20AND%20%3C=10000000)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Từ 5 - 10 triệu">
-                           Từ 5 - 10 triệu
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20price_min:(%3E=10000000%20AND%20%3C=15000000)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Từ 10 - 15 triệu">
-                           Từ 10 - 15 triệu
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20price_min:(%3E=15000000%20AND%20%3C=20000000)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Từ 15 - 20 triệu">
-                           Từ 15 - 20 triệu
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20price_min:(%3E=20000000%20AND%20%3C=99999999)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Trên 20 triệu">
-                           Trên 20 triệu
-                           </a>
-                     </li>
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/dien-thoai" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Loại điện thoại">
-                  Loại điện thoại
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20product_type:(Android)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Android">
-                           Android
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20product_type:(IOS)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="IOS">
-                           IOS
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="https://mew-mobile.mysapo.net/dien-thoai?q=collections:2921522%20AND%20product_type:(%C4%90i%E1%BB%87n%20tho%E1%BA%A1i%20ph%E1%BB%95%20th%C3%B4ng)&page=1&view=grid" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Điện thoại phổ thông">
-                           Điện thoại phổ thông
-                           </a>
-                     </li>
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/dien-thoai-hot" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Điện thoại Hot">
-                  Điện thoại Hot
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                     <li class="level2 position-relative">
-                           <a href="/" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Galaxy Z Fold4">
-                           Galaxy Z Fold4
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="/" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Galaxy Z Flip4">
-                           Galaxy Z Flip4
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="/iphone-13-512gb" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="iPhone 13">
-                           iPhone 13
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="/iphone-13-256gb" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="iPhone 12">
-                           iPhone 12
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="/iphone-13-128gb" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="iPhone 11">
-                           iPhone 11
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="/" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Samsung S22 Ultra">
-                           Samsung S22 Ultra
-                           </a>
-                     </li>
-                     <li class="level2 position-relative">
-                           <a href="/xiaomi-redmi-note-11-pro-plus-5g" class="h-100 d-flex pl-3 pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Xiaomi Redmi Note 11">
-                           Xiaomi Redmi Note 11
-                           </a>
-                     </li>
-                  </ul>
-               </li>
                </ul>
          </li>
-         <li class="level0 d-block w-100 position-static">
-               <a href="/smartwatch" title="Smart watch" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_2.png?1676652384879" alt="Smart watch">
-               <span class="line_1 line_2">Smart watch</span>
-               </a>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a title="Laptop" class="position-relative d-flex js-submenu flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_3.png?1676652384879" alt="Laptop">
-               <span class="line_1 line_2">Laptop</span>
-               </a>
-               <ul class="lv1 p-0 list-unstyled position-absolute m_chill m-0">
-               <li class="level1 main position-sticky bg-white">
-                  <a href="/laptop" class="font-weight-bold d-flex pt-2 pb-2 border-bottom align-items-center w-100 justify-content-center text-main" title="Chi tiết danh mục">
-                  Chi tiết danh mục
+         @foreach ($categoryhome as $cate)
+            <li class="level0 d-block w-100 position-static">
+                  <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" title="{{languageName($cate->name)}}" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
+                  <img class="lazy d-block pb-2 m-auto" src="{{$cate->imagehome}}" data-src="{{$cate->imagehome}}" alt="{{languageName($cate->name)}}">
+                  <span class="line_1 line_2">{{languageName($cate->name)}}</span>
                   </a>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/macbook" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Macbook">
-                  Macbook
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/laptop-van-phong" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Văn phòng">
-                  Văn phòng
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/laptop-gaming" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Gaming">
-                  Gaming
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/laptop-sinh-vien" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Sinh viên">
-                  Sinh viên
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               </ul>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a href="/loa" title="Loa" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_4.png?1676652384879" alt="Loa">
-               <span class="line_1 line_2">Loa</span>
-               </a>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a title="Phụ kiện" class="position-relative d-flex js-submenu flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_5.png?1676652384879" alt="Phụ kiện">
-               <span class="line_1 line_2">Phụ kiện</span>
-               </a>
-               <ul class="lv1 p-0 list-unstyled position-absolute m_chill m-0">
-               <li class="level1 main position-sticky bg-white">
-                  <a href="/phu-kien" class="font-weight-bold d-flex pt-2 pb-2 border-bottom align-items-center w-100 justify-content-center text-main" title="Chi tiết danh mục">
-                  Chi tiết danh mục
-                  </a>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/phu-kien-di-dong" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Phụ kiện di động">
-                  Phụ kiện di động
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/phu-kien-laptop" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Phụ kiện Laptop">
-                  Phụ kiện Laptop
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               <li class="level1 position-relative">
-                  <a href="/phu-kien-gaming" class="font-weight-bold d-flex pt-2 pb-2 border-bottom mr-2 ml-2 align-items-center" title="Phụ kiện Gaming">
-                  Phụ kiện Gaming
-                  </a>
-                  <ul class="lv2 d-flex list-unstyled flex-column pl-0">
-                  </ul>
-               </li>
-               </ul>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a href="/may-tinh-bang" title="Tablet" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_6.png?1676652384879" alt="Tablet">
-               <span class="line_1 line_2">Tablet</span>
-               </a>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a href="/" title="Đồng hồ" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_7.png?1676652384879" alt="Đồng hồ">
-               <span class="line_1 line_2">Đồng hồ</span>
-               </a>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a href="/may-in" title="PC, Máy in" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_8.png?1676652384879" alt="PC, Máy in">
-               <span class="line_1 line_2">PC, Máy in</span>
-               </a>
-         </li>
-         <li class="level0 d-block w-100 position-static">
-               <a href="/" title="Máy cũ giá rẻ" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-               <img class="lazy d-block pb-2 m-auto" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/icon_menu_9.png?1676652384879" alt="Máy cũ giá rẻ">
-               <span class="line_1 line_2">Máy cũ giá rẻ</span>
-               </a>
-         </li>
+            </li>
+         @endforeach
+       
       </ul>
    </div>
 </div>
