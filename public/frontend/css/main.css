@@ -109,6 +109,7 @@
     position: fixed;
     display: flex;
     top:300px;
+    z-index: 100;
     left: 0px;
     flex-direction: column;
     align-content: center;
