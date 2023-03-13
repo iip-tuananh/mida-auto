@@ -718,12 +718,12 @@
                <div class="rounded  p-2 ">
                <div class=" head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row bg-nen">
                   <h2 class="title text-uppercase font-weight-bold position-relative m-0">
-                     <a  class="position-relative" href="javascipt:;" title="{{languageName($cate->name)}}">
+                     <a  class="position-relative" href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" title="{{languageName($cate->name)}}">
                      <div class="button-custom">{{languageName($cate->name)}}</div>
                      </a>
                   </h2>
                   @if (count($cate->typeCate) > 0)
-                  <div class="list_link_pr d-flex pt-2 pb-2">
+                  <div class="list_link_pr d-flex pt-2 pb-2" style="overflow: auto">
                      @foreach ($cate->typeCate as $type)
                         <a class=" button-85 box-shadow a-style bg-do border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
                               <div>
@@ -796,7 +796,7 @@
                <div class="head_box p-2 d-flex align-items-md-center justify-content-between flex-column flex-md-row ">
                  
                   @if (count($cate->typeCate) > 0)
-                  <div class="list_link_pr d-flex pt-2 pb-2">
+                  <div class="list_link_pr d-flex pt-2 pb-2" style="overflow: auto">
                      @foreach ($cate->typeCate as $type)
                         <a class=" button-85 box-shadow a-style bg-xanh border rounded-10 font-weight-bold js-tab-title" href="{{route('allListProType', ['danhmuc'=>$type->cate_slug, 'loaidanhmuc'=>$type->slug])}}" title="{{languageName($type->name)}}">
                               <div>
@@ -879,7 +879,7 @@
                   </div>
                   @endif
                   <h2 class="title text-uppercase font-weight-bold position-relative m-0">
-                     <a class="position-relative" href="imac-macbook" title="{{languageName($cate->name)}}">
+                     <a class="position-relative" href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" title="{{languageName($cate->name)}}">
                      <div class="button-custom">{{languageName($cate->name)}}</div>
                      </a>
                   </h2>
@@ -900,7 +900,7 @@
                   </div>
                   <div class="col-xl-3 col-lg-4 col-12 order-lg-1">
                      <div class="b_product p-2 pr-lg-0 d-flex flex-lg-column">
-                           <a href="#" title="{{languageName($cate->name)}}" class="rounded modal-open position-relative w-100 w-mb-50 ratio1by1 has-edge aspect d-block sitdown">
+                           <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" title="{{languageName($cate->name)}}" class="rounded modal-open position-relative w-100 w-mb-50 ratio1by1 has-edge aspect d-block sitdown">
                            <img class="d-block img img-cover position-absolute lazy" src="{{$cate->imagehome}}" data-src="{{$cate->imagehome}}" alt="{{languageName($cate->name)}}">
                            </a>
                      </div>
