@@ -215,7 +215,7 @@
          @foreach ($categoryhome as $cate)
             <li class="level0 d-block w-100 position-static">
                   <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}" title="{{languageName($cate->name)}}" class="position-relative d-flex flex-column justify-content-center align-items-center text-center p-2">
-                  <img class="lazy d-block pb-2 m-auto" src="{{$cate->imagehome}}" data-src="{{$cate->imagehome}}" alt="{{languageName($cate->name)}}">
+                  <img class="lazy d-block pb-2 m-auto" src="{{$cate->avatar}}" data-src="{{$cate->avatar}}" alt="{{languageName($cate->name)}}">
                   <span class="line_1 line_2">{{languageName($cate->name)}}</span>
                   </a>
             </li>
