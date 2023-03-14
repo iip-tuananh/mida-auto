@@ -49,36 +49,8 @@ Danh sách {{$title}}
                <div class="swiper-button-prev mbc_prev d-none d-md-flex"></div>
                <div class="swiper-button-next mbc_next d-none d-md-flex"></div>
             </div>
-            <h1 class="collection-name font-weight-bold mb-lg-3 text-uppercase pb-2 pt-2 mb-2 d-none">
-               Điện thoại
-            </h1>
             <div class="row">
                <div class="col-12 col-lg-9 order-lg-2 pt-3 pt-lg-0">
-                  <div class="sortPagiBar pb-2 border-bottom">
-                     <ul class="aside-content filter-vendor list-unstyled mb-0 d-flex align-items-baseline gap-10">
-                        <li>
-                           <span class="h6 title-head m-0 pt-2 pb-2 font-weight-bold">Sắp xếp theo: </span>
-                        </li>
-                        <li class="filter-item filter-item--check-box">
-                           <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
-                           <input type="radio" class="d-none sortby-price-asc" name="sortBy" onclick="sortby('price-asc')">
-                           <span class="fa2 px-2 py-1 rounded border">Giá tăng dần</span> 
-                           </label>
-                        </li>
-                        <li class="filter-item filter-item--check-box">
-                           <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
-                           <input type="radio" class="d-none sortby-price-desc" name="sortBy" onclick="sortby('price-desc')">
-                           <span class="fa2 px-2 py-1 rounded border">Giá giảm dần</span> 
-                           </label>
-                        </li>
-                        <li class="filter-item filter-item--check-box">
-                           <label class="d-flex align-items-baseline pt-1 pb-1 m-0">
-                           <input type="radio" class="d-none sortby-created-asc" name="sortBy" onclick="sortby('created-asc')">
-                           <span class="fa2 px-2 py-1 rounded border">Mới nhất </span> 
-                           </label>
-                        </li>
-                     </ul>
-                  </div>
                   <div class="collection" id="form-ketqua">
                      <div class="category-products position-relative mt-3 mb-3">
                         <div class="row slider-items">
@@ -91,12 +63,6 @@ Danh sách {{$title}}
                               {{$list->links()}}
                            </div>
                         </div>
-                        <ul class="pagination d-flex justify-content-center clearfix mt-4 mb-4">
-                           <li class="page-item mr-1 ml-1 disabled"><a class="page-link rounded text-center" href="#" title="Trang trước">&#xab;</a></li>
-                           <li class="active page-item disabled mr-1 ml-1"><a class="page-link rounded text-center" href="javascript:;" title="Trang 1">1</a></li>
-                           <li class="page-item mr-1 ml-1"><a class="page-link rounded text-center" onclick="doSearch(2)" href="javascript:;" title="Trang 2">2</a></li>
-                           <li class="page-item mr-1 ml-1"><a class="page-link rounded text-center" onclick="doSearch(2)" href="javascript:;" title="Trang sau">&#xbb;</a></li>
-                        </ul>
                      </div>
                   </div>
                  
@@ -127,7 +93,11 @@ Danh sách {{$title}}
                                     @endphp
                                     @foreach ($categoryhome as $cate)
                            <li >
+                              @if (isset($cate_id))
                               <a class="cus-tu {{ $cate->id == $cate_id ? $activeClass : '' }}" title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
+                              @else
+                              <a class="cus-tu" title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
+                              @endif
                            </li>   
                         @endforeach
                                  </ul>
@@ -180,90 +150,6 @@ Danh sách {{$title}}
                                  </script>
                               </div>
                            </aside>
-                           {{-- <aside class="aside-item filter-tag-style-2 tag-filtster mb-3 col-12 col-sm-4 col-lg-12">
-                              <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Tính năng đặc biệt</div>
-                              <div class="aside-content filter-group">
-                                 <ul class="d-flex flex-wrap gap_8 list-unstyled m-0">
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-sac-khong-day">
-                                       <input type="checkbox" id="filter-sac-khong-day" class="d-none" onchange="toggleFilter(this)" data-group="tag2" data-field="tags"  value="(Sạc không dây)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Sạc không dây</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-bao-mat-van-tay">
-                                       <input type="checkbox" id="filter-bao-mat-van-tay" class="d-none" onchange="toggleFilter(this)" data-group="tag2" data-field="tags"  value="(Bảo mật vân tay)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Bảo mật vân tay</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-nhan-dien-khuon-mat">
-                                       <input type="checkbox" id="filter-nhan-dien-khuon-mat" class="d-none" onchange="toggleFilter(this)" data-group="tag2" data-field="tags"  value="(Nhận diện khuôn mặt)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Nhận diện khuôn mặt</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-khang-nuoc-khang-bui">
-                                       <input type="checkbox" id="filter-khang-nuoc-khang-bui" class="d-none" onchange="toggleFilter(this)" data-group="tag2" data-field="tags"  value="(Kháng nước - kháng bụi)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Kháng nước - kháng bụi</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-ho-tro-5g">
-                                       <input type="checkbox" id="filter-ho-tro-5g" class="d-none" onchange="toggleFilter(this)" data-group="tag2" data-field="tags"  value="(Hỗ trợ 5G)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Hỗ trợ 5G</span>
-                                       </label>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </aside> --}}
-                           {{-- 
-                           <aside class="aside-item filter-tag-style-3 tag-filtster mb-3 col-12 col-sm-4 col-lg-12">
-                              <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Tính năng </div>
-                              <div class="aside-content filter-group">
-                                 <ul class="d-flex flex-wrap gap_8 list-unstyled m-0">
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-chup-xoa-phong">
-                                       <input type="checkbox" id="filter-chup-xoa-phong" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Chụp xóa phông)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Tính Năng 1</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-chup-goc-rong">
-                                       <input type="checkbox" id="filter-chup-goc-rong" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Chụp góc rộng)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Chụp góc rộng</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-quay-video-4k">
-                                       <input type="checkbox" id="filter-quay-video-4k" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Quay video 4k)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Quay video 4k</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-chup-zoom-xa">
-                                       <input type="checkbox" id="filter-chup-zoom-xa" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Chụp Zoom xa)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Chụp Zoom xa</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-chup-macro">
-                                       <input type="checkbox" id="filter-chup-macro" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Chụp macro)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Chụp macro</span>
-                                       </label>
-                                    </li>
-                                    <li class="filter-item filter-item--check-box">
-                                       <label class="d-flex align-items-baseline m-0" for="filter-chong-rung-nbsp">
-                                       <input type="checkbox" id="filter-chong-rung-nbsp" class="d-none" onchange="toggleFilter(this)" data-group="tag3" data-field="tags"  value="(Chống rung
-                                          &nbsp;)" data-operator="OR">
-                                       <span class="fa2 px-2 py-1 rounded border">Chống rung
-                                       &nbsp;</span>
-                                       </label>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </aside>
-                           --}}
                         </div>
                      </div>
                      <div class="filter-container__selected-filter position-relative d-none order-lg-2 rounded-10 p-2 mb-3">
@@ -272,75 +158,6 @@ Danh sách {{$title}}
                         </div>
                         <ul class="filter-container__selected-filter-list pl-0 m-0 list-unstyled d-block w-100 position-relative clearfix"></ul>
                      </div>
-                     {{-- 
-                     <div class="aside-item mb-2 pt-2 order-3 d-none d-lg-block ">
-                        <a class="h2 title-head font-weight-bold big text-uppercase d-inline-block mb-2 px-3 py-2 box_shadow position-relative" href="24h-cong-nghe" title="24h công nghệ">
-                        24h công nghệ
-                        </a>
-                        <div class="list-blogs">
-                           <article class="d-flex blog-item blog-item-list clearfix border-bottom pt-2 pb-2">
-                              <div class="img_art thumb_img_blog_list">
-                                 <a href="/he-lo-thong-so-ky-thuat-galaxy-buds-2-pro-rat-dang-de-cho-doi" title="Hé lộ thông số kỹ thuật Galaxy Buds 2 Pro, rất đáng để chờ đợi!!!" class="effect-ming">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect rounded">
-                                       <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/galaxy-buds-2-pro-face.jpg?v=1660017575640" class="lazy d-block img img-cover position-absolute" alt="Hé lộ thông số kỹ thuật Galaxy Buds 2 Pro, rất đáng để chờ đợi!!!">
-                                    </div>
-                                 </a>
-                              </div>
-                              <h3 class="blog-item-name pl-3 m-0 position-relative">
-                                 <a class="line_3" href="/he-lo-thong-so-ky-thuat-galaxy-buds-2-pro-rat-dang-de-cho-doi" title="H&#233; lộ th&#244;ng số kỹ thuật Galaxy Buds 2 Pro, rất đ&#225;ng để chờ đợi!!!">H&#233; lộ th&#244;ng số kỹ thuật Galaxy Buds 2 Pro, rất đ&#225;ng để chờ đợi!!!</a>
-                              </h3>
-                           </article>
-                           <article class="d-flex blog-item blog-item-list clearfix border-bottom pt-2 pb-2">
-                              <div class="img_art thumb_img_blog_list">
-                                 <a href="/apple-tung-ra-ban-cap-nhat-ios-16-beta-5-danh-cho-nha-phat-trien" title="Apple tung ra bản cập nhật iOS 16 Beta 5 dành cho nhà phát triển" class="effect-ming">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect rounded">
-                                       <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/cover-20.jpg?v=1660017528540" class="lazy d-block img img-cover position-absolute" alt="Apple tung ra bản cập nhật iOS 16 Beta 5 dành cho nhà phát triển">
-                                    </div>
-                                 </a>
-                              </div>
-                              <h3 class="blog-item-name pl-3 m-0 position-relative">
-                                 <a class="line_3" href="/apple-tung-ra-ban-cap-nhat-ios-16-beta-5-danh-cho-nha-phat-trien" title="Apple tung ra bản cập nhật iOS 16 Beta 5 d&#224;nh cho nh&#224; ph&#225;t triển">Apple tung ra bản cập nhật iOS 16 Beta 5 d&#224;nh cho nh&#224; ph&#225;t triển</a>
-                              </h3>
-                           </article>
-                           <article class="d-flex blog-item blog-item-list clearfix border-bottom pt-2 pb-2">
-                              <div class="img_art thumb_img_blog_list">
-                                 <a href="/realme-narzo-50i-prime-ra-mat-unisoc-t612-pin-5000mah-gia-tu-2-79-trieu-dong" title="Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, giá từ 2.79 triệu đồng" class="effect-ming">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect rounded">
-                                       <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/realme-narzo-50i-prime-ra-mat-viet-nam-7.jpg?v=1660017343050" class="lazy d-block img img-cover position-absolute" alt="Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, giá từ 2.79 triệu đồng">
-                                    </div>
-                                 </a>
-                              </div>
-                              <h3 class="blog-item-name pl-3 m-0 position-relative">
-                                 <a class="line_3" href="/realme-narzo-50i-prime-ra-mat-unisoc-t612-pin-5000mah-gia-tu-2-79-trieu-dong" title="Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, gi&#225; từ 2.79 triệu đồng">Realme Narzo 50i Prime ra mắt: Unisoc T612, pin 5000mAh, gi&#225; từ 2.79 triệu đồng</a>
-                              </h3>
-                           </article>
-                           <article class="d-flex blog-item blog-item-list clearfix border-bottom pt-2 pb-2">
-                              <div class="img_art thumb_img_blog_list">
-                                 <a href="/xiaomi-13-series-co-the-duoc-trang-bi-pin-mot-cell-100w-chip-sac-the-he-moi" title="Xiaomi 13 series có thể được trang bị pin một cell 100W, chip sạc thế hệ mới" class="effect-ming">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect rounded">
-                                       <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/xiaomi-13-series-3-1280x720-800-resize.jpg?v=1658220122433" class="lazy d-block img img-cover position-absolute" alt="Xiaomi 13 series có thể được trang bị pin một cell 100W, chip sạc thế hệ mới">
-                                    </div>
-                                 </a>
-                              </div>
-                              <h3 class="blog-item-name pl-3 m-0 position-relative">
-                                 <a class="line_3" href="/xiaomi-13-series-co-the-duoc-trang-bi-pin-mot-cell-100w-chip-sac-the-he-moi" title="Xiaomi 13 series c&#243; thể được trang bị pin một cell 100W, chip sạc thế hệ mới">Xiaomi 13 series c&#243; thể được trang bị pin một cell 100W, chip sạc thế hệ mới</a>
-                              </h3>
-                           </article>
-                           <article class="d-flex blog-item blog-item-list clearfix pt-2 pb-2">
-                              <div class="img_art thumb_img_blog_list">
-                                 <a href="/ro-ri-anh-chup-phien-ban-surface-duo-tam-trung-bi-microsoft-huy-bo" title="Rò rỉ ảnh chụp phiên bản Surface Duo tầm trung bị Microsoft hủy bỏ" class="effect-ming">
-                                    <div class="position-relative w-100 m-0 be_opa modal-open ratio3by2 has-edge aspect rounded">
-                                       <img src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="//bizweb.dktcdn.net/thumb/large/100/459/533/articles/h2-1280x720-800-resize.jpg?v=1658220152440" class="lazy d-block img img-cover position-absolute" alt="Rò rỉ ảnh chụp phiên bản Surface Duo tầm trung bị Microsoft hủy bỏ">
-                                    </div>
-                                 </a>
-                              </div>
-                              <h3 class="blog-item-name pl-3 m-0 position-relative">
-                                 <a class="line_3" href="/ro-ri-anh-chup-phien-ban-surface-duo-tam-trung-bi-microsoft-huy-bo" title="R&#242; rỉ ảnh chụp phi&#234;n bản Surface Duo tầm trung bị Microsoft hủy bỏ">R&#242; rỉ ảnh chụp phi&#234;n bản Surface Duo tầm trung bị Microsoft hủy bỏ</a>
-                              </h3>
-                           </article>
-                        </div>
-                     </div>
-                     --}}
                   </div>
                </div>
             </div>
