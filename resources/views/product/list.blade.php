@@ -118,14 +118,17 @@ Danh sách {{$title}}
                               <div class="aside-content filter-group">
                                  <ul class="filter-type d-flex flex-wrap gap_8 list-unstyled m-0">
                                     @foreach ($categoryhome as $cate)
-                                    <a href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">
-                                       <li class="filter-item filter-item--check-box">
-                                          <label class="d-flex align-items-baseline m-0" >
-                                          <span class="fa2 px-2 py-1 rounded border">{{languageName($cate->name)}}</span>
-                                          </label>
-                                       </li>
-                                    </a>
-                                    @endforeach
+                           <li >
+                              <a class="cate-id" data-id="{{$cate->id}}" title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
+                           </li>   
+                        @endforeach
+                                    <script>
+                                       $('.danh-muc-click').click(function (e) { 
+                                          e.preventDefault();
+                                          url = $(this).data('url');
+                                          
+                                       });
+                                    </script>
                                  </ul>
                               </div>
                            </aside>
@@ -145,7 +148,7 @@ Danh sách {{$title}}
                                     function toggleCheckboxes(checkbox) {
                                     event.preventDefault(); // Prevent default form behavior
                                     var url = $('input[name="price"]').data('url');
-                                    console.log(url);
+                                    var cate = $('.cate-id').data('id');
                                     var checkboxes = document.getElementsByName('price');
                                     for (var i = 0; i < checkboxes.length; i++) {
                                     if (checkboxes[i] != checkbox) {
@@ -157,7 +160,10 @@ Danh sách {{$title}}
                                     type: 'POST',
                                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                                     url: url,
-                                    data: { price: checkbox.value },
+                                    data: { 
+                                       price: checkbox.value ,
+                                       cate :cate,
+                                    },
                                     success: function (data) {
                                     $('#form-ketqua').html(data.html7);
                                     console.log('thành công');
