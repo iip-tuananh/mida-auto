@@ -225,6 +225,12 @@
     border: none;
     outline: none;
 }
+.tuan-dungim{
+    position: fixed;
+    /* z-index: 100; */
+    bottom: 0px;
+    width: 100%;
+}
 .cus-tu:hover{
     background-color: #d70018;
     color: white;

@@ -132,7 +132,7 @@
             </a>
          
          </div>
-         <div class="d-lg-none ">
+         <div class="d-lg-none tuan-dungim" >
             <div class="tuan-flex">
                <div>
                   <i id="js-menu-toggle" class="fa-solid fa-list"></i>
