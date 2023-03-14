@@ -122,6 +122,9 @@ class ProductController extends Controller
                 }elseif($request->price == '8-10trieu'){
                     $product = $product->where('category',$request->cate)->whereBetween('price', [8000000, 10000000]);
                 }
+                    elseif($request->price == '>10trieu'){
+                        $product = $product->where('category',$request->cate)->where('price', '>', 10000000);
+                }
                 else{
                     $product = $product->where('category',$request->cate)->where('price', '>', 10000000);
                 }

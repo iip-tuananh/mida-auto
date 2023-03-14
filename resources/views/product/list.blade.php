@@ -122,13 +122,6 @@ Danh sách {{$title}}
                               <a class="cate-id" data-id="{{$cate->id}}" title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
                            </li>   
                         @endforeach
-                                    <script>
-                                       $('.danh-muc-click').click(function (e) { 
-                                          e.preventDefault();
-                                          url = $(this).data('url');
-                                          
-                                       });
-                                    </script>
                                  </ul>
                               </div>
                            </aside>
@@ -149,6 +142,7 @@ Danh sách {{$title}}
                                     event.preventDefault(); // Prevent default form behavior
                                     var url = $('input[name="price"]').data('url');
                                     var cate = $('.cate-id').data('id');
+                                    console.log(cate);
                                     var checkboxes = document.getElementsByName('price');
                                     for (var i = 0; i < checkboxes.length; i++) {
                                     if (checkboxes[i] != checkbox) {
