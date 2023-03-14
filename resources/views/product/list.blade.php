@@ -122,9 +122,12 @@ Danh sách {{$title}}
                                     @elseif(isset($type_id))
                                     <input type="text" name="cateno" data-id="{{$type_id}}" class="type-id" hidden>
                                     @endif
+                                    @php
+                                   $activeClass = 'active';
+                                    @endphp
                                     @foreach ($categoryhome as $cate)
                            <li >
-                              <a  title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
+                              <a class="cus-tu {{ $cate->id == $cate_id ? $activeClass : '' }}" title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
                            </li>   
                         @endforeach
                                  </ul>

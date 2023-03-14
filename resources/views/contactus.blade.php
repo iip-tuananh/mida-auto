@@ -40,10 +40,16 @@ Liên hệ với chúng tôi
 				<div class="col-md-12 col-xs-12">
 					<form action="{{route('postcontact')}}" method="post" class="formlienhe">
 					@csrf
+					Nhập tên của bạn (<i style="color: red">*</i>)
 					<input type="text" class="form-control" name="name" placeholder="Enter Name"  required>
-					<input type="text" class="form-control" name="phone" placeholder="Enter Name"  required>
-					<input type="text" class="form-control" name="email" placeholder="Enter Name"  required>
-					<textarea name="mess" id="" cols="30" rows="10" required></textarea>
+					Nhập số điện thoại (<i style="color: red">*</i>)
+					<input type="text" class="form-control" name="phone" placeholder="Enter Phone"  required>
+					Nhập email(<i style="color: red">*</i>)
+					<input type="text" class="form-control" name="email" placeholder="Enter Email"  required>
+					Nhập Thông tin
+					<br>
+					<input type="text" class="form-control" name="mess" placeholder="Enter Content">
+					(<i style="color: red">*</i>) Là trường bắt buộc
 					<br>
 					<input type="submit"  class ="btn-success" value="Gửi thông tin liên hệ">
 				</form>
