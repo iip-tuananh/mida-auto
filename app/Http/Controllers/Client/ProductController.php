@@ -139,44 +139,80 @@ class ProductController extends Controller
                     $product = $product->where('category',$request->cate)->orderBy('price','ASC');
                 }
             }
-        }else{
+        }
+        elseif($request->type_cate != null){
             if(isset($request->price)){
                 if($request->price == '<1trieu'){
-                    $product = $product->where('type_cate',$request->type)->where('price', '<', 1000000);
+                    $product = $product->where('type_cate',$request->type_cate)->where('price', '<', 1000000);
                 }elseif($request->price == '1-2trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [1000000, 2000000]);
+                    $product = $product->where('type_cate',$request->type_cate)->whereBetween('price', [1000000, 2000000]);
                 }elseif($request->price == '2-3trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [2000000, 3000000]);
+                    $product = $product->where('type_cate',$request->type_cate)->whereBetween('price', [2000000, 3000000]);
                 }elseif($request->price == '3-5trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [3000000, 5000000]);
+                    $product = $product->where('type_cate',$request->type_cate)->whereBetween('price', [3000000, 5000000]);
                 }elseif($request->price == '5-8trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [5000000, 8000000]);
+                    $product = $product->where('type_cate',$request->type_cate)->whereBetween('price', [5000000, 8000000]);
                 }elseif($request->price == '8-10trieu'){
-                    $product = $product->where('type_cate',$request->type)->whereBetween('price', [8000000, 10000000]);
+                    $product = $product->where('type_cate',$request->type_cate)->whereBetween('price', [8000000, 10000000]);
                 }
                 else{
-                    $product = $product->where('category',$request->type)->where('price', '>', 10000000);
+                    $product = $product->where('type_cate',$request->type_cate)->where('price', '>', 10000000);
                 }
             }
             if(isset($request->sortby)){
                 if($request->sortby == 'DESC'){
-                    $product = $product->where('type_cate',$request->type)->orderBy('discount','DESC');
+                    $product = $product->where('type_cate',$request->type_cate)->orderBy('discount','DESC');
                 }elseif($request->sortby == 'ASC'){
-                    $product = $product->where('type_cate',$request->type)->orderBy('discount','ASC');
+                    $product = $product->where('type_cate',$request->type_cate)->orderBy('discount','ASC');
                 }elseif($request->sortby == 'new'){
-                    $product = $product->where('type_cate',$request->type)->orderBy('id','DESC');
+                    $product = $product->where('type_cate',$request->type_cate)->orderBy('id','DESC');
                 }elseif($request->sortby == 'PRICE_DESC'){
-                    $product = $product->where('type_cate',$request->type)->orderBy('price','DESC');
+                    $product = $product->where('type_cate',$request->type_cate)->orderBy('price','DESC');
                 }elseif($request->sortby == 'PRICE_ASC'){
-                    $product = $product->where('type_cate',$request->type)->orderBy('price','ASC');
+                    $product = $product->where('type_cate',$request->type_cate)->orderBy('price','ASC');
                 }
             }
         }
+        else{
+            if(isset($request->price)){
+                if($request->price == '<1trieu'){
+                    $product = $product->where('price', '<', 1000000);
+                }elseif($request->price == '1-2trieu'){
+                    $product = $product->whereBetween('price', [1000000, 2000000]);
+                }elseif($request->price == '2-3trieu'){
+                    $product = $product->whereBetween('price', [2000000, 3000000]);
+                }elseif($request->price == '3-5trieu'){
+                    $product = $product->whereBetween('price', [3000000, 5000000]);
+                }elseif($request->price == '5-8trieu'){
+                    $product = $product->whereBetween('price', [5000000, 8000000]);
+                }elseif($request->price == '8-10trieu'){
+                    $product = $product->whereBetween('price', [8000000, 10000000]);
+                }
+                else{
+                    $product = $product->where('price', '>', 10000000);
+                }
+            }
+            if(isset($request->sortby)){
+                if($request->sortby == 'DESC'){
+                    $product = $product::orderBy('discount','DESC');
+                }elseif($request->sortby == 'ASC'){
+                    $product = $product::orderBy('discount','ASC');
+                }elseif($request->sortby == 'new'){
+                    $product = $product::orderBy('id','DESC');
+                }elseif($request->sortby == 'PRICE_DESC'){
+                    $product = $product::orderBy('price','DESC');
+                }elseif($request->sortby == 'PRICE_ASC'){
+                    $product = $product::orderBy('price','ASC');
+                }
+            }
+            
+        }
         
         $product = $product->get();
-        $view = view("layouts.product.filter",compact('product'))->render();
-
-        return response()->json(['html'=>$view]);
+ 
+        $view7 = view("layouts.product.filter",compact('product'))->render();
+   
+        return response()->json(['html7'=>$view7]);
     }
     public function detail_product($cate,$slug)
     {
