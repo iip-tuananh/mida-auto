@@ -346,10 +346,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                               @if($setting->address2 != '')
                               <li style="list-style: none"><i class="fa-solid fa-map-location"></i></i> <a href="tel:+{{$setting->address2}}">{{$setting->address2}}</a></li>
                               @endif
-                      
-                               
                              </ul>
-                      
                        </div>
                            </div>
                        </div>
