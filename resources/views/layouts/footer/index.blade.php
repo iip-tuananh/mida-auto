@@ -19,10 +19,10 @@
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
                <h3 class="footer-title mb-2 position-relative font-weight-bold">Chính sách</h3>
                <ul class="links">
-                  <li><a href="/chinh-sach" title="Chính sách mua hàng">Chính sách mua hàng</a></li>
-                  <li><a href="/chinh-sach" title="Chính sách đổi trả">Chính sách đổi trả</a></li>
-                  <li><a href="/chinh-sach" title="Chính sách bảo hành">Chính sách bảo hành</a></li>
-                  <li><a href="/lien-he" title="Gửi góp ý, khiếu nại">Gửi góp ý, khiếu nại</a></li>
+                  @foreach ($helpCustomFooter as $item)
+                  <li><a href="{{route('pagecontent',['slug'=>$item->slug])}}" title="{{$item->title}}">{{$item->title}}</a></li>
+                  @endforeach
+                 
                </ul>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">

@@ -128,10 +128,47 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                </div>
                            </div>
                            <div class="product-layout_col-right col-12 col-sm-12 col-md-7 col-lg-7 col-xl-5 product-warp">
+                            
                                <div class="product-price font-weight-bold pt-2 pb-2 pl-3 pr-3 rounded mb-2">
                                    <span class="special-price m-0">{{number_format($priceDiscount)}}₫</span>
                                    <del class="old-price ml-2">{{number_format($product->price)}}₫</del>
                                </div>
+                               <div class="m_giftbox mb-3">
+                                <fieldset class="free-gifts p-3 pb-4 pb-md-3 rounded position-relative">
+                                    <legend class="d-inline-block pl-3 pr-3 mb-0">
+                                        <img alt="Code Ưu Đãi" src="//bizweb.dktcdn.net/thumb/icon/100/459/533/themes/868331/assets/gift.gif?1676652384879"> Code Ưu Đãi
+                                    </legend>
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 col-lg-6 col-xl-12">
+                                            <div class="item line_b pb-2 ">
+                                                <span class="mb-2 d-block"><small> Giảm ngay 120k (áp dụng cho các đơn hàng trên 500k)</small>
+                                               
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6 col-xl-12">
+                                            <div class="item line_b pb-2 none_mb">
+                                                <span class="mb-2 d-block"><small> Giảm ngay 20% tổng giá trị đơn hàng trên 1000k. Số lượng có hạn</small>
+                                              
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-6 col-xl-12">
+                                            <div class="item line_b pb-2 none_mb">
+                                                <span class="mb-2 d-block"><small> <b>FREESHIP</b> đơn hàng từ 500k</small>
+                                               
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="position-absolute vmore_c w-100 d-md-none">
+                                            <a href="javascript:;" class="d-block v_more_coupon text-center font-weight-bold">
+                                            <span class="t1">Xem thêm mã ưu đãi</span>
+                                            <span class="t1 d-none">Thu gọn</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
                                <form >
                               
                                    <div id="o_sw_buy" class="mobile_open_box_swatch">
@@ -270,43 +307,50 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                    </div> --}}
                                    <div class="in_1">Loại: <span id="type">{{languageName($product->cate->name)}}</span></div>
                                </div>
-                               <div class="m_giftbox mb-3">
-                                   <fieldset class="free-gifts p-3 pb-4 pb-md-3 rounded position-relative">
-                                       <legend class="d-inline-block pl-3 pr-3 mb-0">
-                                           <img alt="Code Ưu Đãi" src="//bizweb.dktcdn.net/thumb/icon/100/459/533/themes/868331/assets/gift.gif?1676652384879"> Code Ưu Đãi
-                                       </legend>
-                                       <div class="row">
-                                           <div class="col-12 col-md-6 col-lg-6 col-xl-12">
-                                               <div class="item line_b pb-2 ">
-                                                   <span class="mb-2 d-block"><small> Giảm ngay 120k (áp dụng cho các đơn hàng trên 500k)</small>
-                                                  
-                                                   </span>
-                                               </div>
-                                           </div>
-                                           <div class="col-12 col-md-6 col-lg-6 col-xl-12">
-                                               <div class="item line_b pb-2 none_mb">
-                                                   <span class="mb-2 d-block"><small> Giảm ngay 20% tổng giá trị đơn hàng trên 1000k. Số lượng có hạn</small>
-                                                 
-                                                   </span>
-                                               </div>
-                                           </div>
-                                           <div class="col-12 col-md-6 col-lg-6 col-xl-12">
-                                               <div class="item line_b pb-2 none_mb">
-                                                   <span class="mb-2 d-block"><small> <b>FREESHIP</b> đơn hàng từ 500k</small>
-                                                  
-                                                   </span>
-                                               </div>
-                                           </div>
-                                           <div class="position-absolute vmore_c w-100 d-md-none">
-                                               <a href="javascript:;" class="d-block v_more_coupon text-center font-weight-bold">
-                                               <span class="t1">Xem thêm mã ưu đãi</span>
-                                               <span class="t1 d-none">Thu gọn</span>
-                                               </a>
-                                           </div>
-                                       </div>
-                                   </fieldset>
-                               </div>
+                               <div class="product-info position-relative mb-3 p-2 border rounded-10">
+                                <span class="in_1">
+                                Chính sách
+                               
+                                </span>
+                                <ul class="links">
+                                    @foreach ($helpCustomFooter as $item)
+                                    <li><a href="{{route('pagecontent',['slug'=>$item->slug])}}" title="{{$item->title}}">{{$item->title}}</a></li>
+                                    @endforeach
+                                   
+                                 </ul>
+                            </div>
+                            <div class="product-info position-relative mb-3 p-2 border rounded-10">
+                                <span class="in_1">
+                                Liên hệ tư vấn
+                                </span>
+                                <ul class="links">
+                                   @if($setting->phone1 != '')
+                                  <li style="list-style: none"><i class="fa-solid fa-phone"></i> <a href="tel:+{{$setting->phone1}}">{{$setting->phone1}}</a></li>
+                                  @endif
+                                  @if($setting->phone2 != '')
+                                  <li style="list-style: none"><i class="fa-solid fa-phone"></i> <a href="tel:+{{$setting->phone2}}">{{$setting->phone2}}</a></li>
+                                  @endif
+                          
+                                   
+                                 </ul>
+                          
                            </div>
+                           <div class="product-info position-relative mb-3 p-2 border rounded-10">
+                            <span class="in_1">
+                            Địa chỉ mua hàng:
+                            </span>
+                            <ul class="links">
+                               @if($setting->address1 != '')
+                              <li style="list-style: none"><i class="fa-solid fa-map-location"></i></i> <a href="tel:+{{$setting->address1}}">{{$setting->address1}}</a></li>
+                              @endif
+                              @if($setting->address2 != '')
+                              <li style="list-style: none"><i class="fa-solid fa-map-location"></i></i> <a href="tel:+{{$setting->address2}}">{{$setting->address2}}</a></li>
+                              @endif
+                      
+                               
+                             </ul>
+                      
+                       </div>
                        </div>
                        <div class="row">
                            <div class="col-md-4 col-lg-3 col-12 order-lg-2 mb-3">
