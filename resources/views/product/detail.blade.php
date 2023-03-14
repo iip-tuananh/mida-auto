@@ -372,13 +372,12 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                       var swiperRelateProduct = new Swiper('.b_product', {
                                          spaceBetween: 10,
                                          loop: false,
+                                         autoplay:true,
                                          speed: 1000,
                                          navigation: {
                                             nextEl: '.mre_next',
                                             prevEl: '.mre_prev',
                                          },
-                                         slidesPerColumnFill: 'row',
-                                         slidesPerColumn: 2,
                                          breakpoints: {
                                             320: {
                                                slidesPerView: 1
@@ -390,10 +389,10 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                                slidesPerView: 1
                                             },
                                             992: {
-                                               slidesPerView: 2
+                                               slidesPerView: 3
                                             },
                                             1200: {
-                                               slidesPerView: 3
+                                               slidesPerView: 4
                                             }
                                          }
                                       });
