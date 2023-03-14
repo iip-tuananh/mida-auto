@@ -351,6 +351,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                              </ul>
                       
                        </div>
+                           </div>
                        </div>
                        <div class="row">
                            <div class="col-md-4 col-lg-3 col-12 order-lg-2 mb-3">
