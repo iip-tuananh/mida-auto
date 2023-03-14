@@ -117,9 +117,14 @@ Danh sách {{$title}}
                               <div class="h2 title-head m-0 pt-2 pb-2 font-weight-bold">Loại</div>
                               <div class="aside-content filter-group">
                                  <ul class="filter-type d-flex flex-wrap gap_8 list-unstyled m-0">
+                                    @if (isset($cate_id))
+                                    <input type="text" name="cateno" data-id="{{$cate_id}}" class="cate-id" hidden>
+                                    @elseif(isset($type_id))
+                                    <input type="text" name="cateno" data-id="{{$type_id}}" class="type-id" hidden>
+                                    @endif
                                     @foreach ($categoryhome as $cate)
                            <li >
-                              <a class="cate-id" data-id="{{$cate->id}}" title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
+                              <a  title="{{languageName($cate->name)}}"  href="{{route('allListProCate',['danhmuc'=>$cate->slug])}}">{{languageName($cate->name)}}</a>
                            </li>   
                         @endforeach
                                  </ul>

@@ -26,16 +26,16 @@ class ProductController extends Controller
     {
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$danhmuc])
         ->orderBy('id','DESC')
-        ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug','description')
-        ->paginate(12);
-        $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','slug']);
+        ->select('id','category','name','discount','price','images','slug','cate_slug','type_slug', 'size', 'description')
+        ->paginate(16);
+        $data['cateno'] = Category::where('slug',$danhmuc)->first(['id','name','avatar','content','slug','imagehome']);
+        $listBrand = [];
         $cate_id = $data['cateno']->id;
-        $cate_img = $data['cateno']->avatar;
-        $data['cate_img'] = $cate_img;
-
-        $data['cateid'] = $cate_id;
+        $data['brands'] = $listBrand;
+        $data['cate_id'] = $cate_id;
         $data['title'] = languageName($data['cateno']->name);
         $data['content'] = $data['cateno']->content;
+        $data['bannerCate'] = $data['cateno']->avatar;
         return view('product.list',$data);
     }
     public function allListType($danhmuc,$loaidanhmuc){
