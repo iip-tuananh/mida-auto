@@ -100,10 +100,10 @@ export default {
               name: "Phân loại cấp 1",
               path: "/product/type",
             },
-            {
-              name: "Phân loại cấp 2",
-              path: "/product/typetwo",
-            },
+            // {
+            //   name: "Phân loại cấp 2",
+            //   path: "/product/typetwo",
+            // },
             {
               name: "Danh sách sản phẩm",
               path: "/product",
@@ -175,14 +175,14 @@ export default {
               name: "Quản lý banner",
               path: "/banner",
             },
-            {
-              name: "Quản lý đối tác",
-              path: "/partner",
-            },
-            {
-              name: "Thư viện ảnh",
-              path: "/prize",
-            },
+            // {
+            //   name: "Quản lý đối tác",
+            //   path: "/partner",
+            // },
+            // {
+            //   name: "Thư viện ảnh",
+            //   path: "/prize",
+            // },
             // {
             //   name: "Quản lý video",
             //   path: "/video",
