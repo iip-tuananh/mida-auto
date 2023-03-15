@@ -11,6 +11,53 @@ use App\models\Bill\Bill;
 
 class CartController extends Controller
 {
+    public function checkoutluon(Request $request,$id){
+        $id = $request->id;
+        $product = Product::findOrFail($id);
+        $cart = session()->get('cart',[]);
+        if (isset($request->quantity)) {
+            if(isset($cart[$id])) {
+                $cart[$id]['quantity'] = $cart[$id]['quantity'] + $request->quantity;
+
+            } else {
+                $cart[$id] = [
+                    "id" => $product->id,
+                    "name" => $product->name,
+                    "quantity" => $request->quantity,
+                    "price" => $product->price,
+                    "discount" => $product->discount,
+                    "cate_slug" => $product->cate_slug,
+                    "type_slug" => $product->type_slug,
+                    "slug"=>$product->slug,
+                    "image" => json_decode($product->images)[0],
+                ];
+            }
+        } else {
+            if(isset($cart[$id])) {
+                $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
+         
+            } else {
+                $cart[$id] = [
+                    "id" => $product->id,
+                    "name" => $product->name,
+                    "quantity" => 1,
+                    "price" => $product->price,
+                    "discount" => $product->discount,
+                    "cate_slug" => $product->cate_slug,
+                    "type_slug" => $product->type_slug,
+                    "slug"=>$product->slug,
+                    "image" => json_decode($product->images)[0],
+                    
+                ];
+            }
+        }
+        
+        session()->put('cart', $cart);
+        $data['cart'] = session()->get('cart',[]);
+        $data['profile'] = Auth::guard('customer')->user();
+            return view('cart.checkout',$data);
+
+    }
     public function checkout(){
             $data['cart'] = session()->get('cart', []);
             $data['profile'] = Auth::guard('customer')->user();
@@ -35,8 +82,6 @@ class CartController extends Controller
                 $query->cus_address= $request->billingAddress;
                 $query->transport_price = $request->shippingMethod ? $request->shippingMethod : 0;
 				$query->save();
-
-					
                 foreach($cart as $key => $item){
                     $billdetail = new BillDetail();
                     $billdetail->code_bill = $code_bill;

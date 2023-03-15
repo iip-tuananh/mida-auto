@@ -215,8 +215,18 @@
     height: 30px;
     border-radius: 10px;
 }
-*{
+/* *{
     font-family: Arial, Helvetica, sans-serif !important;
+} */
+span.in_1.tran-tun {
+    color: white;
+    display: block;
+    padding: 5px;
+    background-color: #d70018;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transform: translateY(-22px);
+    /* -webkit-transform-origin-y: top; */
 }
 .cus-tu.active{
     background-color: #d70018;

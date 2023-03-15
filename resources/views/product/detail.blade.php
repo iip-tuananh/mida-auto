@@ -17,6 +17,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
 <link rel="stylesheet" href="{{asset('frontend/css/swatch_style.scss.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/mew_style_first.scss.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/css/swiper.scss.css')}}">
+<link rel="stylesheet" href="{{asset('frontend/css/button.css')}}">
 @endsection
 @section('js')
 <script src="{{asset('frontend/js/swiper.js')}}"></script>
@@ -199,7 +200,13 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                             <i class="fa-solid fa-cart-plus"></i>
                                             <small class="ml-2 mr-2 button__text">Thêm vào giỏ</small>
                                         </button>
-                                        <button onclick="window.location.href='tel:{{$setting->phone1}}'" type="button" class=" mb-2 mb-lg-0 btn d-flex justify-content-center flex-column align-items-center rounded p-2   modal-open font-weight-bold position-relative">
+                                        <button onclick="window.location.href='{{route('checkoutluon',['id'=>$product->id])}}'" type="button" class="btn d-flex w-100 justify-content-center flex-column align-items-center rounded pt-2 pb-2 product-action_buynow sitdown modal-open position-relative">
+                                            
+                                            <i class="fa-regular fa-credit-card"></i>
+                                            <small class="ml-2 mr-2 button__text">Mua Ngay</small>
+                                        </button>
+
+                                        <button style="    background-color: green !important; color:white" onclick="window.location.href='tel:{{$setting->phone1}}'" type="button" class="btn d-flex w-100 justify-content-center flex-column align-items-center rounded pt-2 pb-2  sitdown modal-open position-relative">
                                             <span class="text-uppercase font-weight-bold">Liên hệ</span>
                                        
                                         </button>
@@ -217,16 +224,12 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                                     success: function (data) {
                                                        $('.count-item').html(data.html2);
                                                        $.notify("Thêm vào giỏ hàng thành công", "success"
-			);
+			                                                    );
                                                     
                                                     }
                                                 });
                                             });
                                         </script>
-                                           <a href="tel:1900123321" class="btn_out mb-2 mb-lg-0 btn d-none w-100 justify-content-center flex-column align-items-center rounded pt-2 pb-2 sitdown product-action_buynow font-weight-bold text-white position-relative">
-                                           <span class="text-uppercase font-weight-bold">Cháy hàng</span>
-                                           <small>(Vui lòng liên hệ trực tiếp)</small>
-                                           </a>
                                        </div>
                                    </div>
                                    <div class="product-summary small mb-3">
@@ -308,7 +311,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                    <div class="in_1">Loại: <span id="type">{{languageName($product->cate->name)}}</span></div>
                                </div>
                                <div class="product-info position-relative mb-3 p-2 border rounded-10">
-                                <span class="in_1">
+                                <span class="in_1 tran-tun">
                                 Chính sách
                                
                                 </span>
@@ -320,7 +323,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                                  </ul>
                             </div>
                             <div class="product-info position-relative mb-3 p-2 border rounded-10">
-                                <span class="in_1">
+                                <span class="in_1 tran-tun">
                                 Liên hệ tư vấn
                                 </span>
                                 <ul class="links">
@@ -336,7 +339,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                           
                            </div>
                            <div class="product-info position-relative mb-3 p-2 border rounded-10">
-                            <span class="in_1">
+                            <span class="in_1 tran-tun">
                             Địa chỉ mua hàng:
                             </span>
                             <ul class="links">
@@ -353,7 +356,7 @@ $priceDiscount = $product->price - $product->price * ($product->discount / 100);
                        <div class="row">
                            <div class="col-md-4 col-lg-3 col-12 order-lg-2 mb-3">
                                <div class="p-2 box_shadow rounded-10 modal-open spec-tables">
-                                   <h3 class="special-content_title font-weight-bold d-block w-100 p-2 mb-2">Thông số kỹ thuật</h3>
+                                   <h3 class="special-content_title font-weight-bold d-block w-100 p-2 mb-2 button-custom">Thông số kỹ thuật</h3>
                                    <div class="border rounded-10 small modal-open">
                                        <div class="special-content">
                                           @php
