@@ -13,7 +13,7 @@
                </address>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
-               <h3 class="footer-title mb-2 position-relative font-weight-bold mau-fot">Map</h3>
+               <h3 class="footer-title mb-2 position-relative font-weight-bold mau-fot">Xem bản đồ</h3>
                {!!$setting->iframe_map!!}
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
@@ -47,7 +47,7 @@
                   <img class="lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{url('frontend/images/lazada.jpg')}}" alt="Lazada" width=32 height=32>
                   </a>
                </div>
-               <p class="mb-3 position-relative mau-fot">Phương thức thanh toán</p>
+               <p class="mb-3 position-relative">Phương thức thanh toán</p>
                <div class="footer-column-1">
                   <div class="payment-accept">
                         <img class="first lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{url('frontend/images/payment-1.png')}}" alt="payment-1">

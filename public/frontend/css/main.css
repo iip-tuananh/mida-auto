@@ -237,6 +237,10 @@ span.in_1.tran-tun {
 }
 .mau-fot{
     background-color: red;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5px;
 }
 .tuan-dungim{
     position: fixed;
