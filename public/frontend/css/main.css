@@ -235,6 +235,9 @@ span.in_1.tran-tun {
     border: none;
     outline: none;
 }
+.mau-fot{
+    background-color: red;
+}
 .tuan-dungim{
     position: fixed;
     /* z-index: 100; */

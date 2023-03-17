@@ -4,7 +4,7 @@
             <div class="row">
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 footer-left">
                <a href="{{route('home')}}" title="{{$setting->company}}" class="logo_foo d-block mb-2">
-               <img alt="Logo {{$setting->company}}" class="lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{$setting->logo}}">
+                  <h3 class="footer-title mb-2 position-relative font-weight-bold mau-fot">{{$setting->company}}</h3>
                </a>
                <address class="vcard mb-4">
                   <p class="adr"><b>Trụ sở chính:  </b>{{$setting->address1}}</p>
@@ -13,7 +13,7 @@
                </address>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
-               <h3 class="footer-title mb-2 position-relative font-weight-bold">Map</h3>
+               <h3 class="footer-title mb-2 position-relative font-weight-bold mau-fot">Map</h3>
                {!!$setting->iframe_map!!}
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
@@ -26,7 +26,7 @@
                </ul>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
-               <h3 class="footer-title mb-2 position-relative font-weight-bold">Kết nối với chúng tôi</h3>
+               <h3 class="footer-title mb-2 position-relative font-weight-bold mau-fot">Kết nối với chúng tôi</h3>
                <div class="social position-relative pb-2">
                   <a href="#" target="_blank" class="position-relative iso sitdown modal-open d-inline-block facebook mr-1" title="Facebook">
                   <img class="lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{url('frontend/images/facebook.png')}}" alt="facebook" width=32 height=32>
@@ -47,7 +47,7 @@
                   <img class="lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{url('frontend/images/lazada.jpg')}}" alt="Lazada" width=32 height=32>
                   </a>
                </div>
-               <p class="mb-3 position-relative">Phương thức thanh toán</p>
+               <p class="mb-3 position-relative mau-fot">Phương thức thanh toán</p>
                <div class="footer-column-1">
                   <div class="payment-accept">
                         <img class="first lazy" src="//bizweb.dktcdn.net/100/459/533/themes/868331/assets/placeholder_1x1.png?1676652384879" data-src="{{url('frontend/images/payment-1.png')}}" alt="payment-1">
