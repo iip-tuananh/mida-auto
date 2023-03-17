@@ -781,6 +781,7 @@ footer .footer-left .footer-title {
 
 footer ul.links {
     padding: 0;
+    text-align: center;
     list-style: none
 }
 
