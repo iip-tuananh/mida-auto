@@ -1,4 +1,4 @@
-<footer class="bg-white pt-5">
+<footer class="bg-white" style="padding-top: 1rem !important;">
    <div class="foo_mid mb-4">
       <div class="container">
             <div class="row">
@@ -17,7 +17,7 @@
                {!!$setting->iframe_map!!}
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-12 footer-left">
-               <h3 class="footer-title mb-2 position-relative font-weight-bold">Chính sách</h3>
+               <h3 class="footer-title mb-2 position-relative font-weight-bold mau-fot">Chính sách</h3>
                <ul class="links">
                   @foreach ($helpCustomFooter as $item)
                   <li><a href="{{route('pagecontent',['slug'=>$item->slug])}}" title="{{$item->title}}">{{$item->title}}</a></li>
