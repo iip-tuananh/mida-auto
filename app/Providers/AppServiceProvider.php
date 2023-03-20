@@ -50,6 +50,7 @@ class AppServiceProvider extends ServiceProvider
             $language_current = Session::get('locale');
             $promotio = Promotion::where('status',1)->orderBy('id','DESC')->get();
             $servicehome = Services::where('status',1)->orderBy('id','DESC')->get();
+            $servicenew = ServiceCategory::with('services')->where('status',1)->orderBy('id','DESC')->get();
             $serviceCategory = ServiceCategory::where('status',1)->get();
             $setting = Setting::first();
             $lang = Language::get();
@@ -101,6 +102,7 @@ class AppServiceProvider extends ServiceProvider
                 'blogCate'=>$blogCate,
                 'servicehome'=>$servicehome,
                 'hotBlogs'=>$hotBlogs,
+                'servicenew'=>$servicenew,
                 'hotProduct'=>$hotProduct,
                 'bannerHeaderTop'=>$bannerHeaderTop,
                 'aboutUsHeaderTop'=>$aboutUsHeaderTop,
